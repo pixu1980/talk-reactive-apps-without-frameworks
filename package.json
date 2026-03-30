@@ -30,11 +30,11 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.4.9",
 		"@parcel/transformer-inline-string": "2.16.4",
-		"@parcel/transformer-sass": "2.16.4",
 		"@swc/core": "1.15.21",
 		"baseline-browser-mapping": "2.10.12",
 		"lightningcss": "1.32.0",
 		"parcel": "2.16.4",
+		"prettier": "3.8.1",
 		"posthtml": "0.16.7",
 		"posthtml-include": "2.0.1",
 		"sharp": "0.33.5",

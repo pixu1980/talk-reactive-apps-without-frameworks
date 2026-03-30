@@ -1,10 +1,11 @@
 <!DOCTYPE html><html lang=en><meta charset=utf-8><title>Reactive Apps Without Frameworks</title><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=color-scheme content="light dark"><link rel=stylesheet href=https://pixu1980.github.io/reactive-apps-without-frameworks/reactive-apps-without-frameworks.99acf3f2.css><body>
     <main class=reveal>
       <div class=slides>
-        <section intro>
-  <p>DOM-first UI runtime, zero framework dependencies</p>
-  <h2 balance>Reactive Apps <mark>Without Frameworks</mark></h2>
-  <h3 class=fragment>Signals + Proxy Store + DOM Parts + Tagged Templates</h3>
+        <section intro balance>
+  <h1>Reactive <mark>Apps</mark></h1>
+  <h2>
+    <span class=fragment>... <mark>without</mark> frameworks</span>
+  </h2>
 </section>
 
 <section>
@@ -64,57 +65,33 @@
 
 <section>
   <section>
-    <h3 balance>A <mark>minimal</mark>, <mark>inspectable</mark>, <mark>DOM-first</mark> UI stack</h3>
-    <small balance class=fragment>A central store, a tiny signal graph, persistent DOM parts and tagged templates are enough to build a real app-shaped UI without shipping a framework runtime.</small>
+    <h2>
+      Are you <mark>nuts</mark>? <br>
+      <span class=fragment><mark>without</mark> frameworks?</span>
+    </h2>
+    <figure class=fragment>
+      <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/lets-just-get-outta-here.1f25e7c8.gif width=60%>
+    </figure>
   </section>
   <section>
-    <h4>The <mark>pitch</mark></h4>
-    <small>
-      <ul>
-        <li class=fragment>Build a reactive UI stack from platform primitives, not from framework abstractions</li>
-        <li class=fragment>Use signals and DOM parts to target precise DOM updates instead of diffing the whole tree</li>
-        <li class=fragment>Keep view authoring expressive with tagged templates, directives and keyed repeat</li>
-        <li class=fragment>Ship a Todo demo with persistence, filters, bulk actions and a live event log</li>
-      </ul>
-    </small>
+    <h3>What about <mark>frameworks</mark>?</h3>
+    <p class=fragment>Frameworks are great, but they are not the only way to build reactive apps</p>
   </section>
   <section>
-    <h4>Why <mark>now</mark>?</h4>
-    <small>
-      <ul>
-        <li class=fragment><mark>Signals</mark> are converging on a shared vocabulary for state, computed values and effects</li>
-        <li class=fragment><mark>DOM Parts</mark> show how native DOM ranges can behave like stable update slots</li>
-        <li class=fragment><mark>Tagged templates</mark> already give us static structure plus dynamic insertion points</li>
-        <li class=fragment><mark>Proxy + CustomEvent</mark> make state inspection and tooling straightforward</li>
-      </ul>
-    </small>
+    <h3>What about <mark>the platform</mark>?</h3>
+    <p class=fragment>The web platform is evolving to support reactive apps without frameworks</p>
   </section>
   <section>
-    <h4>The browser is <mark>catching up</mark></h4>
-    <small balance>
-      The platform is getting closer to the primitives UI frameworks have been emulating for years. The point is not "frameworks bad", it is understanding how much of the stack can move back into the browser.
-    </small>
+    <h3>What about <mark>the demo</mark>?</h3>
+    <p class=fragment>A Todo app with persistence, filters, bulk actions and a live event log</p>
   </section>
   <section>
-    <h4>Not a final standard, but a <mark>very interesting direction</mark></h4>
-    <small>
-      <ul>
-        <li class=fragment><mark>TC39 Signals</mark> are still Stage 1, so this talk uses a home-grown runtime, not a standards API</li>
-        <li class=fragment><mark>DOM Parts</mark> are still a proposal, so we emulate them with comment anchors and ranges</li>
-        <li class=fragment><mark>Key takeaway</mark>: the platform direction is coherent enough to prototype against it today</li>
-      </ul>
-    </small>
+    <h3>What about <mark>the code</mark>?</h3>
+    <p class=fragment>Signals, Proxy Store, DOM Parts and Tagged Templates</p>
   </section>
   <section>
-    <h4>Scope and <mark>honesty</mark></h4>
-    <small>
-      <ul>
-        <li class=fragment>This is not a framework replacement manifesto</li>
-        <li class=fragment>This is a deliberately small runtime to study data flow, rendering and tradeoffs</li>
-        <li class=fragment>Some parts are fine-grained, some parts are intentionally coarse and explicit</li>
-        <li class=fragment>We will look at the actual code, the actual demo and the actual bugs</li>
-      </ul>
-    </small>
+    <h3>How this can be <mark>possible</mark>?</h3>
+    <p class=fragment>A central store, a tiny Signals graph, persistent DOM parts and tagged templates are enough to build a real app-shaped UI without shipping a framework runtime.</p>
   </section>
 </section>
 
@@ -122,6 +99,16 @@
 <section>
   <section>
     <h4>What are we going to <br><mark>build and dissect</mark> today?</h4>
+    <h2>Topics</h2>
+    <p>We'll cover the following topics:</p>
+    <ul>
+      <li class=fragment>Runtime: Signals, effects, model and repeat</li>
+      <li class=fragment>Store: Proxy-based global state management</li>
+      <li class=fragment>Signals: fine-grained reactivity for any value</li>
+      <li class=fragment>Rendering: DOM-first approach with persistent parts</li>
+      <li class=fragment>Directives: control flow and custom behavior with tagged templates</li>
+      <li class=fragment>Demo: building a Todo app from scratch</li>
+    </ul>
   </section>
   <section>
     <h4>The <mark>runtime core</mark></h4>
@@ -173,6 +160,58 @@
 
 
 <section>
+  <section>
+    <h4>The <mark>pitch</mark></h4>
+    <small>
+      <ul>
+        <li class=fragment>Build a reactive UI stack from platform primitives, not from framework abstractions</li>
+        <li class=fragment>Use signals and DOM parts to target precise DOM updates instead of diffing the whole tree</li>
+        <li class=fragment>Keep view authoring expressive with tagged templates, directives and keyed repeat</li>
+        <li class=fragment>Ship a Todo demo with persistence, filters, bulk actions and a live event log</li>
+      </ul>
+    </small>
+  </section>
+  <section>
+    <h4>Why <mark>now</mark>?</h4>
+    <small>
+      <ul>
+        <li class=fragment><mark>Signals</mark> are converging on a shared vocabulary for state, computed values and effects</li>
+        <li class=fragment><mark>DOM Parts</mark> show how native DOM ranges can behave like stable update slots</li>
+        <li class=fragment><mark>Tagged templates</mark> already give us static structure plus dynamic insertion points</li>
+        <li class=fragment><mark>Proxy + CustomEvent</mark> make state inspection and tooling straightforward</li>
+      </ul>
+    </small>
+  </section>
+  <section>
+    <h4>The browser is <mark>catching up</mark></h4>
+    <small balance>
+      The platform is getting closer to the primitives UI frameworks have been emulating for years. The point is not "frameworks bad", it is understanding how much of the stack can move back into the
+      browser.
+    </small>
+  </section>
+  <section>
+    <h4>Not a final standard, but a <mark>very interesting direction</mark></h4>
+    <small>
+      <ul>
+        <li class=fragment><mark>TC39 Signals</mark> are still Stage 1, so this talk uses a home-grown runtime, not a standards API</li>
+        <li class=fragment><mark>DOM Parts</mark> are still a proposal, so we emulate them with comment anchors and ranges</li>
+        <li class=fragment><mark>Key takeaway</mark>: the platform direction is coherent enough to prototype against it today</li>
+      </ul>
+    </small>
+  </section>
+  <section>
+    <h4>Scope and <mark>honesty</mark></h4>
+    <small>
+      <ul>
+        <li class=fragment>This is not a framework replacement manifesto</li>
+        <li class=fragment>This is a deliberately small runtime to study data flow, rendering and tradeoffs</li>
+        <li class=fragment>Some parts are fine-grained, some parts are intentionally coarse and explicit</li>
+        <li class=fragment>We will look at the actual code, the actual demo and the actual bugs</li>
+      </ul>
+    </small>
+  </section>
+</section>
+<section>
   
   <section data-topic=runtime data-menu-title=Architecture>
   <h4>Layered by <mark>responsibility</mark>, not by hype</h4>
@@ -187,12 +226,12 @@
       <h4>Repository map</h4>
       <small>
         <ul>
-          <li class=fragment><mark>src/demo/scripts/core/store/*</mark> Proxy tree, snapshot cloning, <code>store:change</code> emission</li>
-          <li class=fragment><mark>src/demo/scripts/core/signals/*</mark> <code>State</code>, <code>Computed</code>, dependency tracking, microtask effects</li>
-          <li class=fragment><mark>src/demo/scripts/core/template-engine/*</mark> template compilation, parts, directives, keyed repeat</li>
-          <li class=fragment><mark>src/demo/scripts/state/*</mark> store setup, computed selectors, actions, persistence bridge</li>
-          <li class=fragment><mark>src/demo/scripts/views/app/*</mark> app shell subcomponents, panels and debug surface</li>
-          <li class=fragment><mark>src/demo/scripts/data/*</mark> seed state, generator filters, sorting pipeline</li>
+          <li class=fragment><mark>reactive-apps-without-frameworks-demo/src/scripts/core/store/*</mark> Proxy tree, snapshot cloning, <code>store:change</code> emission</li>
+          <li class=fragment><mark>reactive-apps-without-frameworks-demo/src/scripts/core/signals/*</mark> <code>State</code>, <code>Computed</code>, dependency tracking, microtask effects</li>
+          <li class=fragment><mark>reactive-apps-without-frameworks-demo/src/scripts/core/template-engine/*</mark> template compilation, parts, directives, keyed repeat</li>
+          <li class=fragment><mark>reactive-apps-without-frameworks-demo/src/scripts/state/*</mark> store setup, computed selectors, actions, persistence bridge</li>
+          <li class=fragment><mark>reactive-apps-without-frameworks-demo/src/scripts/views/app/*</mark> app shell subcomponents, panels and debug surface</li>
+          <li class=fragment><mark>reactive-apps-without-frameworks-demo/src/scripts/data/*</mark> seed state, generator filters, sorting pipeline</li>
         </ul>
       </small>
     </left>
@@ -202,7 +241,7 @@
         <ul>
           <li class=fragment>A user action calls a store mutation or an action function</li>
           <li class=fragment>The store emits a <code>store:change</code> event with <code>path</code>, <code>oldValue</code>, <code>newValue</code></li>
-          <li class=fragment>The state bridge persists the snapshot, appends a debug entry, then bumps <code>appVersion</code></li>
+          <li class=fragment>The state bridge persists the snapshot, appends a debug entry, then bumps <code>mainState</code></li>
           <li class=fragment>Signals and template parts update the minimum DOM needed for the new view state</li>
         </ul>
       </small>
@@ -239,7 +278,7 @@
       <small>
         <ul>
           <li class=fragment>The store does not track field-level reactive dependencies</li>
-          <li class=fragment><code>appVersion</code> is a blunt invalidation bridge from store writes to the UI graph</li>
+          <li class=fragment><code>mainState</code> is a blunt invalidation bridge from store writes to the UI graph</li>
           <li class=fragment>This is acceptable here because DOM reuse still keeps actual updates local</li>
         </ul>
       </small>
@@ -344,7 +383,7 @@ window.addEventListener('store:change', (event) =&gt; {
 
   localStorage.setItem(STORAGE_KEY,
     JSON.stringify(store.snapshot()))
-  appVersion.set(performance.now())
+  mainState.set(performance.now())
 })
     </code></pre>
   </article>
@@ -470,7 +509,7 @@ function schedule(effect) {
 </section>
 
   <section data-topic=signals data-menu-title="Store bridge">
-  <h4><code>appVersion</code> is the <mark>bridge</mark>, not the final dream</h4>
+  <h4><code>mainState</code> is the <mark>bridge</mark>, not the final dream</h4>
   <small>
     <ul>
       <li class=fragment>The store is event-based, not signal-native</li>
@@ -662,7 +701,7 @@ export function render(result, container) {
         <pre><code data-trim data-line-numbers class="hljs javascript">
 export function todoModel(todoId, field, options = {}) {
   return model({
-    signal: appVersion,
+    signal: mainState,
     get: () =&gt; getTodoById(todoId)?.[field]
       ?? (options.prop === 'checked' ? false : ''),
     set: (value) =&gt; updateTodo(todoId, { [field]: value }),
@@ -806,7 +845,7 @@ repeat(visibleTodos, (todo) =&gt; todo.id, (todo) =&gt; html`
         <ul>
           <li class=fragment><code>debug.paused</code> toggles the event panel</li>
           <li class=fragment><code>debug.logs</code> stores the latest 30 mutation entries</li>
-          <li class=fragment><code>appVersion</code> is the render invalidation bridge</li>
+          <li class=fragment><code>mainState</code> is the render invalidation bridge</li>
           <li class=fragment><code>summary</code>, <code>visibleTodos</code> and <code>debugLogs</code> are computed selectors over the store</li>
         </ul>
       </small>
@@ -831,12 +870,12 @@ repeat(visibleTodos, (todo) =&gt; todo.id, (todo) =&gt; html`
       <article class=code-stack>
         <pre><code data-trim data-line-numbers class="hljs javascript">
 export const visibleTodos = new Signal.Computed(() =&gt; {
-  appVersion.get()
+  mainState.get()
   return pipelineTodos(store.state.todos, store.state.filters)
 })
 
 export const summary = new Signal.Computed(() =&gt; {
-  appVersion.get()
+  mainState.get()
   // derive total, completed, open, selected, visible
 })
         </code></pre>
@@ -919,7 +958,7 @@ export function updateTodo(id, patch) {
   <small balance>
     The embedded app uses the same store, signals, directives and template engine discussed in the deck. Editing a field, filtering the list or toggling bulk actions mutates the same state graph and feeds the same event log.
   </small>
-  <iframe class=demo-embed title="Live demo" src=https://pixu1980.github.io/reactive-apps-without-frameworks/demo/index.html loading=lazy></iframe>
+  <iframe class=demo-embed title="Live demo" data-demo-embed-url=https://pixu1980.github.io/reactive-apps-without-frameworks-demo/ loading=lazy></iframe>
 </section>
 
   <section data-topic=demo data-menu-title=Takeaways>
@@ -1085,6 +1124,6 @@ export function updateTodo(id, patch) {
 </a>
 
     </main>
-    <script src=https://pixu1980.github.io/reactive-apps-without-frameworks/reactive-apps-without-frameworks.1e9352b9.js type=module></script>
+    <script src=https://pixu1980.github.io/reactive-apps-without-frameworks/reactive-apps-without-frameworks.fa910de2.js type=module></script>
   
 

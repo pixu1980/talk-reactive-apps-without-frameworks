@@ -16,7 +16,7 @@
         <pre><code data-trim data-line-numbers class="hljs javascript">
 export function todoModel(todoId, field, options = {}) {
   return model({
-    signal: appVersion,
+    signal: mainState,
     get: () => getTodoById(todoId)?.[field]
       ?? (options.prop === 'checked' ? false : ''),
     set: (value) => updateTodo(todoId, { [field]: value }),

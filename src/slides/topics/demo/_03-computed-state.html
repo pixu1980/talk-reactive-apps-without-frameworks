@@ -15,12 +15,12 @@
       <article class="code-stack">
         <pre><code data-trim data-line-numbers class="hljs javascript">
 export const visibleTodos = new Signal.Computed(() => {
-  appVersion.get()
+  mainState.get()
   return pipelineTodos(store.state.todos, store.state.filters)
 })
 
 export const summary = new Signal.Computed(() => {
-  appVersion.get()
+  mainState.get()
   // derive total, completed, open, selected, visible
 })
         </code></pre>

@@ -1,55 +1,31 @@
 <section>
   <section>
-    <h3 balance>A <mark>minimal</mark>, <mark>inspectable</mark>, <mark>DOM-first</mark> UI stack</h3>
-    <small balance class="fragment">A central store, a tiny signal graph, persistent DOM parts and tagged templates are enough to build a real app-shaped UI without shipping a framework runtime.</small>
+    <h2>
+      Are you <mark>nuts</mark>? <br />
+      <span class="fragment"><mark>without</mark> frameworks?</span>
+    </h2>
+    <figure class="fragment">
+      <img src="./assets/meme/lets-just-get-outta-here.gif" width="60%" />
+    </figure>
   </section>
   <section>
-    <h4>The <mark>pitch</mark></h4>
-    <small>
-      <ul>
-        <li class="fragment">Build a reactive UI stack from platform primitives, not from framework abstractions</li>
-        <li class="fragment">Use signals and DOM parts to target precise DOM updates instead of diffing the whole tree</li>
-        <li class="fragment">Keep view authoring expressive with tagged templates, directives and keyed repeat</li>
-        <li class="fragment">Ship a Todo demo with persistence, filters, bulk actions and a live event log</li>
-      </ul>
-    </small>
+    <h3>What about <mark>frameworks</mark>?</h3>
+    <p class="fragment">Frameworks are great, but they are not the only way to build reactive apps</p>
   </section>
   <section>
-    <h4>Why <mark>now</mark>?</h4>
-    <small>
-      <ul>
-        <li class="fragment"><mark>Signals</mark> are converging on a shared vocabulary for state, computed values and effects</li>
-        <li class="fragment"><mark>DOM Parts</mark> show how native DOM ranges can behave like stable update slots</li>
-        <li class="fragment"><mark>Tagged templates</mark> already give us static structure plus dynamic insertion points</li>
-        <li class="fragment"><mark>Proxy + CustomEvent</mark> make state inspection and tooling straightforward</li>
-      </ul>
-    </small>
+    <h3>What about <mark>the platform</mark>?</h3>
+    <p class="fragment">The web platform is evolving to support reactive apps without frameworks</p>
   </section>
   <section>
-    <h4>The browser is <mark>catching up</mark></h4>
-    <small balance>
-      The platform is getting closer to the primitives UI frameworks have been emulating for years. The point is not "frameworks bad", it is understanding how much of the stack can move back into the browser.
-    </small>
+    <h3>What about <mark>the demo</mark>?</h3>
+    <p class="fragment">A Todo app with persistence, filters, bulk actions and a live event log</p>
   </section>
   <section>
-    <h4>Not a final standard, but a <mark>very interesting direction</mark></h4>
-    <small>
-      <ul>
-        <li class="fragment"><mark>TC39 Signals</mark> are still Stage 1, so this talk uses a home-grown runtime, not a standards API</li>
-        <li class="fragment"><mark>DOM Parts</mark> are still a proposal, so we emulate them with comment anchors and ranges</li>
-        <li class="fragment"><mark>Key takeaway</mark>: the platform direction is coherent enough to prototype against it today</li>
-      </ul>
-    </small>
+    <h3>What about <mark>the code</mark>?</h3>
+    <p class="fragment">Signals, Proxy Store, DOM Parts and Tagged Templates</p>
   </section>
   <section>
-    <h4>Scope and <mark>honesty</mark></h4>
-    <small>
-      <ul>
-        <li class="fragment">This is not a framework replacement manifesto</li>
-        <li class="fragment">This is a deliberately small runtime to study data flow, rendering and tradeoffs</li>
-        <li class="fragment">Some parts are fine-grained, some parts are intentionally coarse and explicit</li>
-        <li class="fragment">We will look at the actual code, the actual demo and the actual bugs</li>
-      </ul>
-    </small>
+    <h3>How this can be <mark>possible</mark>?</h3>
+    <p class="fragment">A central store, a tiny Signals graph, persistent DOM parts and tagged templates are enough to build a real app-shaped UI without shipping a framework runtime.</p>
   </section>
 </section>

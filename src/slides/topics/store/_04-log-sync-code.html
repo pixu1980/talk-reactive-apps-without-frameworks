@@ -23,7 +23,7 @@ window.addEventListener('store:change', (event) => {
 
   localStorage.setItem(STORAGE_KEY,
     JSON.stringify(store.snapshot()))
-  appVersion.set(performance.now())
+  mainState.set(performance.now())
 })
     </code></pre>
   </article>
