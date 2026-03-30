@@ -14,9 +14,9 @@
     <h4>Why <mark>now</mark>?</h4>
     <small>
       <ul>
-        <li class="fragment"><mark>Signals</mark> are converging on a shared vocabulary for state, computed values and effects</li>
-        <li class="fragment"><mark>DOM Parts</mark> show how native DOM ranges can behave like stable update slots</li>
-        <li class="fragment"><mark>Tagged templates</mark> already give us static structure plus dynamic insertion points</li>
+        <li class="fragment"><mark>TC39 Signals</mark> are converging on shared graph semantics for state, computed values and effects</li>
+        <li class="fragment"><mark>DOM Parts</mark> are turning framework update slots into an explicit browser-level conversation</li>
+        <li class="fragment"><mark>Tagged templates</mark> already give us static structure plus dynamic insertion points today</li>
         <li class="fragment"><mark>Proxy + CustomEvent</mark> make state inspection and tooling straightforward</li>
       </ul>
     </small>
@@ -34,6 +34,7 @@
       <ul>
         <li class="fragment"><mark>TC39 Signals</mark> are still Stage 1, so this talk uses a home-grown runtime, not a standards API</li>
         <li class="fragment"><mark>DOM Parts</mark> are still a proposal, so we emulate them with comment anchors and ranges</li>
+        <li class="fragment"><mark>We will map each claim</mark> to a concrete proposal or MDN reference, not just to vibes</li>
         <li class="fragment"><mark>Key takeaway</mark>: the platform direction is coherent enough to prototype against it today</li>
       </ul>
     </small>
@@ -45,14 +46,12 @@
         <li class="fragment">This is not a framework replacement manifesto</li>
         <li class="fragment">This is a deliberately small runtime to study data flow, rendering and tradeoffs</li>
         <li class="fragment">Some parts are fine-grained, some parts are intentionally coarse and explicit</li>
-        <li class="fragment">We will look at the actual code, the actual demo and the actual bugs</li>
+        <li class="fragment">We will look at the actual code, the actual standalone demo and the actual bugs</li>
       </ul>
     </small>
   </section>
 </section>
-<include src="./slides/topics/runtime/index.html"></include>
 <include src="./slides/topics/store/index.html"></include>
 <include src="./slides/topics/signals/index.html"></include>
-<include src="./slides/topics/rendering/index.html"></include>
-<include src="./slides/topics/directives/index.html"></include>
+<include src="./slides/topics/template-engine/index.html"></include>
 <include src="./slides/topics/demo/index.html"></include>

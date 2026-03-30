@@ -1,0 +1,46 @@
+<section data-topic="signals" data-menu-title="Scheduler">
+  <h4 balance><code>_scheduler.js</code>: the tiny batching loop that keeps rerenders calm</h4>
+  <small balance>
+    Without scheduling, three quick writes could mean three immediate reruns. This file is the polite traffic controller: collect jobs in a set, wait until the current JavaScript stack is done, then flush them once in a predictable batch.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class="fragment"><code>scheduled</code> is a <code>Set</code>, so the same effect can be invalidated many times but only appear once in the queue</li>
+          <li class="fragment"><code>flushing</code> prevents stacking multiple <code>queueMicrotask()</code> calls for the same flush cycle</li>
+          <li class="fragment">The microtask waits until the current call stack finishes, which is just enough batching for a tiny runtime like this</li>
+          <li class="fragment">The <code>while</code> loop matters: if one effect schedules more work during the flush, the scheduler drains that work before finishing</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class="code-stack">
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+const scheduled = new Set()
+let flushing = false
+
+export function schedule(effect) {
+  scheduled.add(effect)
+  if (flushing) return
+  flushing = true
+
+  queueMicrotask(() => {
+    try {
+      while (scheduled.size > 0) {
+        const batch = [...scheduled]
+        scheduled.clear()
+        for (const job of batch) {
+          job.run()
+        }
+      }
+    } finally {
+      flushing = false
+    }
+  })
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>

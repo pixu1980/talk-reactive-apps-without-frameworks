@@ -1,0 +1,40 @@
+<section data-topic="demo" data-menu-title="Todo card">
+  <h4 balance><code>components/TodoItem/_TodoItem.js</code>: one card where <code>model()</code> shows its magic</h4>
+  <small balance>
+    This is the best "look, it is really used" slide. One todo card has checkboxes, text inputs, selects, a textarea, and a delete button, but they all stay tiny because the helpers do the boring work.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class="fragment">Checkboxes use <code>prop: "checked"</code> and <code>event: "change"</code> so DOM booleans map cleanly to store booleans</li>
+          <li class="fragment">Title, notes, category, priority, and due date all reuse the same <code>todoModel()</code> helper</li>
+          <li class="fragment">The delete button is just <code>@click</code>, so event parts and model parts live together happily</li>
+          <li class="fragment">The card also mirrors state into <code>data-state</code> and <code>data-priority</code>, which keeps styling honest and declarative</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class="code-stack">
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+<input
+  model=${todoModel(todo.id, "selected", { prop: "checked", event: "change" })}
+  type="checkbox"
+/>
+
+<input model=${todoModel(todo.id, "title")} />
+
+<select model=${todoModel(todo.id, "priority", { event: "change" })}>
+  ${priorityOptions()}
+</select>
+
+<textarea model=${todoModel(todo.id, "notes")} rows="2"></textarea>
+
+<button @click=${() => removeTodo(todo.id)} data-variant="danger">
+  ${t(language, "buttons.delete")}
+</button>
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>

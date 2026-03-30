@@ -9,7 +9,7 @@ Talk deck based on `@pixu-talks/libraries` with the contents of `reactive-apps-w
   - reactive and declarative programming model, with a simple and intuitive API
   - built on top of the web platform, with no abstraction layer, no virtual DOM, no custom rendering engine
   - runtime with `Signal.State`, `Signal.Computed`, `effect`, `model` and `repeat`
-- demo TodoList embedded in the deck, with the following features:
+- standalone TodoList demo linked from the deck, with the following features:
   - add, edit, delete and toggle todos
   - filter todos by all, active and completed
   - persist todos in local storage
@@ -29,12 +29,10 @@ pnpm install
 pnpm start
 ```
 
-## External demo embed
+## Standalone demo
 
-The deck reads the demo iframe URL from the `demo-url` query parameter and falls back to the GitHub Pages URL of the standalone demo repo.
-
-Example:
+The presentation opens the demo in a new tab instead of embedding it in an iframe:
 
 ```text
-https://pixu1980.github.io/reactive-apps-without-frameworks/?demo-url=https%3A%2F%2Fpixu1980.github.io%2Freactive-apps-without-frameworks-demo%2F
+https://pixu1980.github.io/reactive-apps-without-frameworks-demo/
 ```

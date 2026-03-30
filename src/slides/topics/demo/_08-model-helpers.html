@@ -1,0 +1,41 @@
+<section data-topic="demo" data-menu-title="model() helpers">
+  <h4 balance><code>helpers/_helpers.js</code>: two tiny translators for all our inputs</h4>
+  <small balance>
+    We do not want every text field and checkbox to remember how to read and write the store. So the app builds two small helpers, and then reuses them everywhere.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class="fragment"><code>storeModel(path)</code> is the generic translator for fields like <code>filters.search</code> or <code>preferences.theme</code></li>
+          <li class="fragment"><code>todoModel(todoId, field)</code> is the special translator for one field on one todo card</li>
+          <li class="fragment">Both helpers are just <code>model({ signal, get, set })</code>, which means the same directive powers the whole app</li>
+          <li class="fragment">This is the practical use of the template engine chapter: tiny reusable bindings instead of manual event code everywhere</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class="code-stack">
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function storeModel(path, options = {}) {
+  return model({
+    signal: tickState,
+    get: () => store.get(path),
+    set: (value) => store.set(path, value),
+    ...options,
+  })
+}
+
+export function todoModel(todoId, field, options = {}) {
+  return model({
+    signal: tickState,
+    get: () => getTodoById(todoId)?.[field],
+    set: (value) => updateTodo(todoId, { [field]: value }),
+    ...options,
+  })
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>

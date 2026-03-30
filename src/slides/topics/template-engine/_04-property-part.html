@@ -1,0 +1,44 @@
+<section data-topic="template-engine" data-menu-title="PropertyPart">
+  <h4 balance><code>_property-part.js</code>: write to DOM properties, not HTML text</h4>
+  <small balance>
+    Attributes are strings on markup. Properties are live JavaScript fields on elements. This part exists for the moments when the engine must talk to the actual DOM object, not to serialized HTML.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class="fragment">It extends <code>Part</code>, so property bindings automatically gain the same signal subscription and cleanup behavior as the other reactive parts</li>
+          <li class="fragment"><code>setValue()</code> branches only once: if the input is signal like, subscribe and resolve it; otherwise commit the raw value</li>
+          <li class="fragment"><code>commit()</code> writes straight to <code>this.element[this.name]</code>, which is why booleans, objects, and live form values work correctly</li>
+          <li class="fragment">The file is intentionally tiny because all the complexity belongs in the DOM, not in the wrapper around it</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class="code-stack">
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export class PropertyPart extends Part {
+  constructor(element, name) {
+    super()
+    this.element = element
+    this.name = name
+  }
+
+  setValue(value) {
+    if (isSignalLike(value)) {
+      this.bindSignal(value, (resolved) => this.commit(resolved))
+      return
+    }
+    this.disposeSignal()
+    this.commit(value)
+  }
+
+  commit(value) {
+    this.element[this.name] = value
+  }
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>

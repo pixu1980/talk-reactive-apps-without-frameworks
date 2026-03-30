@@ -1,0 +1,46 @@
+<section data-topic="demo" data-menu-title="Computed state">
+  <h4 balance><code>state/_computed.js</code>: little helpers that keep counting for us</h4>
+  <small balance>
+    A five year old version is: these are tiny robots. You give them the raw toy pile, and they keep answering questions like "which todos should I show?" and "how many are done?"
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class="fragment"><code>visibleTodos</code> listens to <code>tickState</code> and runs the whole filtering pipeline</li>
+          <li class="fragment"><code>summary</code> walks the full list once, then hands ready-made counts to smaller computed signals</li>
+          <li class="fragment"><code>totalCount</code>, <code>openCount</code>, <code>visibleCount</code>, and friends reuse <code>summary</code> instead of recounting everything</li>
+          <li class="fragment">Components read clean answers, not raw loops and conditions</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class="code-stack">
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export const visibleTodos = new Signal.Computed(() => {
+  tickState.get()
+  return pipelineTodos(
+    store.state.todos,
+    store.state.filters,
+    store.state.preferences.language,
+  )
+})
+
+export const summary = new Signal.Computed(() => {
+  tickState.get()
+  const todos = store.state.todos
+  let total = 0
+  let completed = 0
+  let selected = 0
+  for (const todo of todos) {
+    total += 1
+    if (todo.completed) completed += 1
+    if (todo.selected) selected += 1
+  }
+  return { total, completed, open: total - completed, selected, visible: visibleTodos.get().length }
+})
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>

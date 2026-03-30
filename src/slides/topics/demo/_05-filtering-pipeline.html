@@ -1,0 +1,38 @@
+<section data-topic="demo" data-menu-title="Filter pipe">
+  <h4 balance><code>data/_pipeline.js</code>: one filter pipe, one job at a time</h4>
+  <small balance>
+    Instead of making lots of temporary arrays, the app lets todos walk through a pipe. Each filter looks at one todo, decides yes or no, and passes only the matching ones to the next step.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class="fragment"><code>fromArray()</code> turns the todo list into a lazy stream</li>
+          <li class="fragment"><code>filterBySearch()</code>, <code>filterByCategory()</code>, <code>filterByStatus()</code>, and <code>filterByPriority()</code> each do one simple job</li>
+          <li class="fragment">Only the final sort step materializes the list, so the pipeline stays cheap and easy to inspect</li>
+          <li class="fragment"><code>visibleTodos</code> simply asks the pipeline for the ready-made answer</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class="code-stack">
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function pipelineTodos(todos, filters, language) {
+  const iterator = filterByPriority(
+    filterByStatus(
+      filterByCategory(
+        filterBySearch(fromArray(todos), filters.search, language),
+        filters.category,
+      ),
+      filters.status,
+    ),
+    filters.priority,
+  )
+
+  return sortTodos(iterator, filters.sortBy, filters.sortDir, language)
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>

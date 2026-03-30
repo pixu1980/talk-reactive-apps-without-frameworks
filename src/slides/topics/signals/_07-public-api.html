@@ -1,0 +1,44 @@
+<section data-topic="signals" data-menu-title="Public API">
+  <h4 balance><code>index.js</code>: the small public surface the rest of the app actually imports</h4>
+  <small balance>
+    Internal files are easier to teach when they stay tiny and focused. The outside world, though, wants one friendly door. This module assembles that door: constructors, one escape hatch for untracked reads, one type guard, and one helper to create effects.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class="fragment"><code>Signal.State</code> and <code>Signal.Computed</code> expose the two main reactive primitives without leaking file-level implementation details</li>
+          <li class="fragment"><code>Signal.subtle.untrack</code> intentionally sounds advanced, because turning tracking off is powerful and should feel explicit</li>
+          <li class="fragment"><code>isSignalLike()</code> gives the renderer a duck-typing check instead of forcing a brittle <code>instanceof</code> contract</li>
+          <li class="fragment"><code>effect()</code> creates an <code>EffectCollector</code> and returns the disposer, which makes lifecycle cleanup natural for callers</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class="code-stack">
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export const Signal = {
+  State: StateSignal,
+  Computed: ComputedSignal,
+  subtle: {
+    untrack: withoutCollector,
+  },
+}
+
+export function isSignalLike(value) {
+  return Boolean(
+    value &&
+    typeof value.get === "function" &&
+    value.__isSignal
+  )
+}
+
+export function effect(callback) {
+  const runner = new EffectCollector(callback)
+  return () => runner.stop()
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>

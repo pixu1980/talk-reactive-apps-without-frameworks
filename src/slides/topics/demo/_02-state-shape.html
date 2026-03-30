@@ -1,26 +1,44 @@
 <section data-topic="demo" data-menu-title="State shape">
+  <h4 balance><code>data/_data.js</code>: the toy box where every piece starts</h4>
+  <small balance>
+    Before the store can react, it needs one complete starting picture. This file builds that picture in one place, so reset, persistence, and rendering all agree on the same state shape.
+  </small>
   <comparison>
     <left>
-      <h4>Persistent state</h4>
       <small>
         <ul>
-          <li class="fragment"><code>todos</code> array with title, notes, category, priority, due date, completion and selection flags</li>
-          <li class="fragment"><code>categories</code> list reused by draft form and todo cards</li>
-          <li class="fragment"><code>draft</code> values for quick add</li>
-          <li class="fragment"><code>filters</code> for search, category, status, priority and sorting</li>
+          <li class="fragment"><code>todos</code>, <code>categories</code>, and <code>draft</code> hold the work the user can create and edit</li>
+          <li class="fragment"><code>filters</code> and <code>preferences</code> are also state, because the app must remember how to look and what to show</li>
+          <li class="fragment"><code>debug</code> and <code>ui</code> prove that temporary interface details still belong in the same tree</li>
+          <li class="fragment"><code>createSeedData()</code> is reused by first load and by <code>resetDemo()</code>, so the app can always grow back from one seed</li>
         </ul>
       </small>
     </left>
     <right>
-      <h4>Ephemeral-but-visible state</h4>
-      <small>
-        <ul>
-          <li class="fragment"><code>debug.paused</code> toggles the event panel</li>
-          <li class="fragment"><code>debug.logs</code> stores the latest 30 mutation entries</li>
-          <li class="fragment"><code>mainState</code> is the render invalidation bridge</li>
-          <li class="fragment"><code>summary</code>, <code>visibleTodos</code> and <code>debugLogs</code> are computed selectors over the store</li>
-        </ul>
-      </small>
+      <article class="code-stack">
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function createSeedData() {
+  return {
+    todos: [/* starter todos */],
+    categories: ["Inbox", "Talk", "Engine", "Assets", "Research"],
+    draft: {
+      title: "",
+      notes: "",
+      category: "Inbox",
+      priority: "medium",
+      dueDate: new Date(now + ONE_DAY_MS).toISOString().slice(0, 10),
+    },
+    filters: { search: "", category: "all", status: "all", priority: "all", sortBy: "createdAt", sortDir: "desc" },
+    debug: { paused: false, logs: [] },
+    preferences: { colorScheme: "system", theme: "studio", language: "en" },
+    ui: {
+      categoryModal: { open: false, value: "", error: "" },
+      todoModal: { open: false, error: "" },
+    },
+  }
+}
+        </code></pre>
+      </article>
     </right>
   </comparison>
 </section>

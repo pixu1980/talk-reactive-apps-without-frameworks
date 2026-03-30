@@ -1,0 +1,35 @@
+<section data-topic="demo" data-menu-title="Header">
+  <h4 balance><code>components/AppHeader/_AppHeader.js</code>: big buttons on top, tiny writes underneath</h4>
+  <small balance>
+    The header looks rich, but its behavior is simple. Buttons call actions, selects use <code>storeModel()</code>, and the rest of the app updates because the same shared store keeps listening.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class="fragment"><code>@click=${resetDemo}</code>, <code>@click=${openTodoModal}</code>, and <code>@click=${openCategoryModal}</code> are plain event parts</li>
+          <li class="fragment">Theme, language, and color scheme selects write straight into <code>preferences.*</code> paths</li>
+          <li class="fragment">The document dataset effect then mirrors those preferences so CSS and translations can react</li>
+          <li class="fragment">This proves the runtime is driving the whole shell, not just the list in the middle</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class="code-stack">
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+<button data-variant="warning" @click=${resetDemo}>
+  ${t(language, "buttons.resetDemo")}
+</button>
+
+<select model=${storeModel("preferences.theme", { event: "change" })}>
+  ${themeOptions()}
+</select>
+
+<select model=${storeModel("preferences.language", { event: "change" })}>
+  ${languageOptions()}
+</select>
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>

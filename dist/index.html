@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang=en><meta charset=utf-8><title>Reactive Apps Without Frameworks</title><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=color-scheme content="light dark"><link rel=stylesheet href=https://pixu1980.github.io/reactive-apps-without-frameworks/reactive-apps-without-frameworks.99acf3f2.css><body>
+<!DOCTYPE html><html lang=en><meta charset=utf-8><title>Reactive Apps Without Frameworks</title><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=color-scheme content="light dark"><link rel=stylesheet href=https://pixu1980.github.io/reactive-apps-without-frameworks/reactive-apps-without-frameworks.d8a695b7.css><body>
     <main class=reveal>
       <div class=slides>
         <section intro balance>
@@ -65,97 +65,82 @@
 
 <section>
   <section>
+    <h3><mark>Meme</mark> and <br> <mark>Bold Opinions</mark> time</h3>
+  </section>
+  <section>
+    <h3>What about <mark>frameworks</mark>?</h3>
+    <p balance class=fragment>Frameworks <mark>were great</mark>, but they are <mark>not the only way</mark> to build reactive apps...</p>
+  </section>
+  <section>
+    <p balance>...specially with the recent and upcoming evolution of <mark>Web APIs combined with LLMs</mark>.</p>
+  </section>
+  <section>
+    <p>🚨 Bold Opinion Alert #1 🚨</p>
+    <h4 balance class=fragment>
+      After years of "experimentation" in Libraries and Frameworks...
+      <span class=fragment>
+        the <mark>web standards</mark> are <br>
+        <mark>coming back</mark> into the field!
+      </span>
+    </h4>
+    <br>
+    <figure class=fragment>
+      <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/yoda-you-must-unlearn.3bbd05d3.gif alt="Jedi Master Yoda saying 'You must unlearn what you have learned'" width=60%>
+    </figure>
+  </section>
+  <section>
+    <h3>What about the <mark>Web APIs</mark>?</h3>
+    <p balance class=fragment>
+      A custom implementation of <mark>a reactive runtime</mark> built on top of modern Web APIs and TC39 Proposals...  
+    </p>
+  <p></p>
+  </section>
+  <section>
+    <p balance>...without shipping <mark>anything else than vanillaJS</mark> runtime code:</p>
+    <ul>
+      <li class=fragment><mark>TC39 Signals</mark> proposal for reactive behaviors</li>
+      <li class=fragment><mark>Proxy API</mark> for path-aware state management</li>
+      <li class=fragment><mark>DOM Parts</mark> proposals for persistent update slots</li>
+      <li class=fragment><mark>Tagged Template Literals</mark> for declarative views</li>
+    </ul>
+  </section>
+  <section>
+    <p>🚨 Bold Opinion Alert #2 🚨</p>
+    <h4 balance class=fragment>
+      With these APIs, we can build <mark>real apps</mark> with <mark>no framework runtime</mark> at all...
+      <span class=fragment>and still have a <mark>great DX</mark>!</span>
+    </h4>
+    <br>
+    <figure class=fragment>
+      <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/morpheus-show-me.58c5a250.gif alt="Animated reaction meme of Morpheus saying 'Show me'" width=60%>
+    </figure>
+  </section>
+  <section>
+    <h3>What about <mark>the demo</mark>?</h3>
+    <p balance class=fragment>
+      A Todo List app with: <mark>categories</mark>, <mark>priorities</mark>, <mark>persistence</mark>, <mark>filters</mark>, <mark>bulk actions</mark> and a <mark>live event log</mark> to show the inner workings of the runtime and UI.
+    </p>
+  </section>
+  <section>
+    <p>🚨 Bold Opinion Alert #3 🚨</p>
+    <h4 balance class=fragment>
+      If you can <mark>build a real demo</mark> with these APIs, then you can <mark>build real apps</mark>...
+      <span class=fragment>and if you can build real apps, then you can <mark>build any app</mark>!</span>
+    </h4>
+    <br>
+    <figure class=fragment>
+      <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/luke-thats-impossible.4ca9ccaf.gif alt="Luke Skywalker saying 'That's impossible'" width=60%>
+    </figure>
+  </section>
+  <section>
     <h2>
       Are you <mark>nuts</mark>? <br>
       <span class=fragment><mark>without</mark> frameworks?</span>
     </h2>
     <figure class=fragment>
-      <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/lets-just-get-outta-here.1f25e7c8.gif width=60%>
+      <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/homer-lets-just-get-outta-here.1f25e7c8.gif alt="Animated reaction meme saying let's just get outta here" width=60%>
     </figure>
   </section>
-  <section>
-    <h3>What about <mark>frameworks</mark>?</h3>
-    <p class=fragment>Frameworks are great, but they are not the only way to build reactive apps</p>
-  </section>
-  <section>
-    <h3>What about <mark>the platform</mark>?</h3>
-    <p class=fragment>The web platform is evolving to support reactive apps without frameworks</p>
-  </section>
-  <section>
-    <h3>What about <mark>the demo</mark>?</h3>
-    <p class=fragment>A Todo app with persistence, filters, bulk actions and a live event log</p>
-  </section>
-  <section>
-    <h3>What about <mark>the code</mark>?</h3>
-    <p class=fragment>Signals, Proxy Store, DOM Parts and Tagged Templates</p>
-  </section>
-  <section>
-    <h3>How this can be <mark>possible</mark>?</h3>
-    <p class=fragment>A central store, a tiny Signals graph, persistent DOM parts and tagged templates are enough to build a real app-shaped UI without shipping a framework runtime.</p>
-  </section>
-</section>
-
-
-<section>
-  <section>
-    <h4>What are we going to <br><mark>build and dissect</mark> today?</h4>
-    <h2>Topics</h2>
-    <p>We'll cover the following topics:</p>
-    <ul>
-      <li class=fragment>Runtime: Signals, effects, model and repeat</li>
-      <li class=fragment>Store: Proxy-based global state management</li>
-      <li class=fragment>Signals: fine-grained reactivity for any value</li>
-      <li class=fragment>Rendering: DOM-first approach with persistent parts</li>
-      <li class=fragment>Directives: control flow and custom behavior with tagged templates</li>
-      <li class=fragment>Demo: building a Todo app from scratch</li>
-    </ul>
-  </section>
-  <section>
-    <h4>The <mark>runtime core</mark></h4>
-    <small>
-      <ul>
-        <li class=fragment><mark>Signals</mark> for local dependency graphs, computed values and effect scheduling</li>
-        <li class=fragment><mark>Proxy Store</mark> for path-aware mutations and a stable <code>store:change</code> contract</li>
-        <li class=fragment><mark>DOM Parts</mark> for persistent update slots instead of full tree replacement</li>
-        <li class=fragment><mark>Tagged Templates</mark> for declarative views without JSX or a compiler step</li>
-      </ul>
-    </small>
-  </section>
-  <section>
-    <h4>The <mark>rendering pipeline</mark></h4>
-    <small>
-      <ul>
-        <li class=fragment><mark>model</mark> as a tiny two-way binding directive with explicit <code>get</code>/<code>set</code></li>
-        <li class=fragment><mark>repeat</mark> as keyed range reuse for long lists and stable DOM nodes</li>
-        <li class=fragment><mark>Generator pipelines</mark> for lazy filtering before final materialization</li>
-        <li class=fragment><mark>Template caching</mark> via the stable identity of template literal <code>strings</code></li>
-      </ul>
-    </small>
-  </section>
-  <section>
-    <h4>From primitives to a <mark>real demo</mark></h4>
-    <small>
-      <ul>
-        <li class=fragment>A Todo app with draft state, filters, category management and bulk actions</li>
-        <li class=fragment>A live <code>store:change</code> panel wired to the same runtime as the app itself</li>
-        <li class=fragment>Persistence through <code>localStorage</code>, not through hidden framework state</li>
-        <li class=fragment>A few subtle bugs that reveal where the runtime still needs engineering discipline</li>
-      </ul>
-    </small>
-  </section>
-</section>
-
-<section class=slide-dive-in data-auto-animate>
-  <div sr-only data-menu-title>Into the runtime</div>
-  <dive-in>
-    <stack-container>
-      <stack-item>Into the <mark>runtime</mark></stack-item>
-      <stack-item>Into the <mark>runtime</mark></stack-item>
-      <stack-item>Into the <mark>runtime</mark></stack-item>
-      <stack-item>Into the <mark>runtime</mark></stack-item>
-      <stack-item>Into the <mark>runtime</mark></stack-item>
-    </stack-container>
-  </dive-in>
 </section>
 
 
@@ -175,9 +160,9 @@
     <h4>Why <mark>now</mark>?</h4>
     <small>
       <ul>
-        <li class=fragment><mark>Signals</mark> are converging on a shared vocabulary for state, computed values and effects</li>
-        <li class=fragment><mark>DOM Parts</mark> show how native DOM ranges can behave like stable update slots</li>
-        <li class=fragment><mark>Tagged templates</mark> already give us static structure plus dynamic insertion points</li>
+        <li class=fragment><mark>TC39 Signals</mark> are converging on shared graph semantics for state, computed values and effects</li>
+        <li class=fragment><mark>DOM Parts</mark> are turning framework update slots into an explicit browser-level conversation</li>
+        <li class=fragment><mark>Tagged templates</mark> already give us static structure plus dynamic insertion points today</li>
         <li class=fragment><mark>Proxy + CustomEvent</mark> make state inspection and tooling straightforward</li>
       </ul>
     </small>
@@ -195,6 +180,7 @@
       <ul>
         <li class=fragment><mark>TC39 Signals</mark> are still Stage 1, so this talk uses a home-grown runtime, not a standards API</li>
         <li class=fragment><mark>DOM Parts</mark> are still a proposal, so we emulate them with comment anchors and ranges</li>
+        <li class=fragment><mark>We will map each claim</mark> to a concrete proposal or MDN reference, not just to vibes</li>
         <li class=fragment><mark>Key takeaway</mark>: the platform direction is coherent enough to prototype against it today</li>
       </ul>
     </small>
@@ -206,113 +192,133 @@
         <li class=fragment>This is not a framework replacement manifesto</li>
         <li class=fragment>This is a deliberately small runtime to study data flow, rendering and tradeoffs</li>
         <li class=fragment>Some parts are fine-grained, some parts are intentionally coarse and explicit</li>
-        <li class=fragment>We will look at the actual code, the actual demo and the actual bugs</li>
+        <li class=fragment>We will look at the actual code, the actual standalone demo and the actual bugs</li>
       </ul>
     </small>
   </section>
 </section>
 <section>
   
-  <section data-topic=runtime data-menu-title=Architecture>
-  <h4>Layered by <mark>responsibility</mark>, not by hype</h4>
+  <section data-topic=store data-menu-title=clone()>
+  <h4 balance><code>_clone.js</code>: the store's washing machine for values</h4>
   <small balance>
-    The project is intentionally split into small layers: a Proxy-based store, a tiny signals engine, a template runtime based on DOM parts, and an app layer that composes them into a Todo demo.
+    Before the store keeps data, emits events, or returns snapshots, it runs values through one careful cloning pipeline. This file exists so the outside world never gets to hold the store's raw internals by accident.
   </small>
-</section>
-
-  <section data-topic=runtime data-menu-title=Architecture>
   <comparison>
     <left>
-      <h4>Repository map</h4>
       <small>
         <ul>
-          <li class=fragment><mark>reactive-apps-without-frameworks-demo/src/scripts/core/store/*</mark> Proxy tree, snapshot cloning, <code>store:change</code> emission</li>
-          <li class=fragment><mark>reactive-apps-without-frameworks-demo/src/scripts/core/signals/*</mark> <code>State</code>, <code>Computed</code>, dependency tracking, microtask effects</li>
-          <li class=fragment><mark>reactive-apps-without-frameworks-demo/src/scripts/core/template-engine/*</mark> template compilation, parts, directives, keyed repeat</li>
-          <li class=fragment><mark>reactive-apps-without-frameworks-demo/src/scripts/state/*</mark> store setup, computed selectors, actions, persistence bridge</li>
-          <li class=fragment><mark>reactive-apps-without-frameworks-demo/src/scripts/views/app/*</mark> app shell subcomponents, panels and debug surface</li>
-          <li class=fragment><mark>reactive-apps-without-frameworks-demo/src/scripts/data/*</mark> seed state, generator filters, sorting pipeline</li>
+          <li class=fragment><code>getRawValue()</code> unwraps proxies through <code>__raw</code>, so cloning works on the actual target object instead of proxy wrappers</li>
+          <li class=fragment><code>clonePlainValue()</code> uses a <code>WeakMap</code> named <code>seen</code> to preserve identity across repeated references and avoid infinite loops</li>
+          <li class=fragment>It explicitly preserves <code>Date</code>, <code>RegExp</code>, <code>Map</code>, <code>Set</code>, arrays, and plain enumerable object fields</li>
+          <li class=fragment><code>deepClone()</code> is just the friendly public wrapper the rest of the store calls when it needs an immutable snapshot</li>
         </ul>
       </small>
     </left>
     <right>
-      <h4>Data flow</h4>
-      <small>
-        <ul>
-          <li class=fragment>A user action calls a store mutation or an action function</li>
-          <li class=fragment>The store emits a <code>store:change</code> event with <code>path</code>, <code>oldValue</code>, <code>newValue</code></li>
-          <li class=fragment>The state bridge persists the snapshot, appends a debug entry, then bumps <code>mainState</code></li>
-          <li class=fragment>Signals and template parts update the minimum DOM needed for the new view state</li>
-        </ul>
-      </small>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+function getRawValue(value) {
+  if (!isObject(value)) return value
+  return value.__raw ?? value
+}
+
+export function clonePlainValue(value, seen = new WeakMap()) {
+  const raw = getRawValue(value)
+  if (!isObject(raw)) return raw
+  if (seen.has(raw)) return seen.get(raw)
+
+  if (raw instanceof Date) return new Date(raw.getTime())
+  if (raw instanceof RegExp) return new RegExp(raw.source, raw.flags)
+  if (raw instanceof Map) {
+    const next = new Map()
+    seen.set(raw, next)
+    for (const [key, entryValue] of raw.entries()) {
+      next.set(clonePlainValue(key, seen), clonePlainValue(entryValue, seen))
+    }
+    return next
+  }
+}
+        </code></pre>
+      </article>
     </right>
   </comparison>
 </section>
-
-  <section data-topic=runtime data-menu-title=Architecture>
-  <h4>End-to-end write path</h4>
-  <small>
-    <ul>
-      <li class=fragment><mark>Write</mark>: <code>store.set('filters.search', value)</code> or an action replacing a todo object</li>
-      <li class=fragment><mark>Observe</mark>: the Proxy emits one normalized event payload</li>
-      <li class=fragment><mark>Bridge</mark>: the event listener updates persistence, debug log and invalidation state</li>
-      <li class=fragment><mark>Render</mark>: the root effect re-runs the view, but parts reuse existing DOM nodes</li>
-    </ul>
+  <section data-topic=store data-menu-title=isObject()>
+  <h4 balance><code>_guards.js</code>: one tiny question that protects the whole system</h4>
+  <small balance>
+    This file is almost comically small, and that is exactly why it matters. The store asks this question everywhere: "Is this something I can traverse or proxy, or should I leave it alone?"
   </small>
-</section>
-
-  <section data-topic=runtime data-menu-title=Granularity>
   <comparison>
     <left>
-      <h4>Fine-grained parts</h4>
       <small>
         <ul>
-          <li class=fragment>Signals only notify their own subscribers</li>
-          <li class=fragment>Computed values lazily rebuild dependencies</li>
-          <li class=fragment>Parts update ranges, attributes, properties or listeners in place</li>
+          <li class=fragment>The guard returns true only for non-null objects, which means primitives stay cheap and untouched</li>
+          <li class=fragment>The clone layer uses it to stop recursion at strings, numbers, booleans, and <code>null</code></li>
+          <li class=fragment>The proxy layer uses it to decide whether a nested value should become another stable proxy</li>
+          <li class=fragment>This is the kind of boring helper senior engineers love: tiny, reusable, and impossible to misunderstand at 2 AM</li>
         </ul>
       </small>
     </left>
     <right>
-      <h4>Deliberately coarse parts</h4>
-      <small>
-        <ul>
-          <li class=fragment>The store does not track field-level reactive dependencies</li>
-          <li class=fragment><code>mainState</code> is a blunt invalidation bridge from store writes to the UI graph</li>
-          <li class=fragment>This is acceptable here because DOM reuse still keeps actual updates local</li>
-        </ul>
-      </small>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function isObject(value) {
+  return value !== null &amp;&amp; typeof value === "object"
+}
+        </code></pre>
+      </article>
     </right>
   </comparison>
 </section>
 
-</section>
-
-<section>
-  
-  <section data-topic=store data-menu-title=Store>
-  <h4>A Proxy store with a <mark>stable event contract</mark></h4>
-  <small>
-    <ul>
-      <li class=fragment>The raw state is deep-cloned once at construction time</li>
-      <li class=fragment>Nested objects are lazily wrapped in cached proxies via <code>WeakMap</code></li>
-      <li class=fragment>Each write emits one <code>CustomEvent('store:change')</code></li>
-      <li class=fragment>The emitted payload is serializable and detached from proxy internals</li>
-    </ul>
+  <section data-topic=store data-menu-title=paths>
+  <h4 balance><code>_paths.js</code>: translate between human paths and machine paths</h4>
+  <small balance>
+    The store lets callers say <code>"filters.search"</code>, but the proxy engine wants to work one segment at a time. This file is the translator sitting in the middle, quietly making that API feel friendly.
   </small>
-</section>
-
-  <section data-topic=store data-menu-title="Store internals">
   <comparison>
     <left>
-      <h4>Platform APIs in play</h4>
       <small>
         <ul>
-          <li class=fragment><mark>Proxy</mark> intercepts <code>get</code>, <code>set</code> and <code>deleteProperty</code></li>
-          <li class=fragment><mark>Reflect</mark> preserves native object semantics</li>
-          <li class=fragment><mark>WeakMap</mark> keeps proxy identity stable across repeated reads</li>
-          <li class=fragment><mark>CustomEvent</mark> transports mutation metadata through the browser event system</li>
-          <li class=fragment><mark>localStorage</mark> stores the snapshot, not framework-owned hidden state</li>
+          <li class=fragment><code>toPathArray()</code> accepts strings, arrays, numbers, symbols, or nothing at all, then normalizes everything into one array shape</li>
+          <li class=fragment>That means <code>get()</code>, <code>set()</code>, and <code>update()</code> can be flexible at the edges but simple internally</li>
+          <li class=fragment><code>pathToString()</code> turns the same structure back into dot notation for event payloads like <code>todos.3.done</code></li>
+          <li class=fragment>It is small infrastructure, but it keeps the public API pleasant without making the internals messy</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function toPathArray(path) {
+  if (Array.isArray(path)) return path
+  if (path == null || path === "") return []
+  return String(path).split(".").filter(Boolean)
+}
+
+export function pathToString(path) {
+  return toPathArray(path).join(".")
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=store data-menu-title="Store engine">
+  <h4 balance><code>_store.js</code>: the actual Proxy store engine</h4>
+  <small balance>
+    This is where everything comes together. The class owns the raw target tree, creates stable proxies, emits cloned mutation events, and exposes a small API that the rest of the app can reason about without guesswork.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment>The constructor deep-clones the initial state, creates one <code>WeakMap</code> cache for proxy identity, and exposes <code>state</code> as the proxied tree</li>
+          <li class=fragment><code>createProxy()</code> intercepts <code>get</code>, <code>set</code>, and <code>deleteProperty</code>, while delegating real object behavior to <code>Reflect</code></li>
+          <li class=fragment><code>emitChange()</code> always clones <code>oldValue</code> and <code>newValue</code>, so listeners receive safe payloads instead of live references into the store</li>
+          <li class=fragment><code>get()</code>, <code>set()</code>, <code>update()</code>, <code>replace()</code>, and <code>snapshot()</code> are intentionally tiny wrappers around that proxy graph and event contract</li>
         </ul>
       </small>
     </left>
@@ -320,95 +326,58 @@
       <article class=code-stack>
         <pre><code data-trim data-line-numbers class="hljs javascript">
 createProxy(target, path) {
-  if (this.proxyCache.has(target))
-    return this.proxyCache.get(target)
+  if (!isObject(target)) return target
+  if (this.proxyCache.has(target)) return this.proxyCache.get(target)
 
   const proxy = new Proxy(target, {
     get: (raw, key, receiver) =&gt; {
+      if (key === "__raw") return raw
+      if (key === "__path") return path
       const value = Reflect.get(raw, key, receiver)
-      return isObject(value)
-        ? this.createProxy(value, [...path, key])
-        : value
+      if (isObject(value)) return this.createProxy(value, [...path, key])
+      return value
     },
     set: (raw, key, value, receiver) =&gt; {
       const nextPath = [...path, key]
       const oldValue = raw[key]
       const prepared = clonePlainValue(value)
       const result = Reflect.set(raw, key, prepared, receiver)
-      if (oldValue !== prepared)
-        this.emitChange(nextPath, oldValue, prepared)
+      if (oldValue !== prepared) this.emitChange(nextPath, oldValue, prepared)
       return result
-    }
+    },
   })
+}
         </code></pre>
       </article>
     </right>
   </comparison>
 </section>
 
-  <section data-topic=store data-menu-title="Log sync">
-  <h4>Why the <mark>demo</mark> and the <mark>log</mark> stay in sync</h4>
-  <small>
-    <ul>
-      <li class=fragment>The debug panel is driven by the same <code>store:change</code> events as the rest of the runtime</li>
-      <li class=fragment>Internal writes to <code>debug.logs</code> are protected by a re-entrancy guard</li>
-      <li class=fragment>Persistence now happens after the optional debug entry is appended, so the saved snapshot matches the visible state</li>
-      <li class=fragment>Paused logging suppresses new debug entries; unpausing emits its own <code>debug.paused</code> mutation</li>
-    </ul>
+  <section data-topic=store data-menu-title="Public API">
+  <h4 balance><code>index.js</code>: one calm public doorway into the store layer</h4>
+  <small balance>
+    After all that machinery, the public module is intentionally almost boring. That is a feature. Most consumers should not care how cloning, path normalization, or proxy caching work. They should just import <code>Store</code> and move on.
   </small>
-</section>
-
-  <section data-topic=store data-menu-title="Log sync">
-  <article class=code-stack>
-    <pre><code data-trim data-line-numbers class="hljs javascript">
-window.addEventListener('store:change', (event) =&gt; {
-  if (isWritingDebugLog) return
-
-  if (!store.state.debug.paused &amp;&amp;
-      event.detail.path !== 'debug.logs') {
-    isWritingDebugLog = true
-    try {
-      store.state.debug.logs = [
-        {
-          id: crypto.randomUUID(),
-          timestamp: new Date().toLocaleTimeString('en-GB'),
-          ...event.detail,
-        },
-        ...store.state.debug.logs,
-      ].slice(0, 30)
-    } finally {
-      isWritingDebugLog = false
-    }
-  }
-
-  localStorage.setItem(STORAGE_KEY,
-    JSON.stringify(store.snapshot()))
-  mainState.set(performance.now())
-})
-    </code></pre>
-  </article>
-</section>
-
-  <section data-topic=store data-menu-title="Event payloads">
   <comparison>
     <left>
-      <h4>Field-level mutations</h4>
       <small>
         <ul>
-          <li class=fragment><code>draft.title</code> and <code>filters.search</code> log exactly one field path per keystroke</li>
-          <li class=fragment>They are produced by <code>store.set(path, value)</code> through the <code>model</code> directive</li>
+          <li class=fragment>This file is a barrel with exactly one export, which keeps imports stable even if internals are later reorganized</li>
+          <li class=fragment>It is the boundary between "private plumbing" and "public contract"</li>
+          <li class=fragment>That tiny boundary matters in talks and real products alike, because architecture becomes teachable when entry points are obvious</li>
+          <li class=fragment>In other words: all the complexity lives behind the curtain, and the consumer gets one friendly button to press</li>
         </ul>
       </small>
     </left>
     <right>
-      <h4>Todo item mutations</h4>
-      <small>
-        <ul>
-          <li class=fragment><code>updateTodo()</code> replaces one array item with a patched object</li>
-          <li class=fragment>The log therefore shows paths like <code>todos.1</code>, not <code>todos.1.title</code></li>
-          <li class=fragment>That is a conscious simplification: predictable patches over deep structural tracking</li>
-        </ul>
-      </small>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+/**
+ * Public exports for the proxy based store layer.
+ */
+export { Store } from "./_store.js"
+        </code></pre>
+      </article>
     </right>
   </comparison>
 </section>
@@ -417,50 +386,45 @@ window.addEventListener('store:change', (event) =&gt; {
 
 <section>
   
-  <section data-topic=signals data-menu-title=Signals>
-  <h4>Signals: a tiny <mark>dependency graph</mark></h4>
-  <small>
-    <ul>
-      <li class=fragment><code>Signal.State</code> owns mutable state plus an equality strategy</li>
-      <li class=fragment><code>Signal.Computed</code> tracks dependencies by observing who calls <code>.get()</code></li>
-      <li class=fragment><code>effect()</code> is just a collector whose callback is re-scheduled when dependencies invalidate</li>
-      <li class=fragment>There is no scheduler framework here, only a microtask queue and sets of subscribers</li>
-    </ul>
+  <section data-topic=signals data-menu-title=BaseSignal>
+  <h4 balance><code>_base-signal.js</code>: the shared wiring for every signal</h4>
+  <small balance>
+    This file is deliberately tiny. It does not store app data and it does not compute derived values. Its whole job is to say: "I can be tracked, I can be subscribed to, and I can notify listeners when I change."
   </small>
-</section>
-
-  <section data-topic=signals data-menu-title="Dependency tracking">
   <comparison>
     <left>
-      <h4>How dependency collection works</h4>
       <small>
         <ul>
-          <li class=fragment><mark>collectorStack</mark> keeps track of the currently executing computed or effect</li>
-          <li class=fragment>Any signal read during that execution registers itself as a dependency</li>
-          <li class=fragment><code>Computed</code> instances unsubscribe from stale dependencies before recomputing</li>
-          <li class=fragment>The graph is rebuilt from reads, not declared up front</li>
+          <li class=fragment><code>subscribers</code> is a <code>Set</code>, so each listener is stored once and can be removed cleanly later</li>
+          <li class=fragment><code>subscribe()</code> adds a callback and returns the tiny unsubscribe function that removes it from the set</li>
+          <li class=fragment><code>track()</code> asks the collector context who is currently watching, then registers this signal as a dependency</li>
+          <li class=fragment><code>notify()</code> walks a copied array of subscribers, so updates stay safe even if the set changes mid loop</li>
         </ul>
       </small>
     </left>
     <right>
       <article class=code-stack>
         <pre><code data-trim data-line-numbers class="hljs javascript">
-track() {
-  const current =
-    collectorStack[collectorStack.length - 1]
-  if (current) current.addDependency(this)
-}
+export class BaseSignal {
+  constructor() {
+    this.subscribers = new Set()
+    this.__isSignal = true
+  }
 
-evaluate() {
-  if (!this.dirty) return this.cached
-  this.cleanupDependencies()
-  collectorStack.push(this)
-  try {
-    this.cached = this.compute()
-    this.dirty = false
-    return this.cached
-  } finally {
-    collectorStack.pop()
+  subscribe(subscriber) {
+    this.subscribers.add(subscriber)
+    return () =&gt; this.subscribers.delete(subscriber)
+  }
+
+  track() {
+    const current = getCurrentCollector()
+    if (current) current.addDependency(this)
+  }
+
+  notify() {
+    for (const subscriber of [...this.subscribers]) {
+      subscriber()
+    }
   }
 }
         </code></pre>
@@ -469,23 +433,229 @@ evaluate() {
   </comparison>
 </section>
 
-  <section data-topic=signals data-menu-title=Scheduling>
+  <section data-topic=signals data-menu-title=StateSignal>
+  <h4 balance><code>_state-signal.js</code>: the box that actually holds a value</h4>
+  <small balance>
+    If <code>BaseSignal</code> is the wiring, <code>StateSignal</code> is the first real piece of state. It stores one concrete value, exposes tracked and untracked reads, and only notifies dependents when the value really changes.
+  </small>
   <comparison>
     <left>
-      <h4>Why microtasks matter</h4>
       <small>
         <ul>
-          <li class=fragment>Multiple signal invalidations in the same tick should not trigger N renders</li>
-          <li class=fragment><code>schedule()</code> deduplicates effect collectors in a <code>Set</code></li>
-          <li class=fragment><code>queueMicrotask()</code> flushes them once the current stack is done</li>
-          <li class=fragment>This is enough to batch render work without a heavyweight scheduler</li>
+          <li class=fragment>It extends <code>BaseSignal</code>, so it inherits subscription, tracking, and notification behavior instead of reimplementing them</li>
+          <li class=fragment><code>get()</code> calls <code>track()</code> before returning the value, which is how reads become graph edges</li>
+          <li class=fragment><code>peek()</code> returns the same value without dependency collection, useful when you want to inspect state quietly</li>
+          <li class=fragment><code>set()</code> uses <code>equals</code> as a guard rail, so identical writes do not fan out pointless invalidations</li>
         </ul>
       </small>
     </left>
     <right>
       <article class=code-stack>
         <pre><code data-trim data-line-numbers class="hljs javascript">
-function schedule(effect) {
+export class StateSignal extends BaseSignal {
+  constructor(value, options = {}) {
+    super()
+    this.value = value
+    this.equals = options.equals ?? Object.is
+  }
+
+  get() {
+    this.track()
+    return this.value
+  }
+
+  peek() {
+    return this.value
+  }
+
+  set(nextValue) {
+    if (this.equals(this.value, nextValue)) return this.value
+    this.value = nextValue
+    this.notify()
+    return this.value
+  }
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=signals data-menu-title="Collector context">
+  <h4 balance><code>_collector-context.js</code>: the clipboard that answers "who is listening right now?"</h4>
+  <small balance>
+    Reactive tracking looks magical until you reduce it to one simple rule: while a computed or effect runs, remember who it is. Then every signal read can attach itself to that active collector.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>collectorStack</code> is an array because collectors can nest; the active one always lives on the top</li>
+          <li class=fragment><code>getCurrentCollector()</code> is the tiny read primitive used by <code>BaseSignal.track()</code></li>
+          <li class=fragment><code>withCollector()</code> wraps execution in <code>push</code> and <code>pop</code> with <code>try/finally</code>, so cleanup happens even if the callback throws</li>
+          <li class=fragment><code>withoutCollector()</code> temporarily silences tracking for the rare cases where a read should not create a dependency</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+const collectorStack = []
+
+export function getCurrentCollector() {
+  return collectorStack[collectorStack.length - 1]
+}
+
+export function withCollector(collector, callback) {
+  pushCollector(collector)
+  try {
+    return callback()
+  } finally {
+    popCollector()
+  }
+}
+
+export function withoutCollector(callback) {
+  const current = popCollector()
+  try {
+    return callback()
+  } finally {
+    if (current) pushCollector(current)
+  }
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+  <section data-topic=signals data-menu-title=ComputedSignal>
+  <h4 balance><code>_computed-signal.js</code>: the lazy brain that derives new values</h4>
+  <small balance>
+    This is the heart of the graph. A computed signal does not own data like state does. Instead, it remembers how to derive data, which signals it depended on last time, and whether that cached answer is still trustworthy.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment>The constructor stores the compute function, the equality check, the dependency map, the cached value, and the dirty flags that control recomputation</li>
+          <li class=fragment><code>addDependency()</code> subscribes once per upstream signal and keeps the unsubscribe function in a <code>Map</code></li>
+          <li class=fragment><code>evaluate()</code> is lazy: it does nothing until someone calls <code>get()</code> or <code>peek()</code>, then rebuilds the dependency graph from fresh reads</li>
+          <li class=fragment><code>invalidate()</code> marks the value stale and notifies downstream subscribers, so effects and other computeds know they must reevaluate later</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+constructor(compute, options = {}) {
+  super()
+  this.compute = compute
+  this.equals = options.equals ?? Object.is
+  this.dependencies = new Map()
+  this.cached = undefined
+  this.dirty = true
+  this.recomputing = false
+  this.boundInvalidate = this.invalidate.bind(this)
+}
+
+addDependency(signal) {
+  if (this.dependencies.has(signal)) return
+  const unsubscribe = signal.subscribe(this.boundInvalidate)
+  this.dependencies.set(signal, unsubscribe)
+}
+
+evaluate() {
+  if (!this.dirty) return this.cached
+  if (this.recomputing) return this.cached
+  this.recomputing = true
+  this.cleanupDependencies()
+  try {
+    const nextValue = withCollector(this, () =&gt; this.compute())
+    if (this.dirty || !this.equals(this.cached, nextValue)) {
+      this.cached = nextValue
+    }
+    this.dirty = false
+    return this.cached
+  } finally {
+    this.recomputing = false
+  }
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+  <section data-topic=signals data-menu-title=EffectCollector>
+  <h4 balance><code>_effect-collector.js</code>: the runner that lets the graph touch the outside world</h4>
+  <small balance>
+    Effects are where reactivity becomes visible. Rendering, logging, syncing, measuring: none of those produce a derived value, so they live in a collector that tracks reads, resubscribes on every run, and hands reruns to the scheduler.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment>The constructor initializes the callback, dependency map, and active flag, then immediately runs once to discover the first dependency graph</li>
+          <li class=fragment><code>addDependency()</code> subscribes to each signal with <code>() =&gt; schedule(this)</code>, which means invalidations are batched instead of running effects synchronously</li>
+          <li class=fragment><code>run()</code> first cleans stale subscriptions, then executes the callback inside <code>withCollector(this, ...)</code> so fresh reads rebuild the graph</li>
+          <li class=fragment><code>stop()</code> is the disposer: it flips <code>active</code> off and unsubscribes from everything</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export class EffectCollector {
+  constructor(callback) {
+    this.callback = callback
+    this.dependencies = new Map()
+    this.active = true
+    this.run = this.run.bind(this)
+    this.run()
+  }
+
+  addDependency(signal) {
+    if (this.dependencies.has(signal)) return
+    const unsubscribe = signal.subscribe(() =&gt; schedule(this))
+    this.dependencies.set(signal, unsubscribe)
+  }
+
+  run() {
+    if (!this.active) return
+    this.cleanup()
+    withCollector(this, () =&gt; {
+      this.callback()
+    })
+  }
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=signals data-menu-title=Scheduler>
+  <h4 balance><code>_scheduler.js</code>: the tiny batching loop that keeps rerenders calm</h4>
+  <small balance>
+    Without scheduling, three quick writes could mean three immediate reruns. This file is the polite traffic controller: collect jobs in a set, wait until the current JavaScript stack is done, then flush them once in a predictable batch.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>scheduled</code> is a <code>Set</code>, so the same effect can be invalidated many times but only appear once in the queue</li>
+          <li class=fragment><code>flushing</code> prevents stacking multiple <code>queueMicrotask()</code> calls for the same flush cycle</li>
+          <li class=fragment>The microtask waits until the current call stack finishes, which is just enough batching for a tiny runtime like this</li>
+          <li class=fragment>The <code>while</code> loop matters: if one effect schedules more work during the flush, the scheduler drains that work before finishing</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+const scheduled = new Set()
+let flushing = false
+
+export function schedule(effect) {
   scheduled.add(effect)
   if (flushing) return
   flushing = true
@@ -495,7 +665,9 @@ function schedule(effect) {
       while (scheduled.size &gt; 0) {
         const batch = [...scheduled]
         scheduled.clear()
-        for (const job of batch) job.run()
+        for (const job of batch) {
+          job.run()
+        }
       }
     } finally {
       flushing = false
@@ -508,112 +680,278 @@ function schedule(effect) {
   </comparison>
 </section>
 
-  <section data-topic=signals data-menu-title="Store bridge">
-  <h4><code>mainState</code> is the <mark>bridge</mark>, not the final dream</h4>
-  <small>
-    <ul>
-      <li class=fragment>The store is event-based, not signal-native</li>
-      <li class=fragment>The bridge signal uses <code>equals: () =&gt; false</code> so every store write invalidates dependents</li>
-      <li class=fragment><code>visibleTodos</code>, <code>summary</code>, <code>debugLogs</code> and the root render effect all read it</li>
-      <li class=fragment>This is a coarse invalidation strategy, but it keeps the integration explicit and easy to reason about</li>
-    </ul>
+  <section data-topic=signals data-menu-title="Public API">
+  <h4 balance><code>index.js</code>: the small public surface the rest of the app actually imports</h4>
+  <small balance>
+    Internal files are easier to teach when they stay tiny and focused. The outside world, though, wants one friendly door. This module assembles that door: constructors, one escape hatch for untracked reads, one type guard, and one helper to create effects.
   </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>Signal.State</code> and <code>Signal.Computed</code> expose the two main reactive primitives without leaking file-level implementation details</li>
+          <li class=fragment><code>Signal.subtle.untrack</code> intentionally sounds advanced, because turning tracking off is powerful and should feel explicit</li>
+          <li class=fragment><code>isSignalLike()</code> gives the renderer a duck-typing check instead of forcing a brittle <code>instanceof</code> contract</li>
+          <li class=fragment><code>effect()</code> creates an <code>EffectCollector</code> and returns the disposer, which makes lifecycle cleanup natural for callers</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export const Signal = {
+  State: StateSignal,
+  Computed: ComputedSignal,
+  subtle: {
+    untrack: withoutCollector,
+  },
+}
+
+export function isSignalLike(value) {
+  return Boolean(
+    value &amp;&amp;
+    typeof value.get === "function" &amp;&amp;
+    value.__isSignal
+  )
+}
+
+export function effect(callback) {
+  const runner = new EffectCollector(callback)
+  return () =&gt; runner.stop()
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
 </section>
 
 </section>
 
 <section>
   
-  <section data-topic=rendering data-menu-title=Templates>
-  <h4>Tagged templates as a <mark>view IR</mark></h4>
-  <small>
-    <ul>
-      <li class=fragment><code>html(strings, ...values)</code> does not render immediately</li>
-      <li class=fragment>It returns a <code>template-result</code> record with static shape plus dynamic values</li>
-      <li class=fragment>The static <code>strings</code> array is a stable cache key for template compilation</li>
-      <li class=fragment>This gives us JSX-like ergonomics without a compiler or a virtual DOM</li>
-    </ul>
+  <section data-topic=template-engine data-menu-title=template-helpers>
+  <h4 balance><code>_template-helpers.js</code>: the tiny IR every template expression becomes</h4>
+  <small balance>
+    Before the engine can render anything, it needs one honest shape for "a template", and one honest shape for "a directive". This file gives us exactly that, with almost no magic.
   </small>
-</section>
-
-  <section data-topic=rendering data-menu-title="Template compilation">
   <comparison>
     <left>
-      <h4>Compilation step</h4>
       <small>
         <ul>
-          <li class=fragment>Insert placeholder markers into the HTML string</li>
-          <li class=fragment>Parse once with <code>&lt;template&gt;</code> into an inert <code>DocumentFragment</code></li>
-          <li class=fragment>Walk the fragment to discover child, attribute, property and event descriptors</li>
-          <li class=fragment>Clone the fragment for each concrete instance and resolve parts by node path</li>
+          <li class=fragment><code>html(strings, ...values)</code> does not touch the DOM; it returns a plain object with <code>kind</code>, <code>strings</code>, and <code>values</code></li>
+          <li class=fragment><code>directive(name, payload)</code> brands directive results with a private <code>Symbol</code>, so parts can recognize them without stringly typed hacks</li>
+          <li class=fragment><code>isDirective()</code> checks that brand and can optionally narrow by name, which is how parts distinguish <code>model</code> from <code>repeat</code></li>
+          <li class=fragment><code>model()</code> and <code>repeat()</code> are just friendly wrappers over <code>directive()</code>, so the authoring API stays declarative</li>
         </ul>
       </small>
     </left>
     <right>
       <article class=code-stack>
         <pre><code data-trim data-line-numbers class="hljs javascript">
-for (let index = 0; index &lt; strings.length - 1; index += 1) {
-  const chunk = strings[index]
-  markup += chunk
-  const attributeMatch =
-    chunk.match(/([.@]?[-\\w:]+)\\s*=\\s*(?:\"|'|)?$/)
-
-  markup += attributeMatch
-    ? `__part_${index}__`
-    : ``
+export function html(strings, ...values) {
+  return {
+    kind: "template-result",
+    strings,
+    values,
+  }
 }
 
-const template = document.createElement('template')
-template.innerHTML = markup
-const walker = document.createTreeWalker(
-  template.content,
-  NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_COMMENT
-)
+export function directive(name, payload) {
+  return {
+    [directiveBrand]: true,
+    name,
+    payload,
+  }
+}
+
+export function model(config) {
+  return directive("model", config)
+}
+
+export function repeat(items, key, renderItem) {
+  return directive("repeat", { items, key, renderItem })
+}
         </code></pre>
       </article>
     </right>
   </comparison>
 </section>
 
-  <section data-topic=rendering data-menu-title=Parts>
-  <h4>DOM Parts are <mark>persistent update slots</mark></h4>
-  <small>
-    <ul>
-      <li class=fragment><mark>ChildNodePart</mark> owns a start and end comment and updates the range between them</li>
-      <li class=fragment><mark>AttributePart</mark> writes plain HTML attributes and hosts the <code>model</code> directive</li>
-      <li class=fragment><mark>PropertyPart</mark> writes native JS properties such as <code>.value</code> or <code>.disabled</code></li>
-      <li class=fragment><mark>EventPart</mark> attaches stable DOM listeners</li>
-    </ul>
+  <section data-topic=template-engine data-menu-title=Part>
+  <h4 balance><code>_part.js</code>: one tiny base class for reactive DOM slots</h4>
+  <small balance>
+    A lot of the engine becomes easier to understand once you see this file: a DOM part is just a place that can hold a value, optionally subscribe to a signal, and clean itself up when the source changes.
   </small>
-</section>
-
-  <section data-topic=rendering data-menu-title="Child ranges">
   <comparison>
     <left>
-      <h4>How child ranges work</h4>
       <small>
         <ul>
-          <li class=fragment>Each dynamic child node is replaced by comment anchors</li>
-          <li class=fragment>Clearing a part means removing nodes between <code>start</code> and <code>end</code></li>
-          <li class=fragment>Reusing a template means updating existing parts, not reparsing HTML</li>
-          <li class=fragment>Range movement powers keyed repeat without reconstructing every child</li>
+          <li class=fragment><code>value</code> stores the last committed input, which gives concrete parts a shared place to remember what they rendered</li>
+          <li class=fragment><code>signalCleanup</code> stores the unsubscribe function for the currently bound signal, so replacing a binding does not leak subscriptions</li>
+          <li class=fragment><code>bindSignal()</code> subscribes once, then immediately pushes <code>signal.get()</code> through the same callback path used for later updates</li>
+          <li class=fragment><code>disposeSignal()</code> is boring on purpose: one cleanup path, reused by attribute, property, and child parts</li>
         </ul>
       </small>
     </left>
     <right>
       <article class=code-stack>
         <pre><code data-trim data-line-numbers class="hljs javascript">
-commitTemplate(result) {
-  if (this.currentTemplateInstance?.strings === result.strings) {
-    this.currentTemplateInstance.update(result.values)
+export class Part {
+  constructor() {
+    this.value = undefined
+    this.signalCleanup = null
+  }
+
+  bindSignal(signal, callback) {
+    this.disposeSignal()
+    this.signalCleanup = signal.subscribe(() =&gt; {
+      callback(signal.get())
+    })
+    callback(signal.get())
+  }
+
+  disposeSignal() {
+    if (this.signalCleanup) this.signalCleanup()
+    this.signalCleanup = null
+  }
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=template-engine data-menu-title=EventPart>
+  <h4 balance><code>_event-part.js</code>: the whole event system in one very small file</h4>
+  <small balance>
+    This slide is a nice reminder that not every runtime primitive needs to be clever. Event bindings are not tracked values. They are simply listener replacement with disciplined cleanup.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>EventPart</code> does not extend <code>Part</code>, because event listeners are not signal subscriptions and do not share that lifecycle</li>
+          <li class=fragment><code>setValue()</code> always removes the old listener first, so rerenders can safely replace closures without stacking handlers</li>
+          <li class=fragment>Non function values are ignored, which keeps bad bindings harmless instead of half working</li>
+          <li class=fragment>The class stores exactly one active listener reference, because removal in the DOM API must use the same function identity</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export class EventPart {
+  constructor(element, name) {
+    this.element = element
+    this.name = name
+    this.listener = null
+  }
+
+  setValue(value) {
+    if (this.listener) {
+      this.element.removeEventListener(this.name, this.listener)
+      this.listener = null
+    }
+    if (typeof value !== "function") return
+    this.listener = value
+    this.element.addEventListener(this.name, this.listener)
+  }
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=template-engine data-menu-title=PropertyPart>
+  <h4 balance><code>_property-part.js</code>: write to DOM properties, not HTML text</h4>
+  <small balance>
+    Attributes are strings on markup. Properties are live JavaScript fields on elements. This part exists for the moments when the engine must talk to the actual DOM object, not to serialized HTML.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment>It extends <code>Part</code>, so property bindings automatically gain the same signal subscription and cleanup behavior as the other reactive parts</li>
+          <li class=fragment><code>setValue()</code> branches only once: if the input is signal like, subscribe and resolve it; otherwise commit the raw value</li>
+          <li class=fragment><code>commit()</code> writes straight to <code>this.element[this.name]</code>, which is why booleans, objects, and live form values work correctly</li>
+          <li class=fragment>The file is intentionally tiny because all the complexity belongs in the DOM, not in the wrapper around it</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export class PropertyPart extends Part {
+  constructor(element, name) {
+    super()
+    this.element = element
+    this.name = name
+  }
+
+  setValue(value) {
+    if (isSignalLike(value)) {
+      this.bindSignal(value, (resolved) =&gt; this.commit(resolved))
+      return
+    }
+    this.disposeSignal()
+    this.commit(value)
+  }
+
+  commit(value) {
+    this.element[this.name] = value
+  }
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=template-engine data-menu-title=AttributePart>
+  <h4 balance><code>_attribute-part.js</code>: plain attributes plus the most opinionated directive in the engine</h4>
+  <small balance>
+    This file starts simple and then becomes surprisingly sophisticated. It can write ordinary attributes, subscribe to signals, and run the two way <code>model()</code> directive with cursor preservation and a select specific bug fix.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>setValue()</code> is the traffic cop: route <code>model(...)</code> to <code>commitModel()</code>, route signals through <code>bindSignal()</code>, otherwise commit a normal attribute</li>
+          <li class=fragment><code>commit()</code> maps <code>null</code> and <code>false</code> to attribute removal, <code>true</code> to an empty attribute, and everything else to a string</li>
+          <li class=fragment><code>commitModel()</code> caches bindings by event, property, and signal identity, so stable model shapes do not tear down listeners every rerender</li>
+          <li class=fragment><code>sync()</code> handles <code>checked</code> versus <code>value</code>, preserves text selection while typing, and <code>syncAfterRender()</code> gives <code>&lt;select&gt;</code> one extra microtask so options exist first</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+setValue(value) {
+  if (this.name === "model" &amp;&amp; isDirective(value, "model")) {
+    this.commitModel(value.payload)
+    this.value = value
     return
   }
 
-  clearRange(this.start, this.end)
-  const instance = new TemplateInstance(result.strings)
-  this.currentTemplateInstance = instance
-  instance.update(result.values)
-  this.start.parentNode.insertBefore(instance.fragment, this.end)
+  if (isSignalLike(value)) {
+    this.disposeModel()
+    this.bindSignal(value, (resolved) =&gt; this.commit(resolved))
+    return
+  }
+
+  this.disposeModel()
+  this.disposeSignal()
+  this.commit(value)
+}
+
+const syncAfterRender = () =&gt; {
+  sync()
+  if (this.element instanceof HTMLSelectElement) {
+    queueMicrotask(() =&gt; {
+      if (this._modelBinding === binding &amp;&amp; this.element.isConnected) sync()
+    })
+  }
 }
         </code></pre>
       </article>
@@ -621,28 +959,246 @@ commitTemplate(result) {
   </comparison>
 </section>
 
-  <section data-topic=rendering data-menu-title="Template instances">
+  <section data-topic=template-engine data-menu-title="range helpers">
+  <h4 balance><code>_range.js</code>: comment markers become a real DOM editing toolkit</h4>
+  <small balance>
+    Proposed DOM Parts would give the browser native update slots. We do not have that here, so this file builds the minimum surgery kit needed to treat two comments as a movable, replaceable DOM range.
+  </small>
   <comparison>
     <left>
-      <h4>Why there is no VDOM here</h4>
       <small>
         <ul>
-          <li class=fragment>The static tree is compiled once and cached by <code>strings</code></li>
-          <li class=fragment>Instances clone DOM fragments directly, not virtual nodes</li>
-          <li class=fragment>Updates are dispatched to concrete parts with concrete DOM references</li>
-          <li class=fragment>The runtime never needs a generic "diff every child" pass</li>
+          <li class=fragment><code>clearRange()</code> removes everything between start and end markers without touching the markers themselves</li>
+          <li class=fragment><code>moveRangeBefore()</code> lifts a whole block into a fragment and reinserts it, so keyed list moves can preserve real DOM nodes instead of recreating them</li>
+          <li class=fragment><code>isRangeBeforeReference()</code> prevents pointless moves during repeat reconciliation by checking whether the block is already in the right place</li>
+          <li class=fragment><code>normalizeNode()</code>, <code>isIterable()</code>, and <code>inferModelProperty()</code> are the tiny helpers that let the bigger parts stay readable</li>
         </ul>
       </small>
     </left>
     <right>
       <article class=code-stack>
         <pre><code data-trim data-line-numbers class="hljs javascript">
+export function clearRange(start, end) {
+  let current = start.nextSibling
+  while (current &amp;&amp; current !== end) {
+    const next = current.nextSibling
+    current.remove()
+    current = next
+  }
+}
+
+export function moveRangeBefore(start, end, referenceNode) {
+  const fragment = document.createDocumentFragment()
+  let current = start
+  while (current) {
+    const next = current.nextSibling
+    fragment.append(current)
+    if (current === end) break
+    current = next
+  }
+  referenceNode.parentNode.insertBefore(fragment, referenceNode)
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=template-engine data-menu-title=ChildNodePart>
+  <h4 balance><code>_child-node-part.js</code>: the part that can render almost anything</h4>
+  <small balance>
+    If <code>AttributePart</code> speaks to element fields, <code>ChildNodePart</code> speaks to the area between two markers. Text, nodes, nested templates, iterables, keyed repeat, signal driven lists: this is the heavyweight operator of the engine.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>setValue()</code> resolves signals first, so child content can stay reactive without every caller writing manual subscriptions</li>
+          <li class=fragment><code>commit()</code> branches across repeat directives, template results, iterables, and single values, which is why one placeholder can accept many shapes</li>
+          <li class=fragment><code>commitTemplate()</code> reuses the existing template instance when the template literal identity is the same, updating values in place instead of rebuilding DOM</li>
+          <li class=fragment><code>commitRepeat()</code> keeps a keyed map of blocks, walks backwards to get a stable anchor, moves ranges instead of nodes one by one, and can subscribe to signal driven item sources</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+function createBlock(itemKey, referenceNode) {
+  const start = document.createComment(`repeat-start:${itemKey}`)
+  const end = document.createComment(`repeat-end:${itemKey}`)
+  referenceNode.parentNode.insertBefore(start, referenceNode)
+  referenceNode.parentNode.insertBefore(end, referenceNode)
+  return { key: itemKey, start, end, part: new ChildNodePart(start, end) }
+}
+
+commitRepeat({ items, key, renderItem }) {
+  const source = isSignalLike(items) ? items.get() : items
+  const list = Array.isArray(source) ? source : isIterable(source) ? [...source] : []
+  const state = this.repeatState ?? { blocks: new Map() }
+  const nextBlocks = new Map()
+  let referenceNode = this.end
+
+  for (let index = list.length - 1; index &gt;= 0; index -= 1) {
+    const item = list[index]
+    const itemKey = key(item)
+    let block = state.blocks.get(itemKey) ?? createBlock(itemKey, referenceNode)
+    if (block.item !== item) block.part.setValue(renderItem(item))
+    nextBlocks.set(itemKey, block)
+    referenceNode = block.start
+  }
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=template-engine data-menu-title="parts barrel">
+  <h4 balance><code>_parts.js</code>: one import seam for all DOM part implementations</h4>
+  <small balance>
+    This file is short, but it improves the architecture in a very practical way. The template instance builder can depend on one barrel instead of juggling a handful of sibling imports every time it maps descriptors to concrete parts.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment>It reexports <code>AttributePart</code>, <code>ChildNodePart</code>, <code>EventPart</code>, <code>Part</code>, and <code>PropertyPart</code> from one place</li>
+          <li class=fragment>That gives <code>_template-instance.js</code> a single dependency edge for all concrete part types</li>
+          <li class=fragment>Barrels like this are not about saving keystrokes; they are about making module boundaries legible</li>
+          <li class=fragment>In a talk, this matters because people can understand the graph at a glance instead of parsing import noise</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export { AttributePart } from "./_attribute-part.js"
+export { ChildNodePart } from "./_child-node-part.js"
+export { EventPart } from "./_event-part.js"
+export { Part } from "./_part.js"
+export { PropertyPart } from "./_property-part.js"
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=template-engine data-menu-title="instance ref">
+  <h4 balance><code>_template-instance-ref.js</code>: a tiny registry that breaks a circular import cleanly</h4>
+  <small balance>
+    This is one of those files that makes seasoned engineers smile. Instead of pretending circular imports do not exist, the runtime isolates the cycle behind a tiny register and read API with one loud failure mode.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>TemplateInstance</code> lives in module scope as a mutable slot, not as a direct import</li>
+          <li class=fragment><code>setTemplateInstanceClass()</code> registers the concrete class exactly once during template engine setup</li>
+          <li class=fragment><code>getTemplateInstanceClass()</code> lets <code>ChildNodePart</code> instantiate nested templates without importing the class directly</li>
+          <li class=fragment>If setup did not happen, the helper throws immediately, which is much better than silently rendering broken DOM</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+let TemplateInstance
+
+export function setTemplateInstanceClass(cls) {
+  TemplateInstance = cls
+}
+
+export function getTemplateInstanceClass() {
+  if (!TemplateInstance) {
+    throw new Error("TemplateInstance class not registered.")
+  }
+
+  return TemplateInstance
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=template-engine data-menu-title=TemplateInstance>
+  <h4 balance><code>_template-instance.js</code>: compile once, clone fast, bind precise parts</h4>
+  <small balance>
+    This is the parser and the materializer. It turns template literals into cached descriptors, then turns those descriptors into concrete part objects inside a cloned fragment. If the engine feels magical anywhere, it is here.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>getTemplate()</code> builds synthetic markup with placeholders, parses it once, walks the fragment, and stores descriptor metadata in a <code>WeakMap</code> keyed by the original <code>TemplateStringsArray</code></li>
+          <li class=fragment>Descriptors record type, index, name, raw attribute name, and node path, so later instances can find the exact DOM spot without reparsing strings</li>
+          <li class=fragment>The constructor clones the cached template fragment, resolves descriptor paths, and swaps placeholders for <code>ChildNodePart</code>, <code>AttributePart</code>, <code>PropertyPart</code>, or <code>EventPart</code></li>
+          <li class=fragment><code>update(values)</code> is then almost boring: walk the values array and push each value into its matching part</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+function getTemplate(strings) {
+  let record = templateCache.get(strings)
+  if (record) return record
+
+  let markup = ""
+  for (let index = 0; index &lt; strings.length - 1; index += 1) {
+    const chunk = strings[index]
+    markup += chunk
+    markup += chunk.match(ATTRIBUTE_PART_RE)
+      ? `__part_${index}__`
+      : ``
+  }
+
+  const template = document.createElement("template")
+  template.innerHTML = markup + strings[strings.length - 1]
+  record = { template, descriptors }
+  templateCache.set(strings, record)
+  return record
+}
+
+update(values) {
+  for (let index = 0; index &lt; values.length; index += 1) {
+    const part = this.parts.get(index)
+    if (part) part.setValue(values[index])
+  }
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=template-engine data-menu-title="template runtime">
+  <h4 balance><code>_template.js</code>: the composition root that turns helpers and instances into rendering</h4>
+  <small balance>
+    This file is where the engine becomes usable. It wires the concrete <code>TemplateInstance</code> class into the registry, reexports the helper surface, and gives us a <code>render()</code> function that keeps one stable root part per container.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>setTemplateInstanceClass(TemplateInstance)</code> happens once at module load, which closes the loop opened by <code>_template-instance-ref.js</code></li>
+          <li class=fragment>The file reexports <code>directive</code>, <code>html</code>, <code>isDirective</code>, <code>model</code>, and <code>repeat</code>, so consumers do not have to know about the helpers module directly</li>
+          <li class=fragment><code>render()</code> creates one pair of root comments and one root <code>ChildNodePart</code> the first time a container is used</li>
+          <li class=fragment>Every later render reuses that root part, which means the container itself stays stable and only the controlled range changes</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+setTemplateInstanceClass(TemplateInstance)
+
 export function render(result, container) {
   let rootPart = container.__rootPart
   if (!rootPart) {
-    const start = document.createComment('root:start')
-    const end = document.createComment('root:end')
-    container.textContent = ''
+    const start = document.createComment("root:start")
+    const end = document.createComment("root:end")
+    container.textContent = ""
     container.append(start, end)
     rootPart = new ChildNodePart(start, end)
     container.__rootPart = rootPart
@@ -655,55 +1211,363 @@ export function render(result, container) {
   </comparison>
 </section>
 
-  <section data-topic=rendering data-menu-title="Runtime honesty">
-  <h4>What gets updated on every <mark>store write</mark>?</h4>
-  <small>
-    <ul>
-      <li class=fragment>The root effect re-runs <code>appView()</code></li>
-      <li class=fragment>Template instances with the same shape are reused</li>
-      <li class=fragment>Only the parts that see changed values commit DOM updates</li>
-      <li class=fragment>So the render function is coarse, but DOM mutation is still localized</li>
-    </ul>
+  <section data-topic=template-engine data-menu-title="Public API">
+  <h4 balance><code>index.js</code>: the single friendly import path the rest of the app sees</h4>
+  <small balance>
+    After all that plumbing, the public entry is intentionally boring. That is the mark of a good boundary. Internals can be rich, but the caller should get one calm door and a small set of names.
   </small>
-</section>
-
-</section>
-
-<section>
-  
-  <section data-topic=directives data-menu-title=Directives>
-  <h4><code>model</code> and <code>repeat</code> carry most of the <mark>DX</mark></h4>
-  <small>
-    <ul>
-      <li class=fragment><code>model</code> turns a DOM field into a tiny explicit binding contract</li>
-      <li class=fragment><code>repeat</code> gives the runtime keyed list reuse with stable ranges</li>
-      <li class=fragment>Neither directive is magic: both are plain data handled by parts</li>
-      <li class=fragment>This is where the demo starts feeling "framework-like" without actually depending on one</li>
-    </ul>
-  </small>
-</section>
-
-  <section data-topic=directives data-menu-title=model>
   <comparison>
     <left>
-      <h4>The <code>model</code> contract</h4>
       <small>
         <ul>
-          <li class=fragment><code>get()</code> reads from the store or from a specific todo item</li>
-          <li class=fragment><code>set(value)</code> writes back through <code>store.set()</code> or an action</li>
-          <li class=fragment><code>signal</code> decides when the DOM control should resync</li>
-          <li class=fragment><code>event</code> and <code>prop</code> let the binding target text inputs, checkboxes and selects</li>
+          <li class=fragment>This module reexports <code>directive</code>, <code>html</code>, <code>isDirective</code>, <code>model</code>, <code>render</code>, and <code>repeat</code> from one place</li>
+          <li class=fragment>That means views and components never need to know whether the engine is split across 2 files or 20</li>
+          <li class=fragment>In architecture terms, this is the explicit public contract of the whole template layer</li>
+          <li class=fragment>In conference terms, this is the slide where you can finally say: "all that machinery collapses into one import"</li>
         </ul>
       </small>
     </left>
     <right>
       <article class=code-stack>
         <pre><code data-trim data-line-numbers class="hljs javascript">
+export {
+  directive,
+  html,
+  isDirective,
+  model,
+  render,
+  repeat,
+} from "./_template.js"
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+</section>
+
+<section>
+  
+  <section data-topic=demo data-menu-title="App shell">
+  <h4 balance><code>components/App/_App.js</code>: one real app shell, not one lonely button</h4>
+  <small balance>
+    This chapter is where the tiny runtime stops being theory. The app view is a little house made of small rooms, and every room uses the same store, signals, and template helpers we already studied.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>appView()</code> assembles the header, stats, list, side panels, debug panel, and both modals</li>
+          <li class=fragment>Every room is just a function that returns <code>html</code>, so composition stays plain and readable</li>
+          <li class=fragment>No room owns secret state; they all read from the same shared truth box</li>
+          <li class=fragment>That is why this demo feels like a small product slice, not a stage prop</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function appView() {
+  return html`
+    ${appHeader()}
+    <main data-component=app-shell>
+      ${statsRow()}
+      ${todoListPanel()}
+    </main>
+    <aside data-slot=controls>${filtersPanel()} ${bulkActionsPanel()}</aside>
+    <aside data-slot=debug-sidebar>${debugPanel()}</aside>
+    ${todoModal()} ${categoryModal()}
+  `
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=demo data-menu-title="State shape">
+  <h4 balance><code>data/_data.js</code>: the toy box where every piece starts</h4>
+  <small balance>
+    Before the store can react, it needs one complete starting picture. This file builds that picture in one place, so reset, persistence, and rendering all agree on the same state shape.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>todos</code>, <code>categories</code>, and <code>draft</code> hold the work the user can create and edit</li>
+          <li class=fragment><code>filters</code> and <code>preferences</code> are also state, because the app must remember how to look and what to show</li>
+          <li class=fragment><code>debug</code> and <code>ui</code> prove that temporary interface details still belong in the same tree</li>
+          <li class=fragment><code>createSeedData()</code> is reused by first load and by <code>resetDemo()</code>, so the app can always grow back from one seed</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function createSeedData() {
+  return {
+    todos: [/* starter todos */],
+    categories: ["Inbox", "Talk", "Engine", "Assets", "Research"],
+    draft: {
+      title: "",
+      notes: "",
+      category: "Inbox",
+      priority: "medium",
+      dueDate: new Date(now + ONE_DAY_MS).toISOString().slice(0, 10),
+    },
+    filters: { search: "", category: "all", status: "all", priority: "all", sortBy: "createdAt", sortDir: "desc" },
+    debug: { paused: false, logs: [] },
+    preferences: { colorScheme: "system", theme: "studio", language: "en" },
+    ui: {
+      categoryModal: { open: false, value: "", error: "" },
+      todoModal: { open: false, error: "" },
+    },
+  }
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=demo data-menu-title="Store + bell">
+  <h4 balance><code>state/_store-setup.js</code>: the bell that says "something changed"</h4>
+  <small balance>
+    The proxy store already knows when data changes. This file turns that fact into app behavior: save the snapshot, update the debug log, and ring one tiny signal so the rest of the UI can wake up.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>store</code> is the shared truth box created from the seed state</li>
+          <li class=fragment><code>tickState</code> is a tiny signal used as a redraw bell, and <code>equals: () =&gt; false</code> means every ring counts</li>
+          <li class=fragment><code>handleStoreChange()</code> appends a debug entry, persists a snapshot, then bumps <code>tickState</code></li>
+          <li class=fragment>This is the practical bridge between the store chapter and the signals chapter</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export const store = new Store(initialState)
+
+export const tickState = new Signal.State(0, {
+  equals: () =&gt; false,
+})
+
+function handleStoreChange(event) {
+  if (!store.state.debug.paused &amp;&amp; event.detail.path !== "debug.logs") {
+    appendDebugLog(event.detail)
+  }
+  persistState()
+  tickState.set(performance.now())
+}
+
+window.addEventListener("store:change", handleStoreChange)
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=demo data-menu-title="Computed state">
+  <h4 balance><code>state/_computed.js</code>: little helpers that keep counting for us</h4>
+  <small balance>
+    A five year old version is: these are tiny robots. You give them the raw toy pile, and they keep answering questions like "which todos should I show?" and "how many are done?"
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>visibleTodos</code> listens to <code>tickState</code> and runs the whole filtering pipeline</li>
+          <li class=fragment><code>summary</code> walks the full list once, then hands ready-made counts to smaller computed signals</li>
+          <li class=fragment><code>totalCount</code>, <code>openCount</code>, <code>visibleCount</code>, and friends reuse <code>summary</code> instead of recounting everything</li>
+          <li class=fragment>Components read clean answers, not raw loops and conditions</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export const visibleTodos = new Signal.Computed(() =&gt; {
+  tickState.get()
+  return pipelineTodos(
+    store.state.todos,
+    store.state.filters,
+    store.state.preferences.language,
+  )
+})
+
+export const summary = new Signal.Computed(() =&gt; {
+  tickState.get()
+  const todos = store.state.todos
+  let total = 0
+  let completed = 0
+  let selected = 0
+  for (const todo of todos) {
+    total += 1
+    if (todo.completed) completed += 1
+    if (todo.selected) selected += 1
+  }
+  return { total, completed, open: total - completed, selected, visible: visibleTodos.get().length }
+})
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=demo data-menu-title="Filter pipe">
+  <h4 balance><code>data/_pipeline.js</code>: one filter pipe, one job at a time</h4>
+  <small balance>
+    Instead of making lots of temporary arrays, the app lets todos walk through a pipe. Each filter looks at one todo, decides yes or no, and passes only the matching ones to the next step.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>fromArray()</code> turns the todo list into a lazy stream</li>
+          <li class=fragment><code>filterBySearch()</code>, <code>filterByCategory()</code>, <code>filterByStatus()</code>, and <code>filterByPriority()</code> each do one simple job</li>
+          <li class=fragment>Only the final sort step materializes the list, so the pipeline stays cheap and easy to inspect</li>
+          <li class=fragment><code>visibleTodos</code> simply asks the pipeline for the ready-made answer</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function pipelineTodos(todos, filters, language) {
+  const iterator = filterByPriority(
+    filterByStatus(
+      filterByCategory(
+        filterBySearch(fromArray(todos), filters.search, language),
+        filters.category,
+      ),
+      filters.status,
+    ),
+    filters.priority,
+  )
+
+  return sortTodos(iterator, filters.sortBy, filters.sortDir, language)
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=demo data-menu-title=Actions>
+  <h4 balance><code>state/_actions.js</code>: the hands that move the toys</h4>
+  <small balance>
+    Actions are the places where the app says "change the world now". They are boring on purpose: find something, replace it, add it, remove it, or rebuild the whole state from the seed.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>updateTodo()</code> finds one item and replaces it with a patched copy</li>
+          <li class=fragment><code>addTodo()</code> turns the shared draft into a new todo, then resets the draft for the next creation</li>
+          <li class=fragment><code>deleteSelected()</code>, <code>deleteCompleted()</code>, and friends operate on whole arrays with plain <code>map()</code> or <code>filter()</code></li>
+          <li class=fragment><code>resetDemo()</code> replaces the entire state tree while keeping the current preferences</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function updateTodo(id, patch) {
+  const index = store.state.todos.findIndex((todo) =&gt; todo.id === id)
+  if (index &lt; 0) return
+  const current = store.state.todos[index]
+  store.state.todos[index] = {
+    ...current,
+    ...patch,
+  }
+}
+
+export function resetDemo() {
+  const { preferences } = store.snapshot()
+  store.replace({
+    ...createSeedData(),
+    preferences: { ...preferences },
+  })
+  tickState.set(performance.now())
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=demo data-menu-title="Render loop">
+  <h4 balance><code>src/scripts/index.js</code>: when the bell rings, paint again</h4>
+  <small balance>
+    This is the slide where the chapters shake hands. Signals watch, the template engine renders, and the DOM changes for real.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment>The first <code>effect()</code> mirrors theme, color scheme, and language onto the document for CSS and accessibility</li>
+          <li class=fragment>The second <code>effect()</code> watches <code>tickState</code> and calls <code>render(appView(), root)</code></li>
+          <li class=fragment><code>requestAnimationFrame()</code> measures the app shell after the DOM has been updated</li>
+          <li class=fragment>So the runtime story is: store change, bell rings, effect runs, template engine paints</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+effect(() =&gt; {
+  tickState.get()
+  syncDocumentPreferences()
+})
+
+effect(() =&gt; {
+  tickState.get()
+  render(appView(), root)
+  scheduleAppShellSizeSync()
+})
+
+tickState.set(performance.now())
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=demo data-menu-title="model() helpers">
+  <h4 balance><code>helpers/_helpers.js</code>: two tiny translators for all our inputs</h4>
+  <small balance>
+    We do not want every text field and checkbox to remember how to read and write the store. So the app builds two small helpers, and then reuses them everywhere.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>storeModel(path)</code> is the generic translator for fields like <code>filters.search</code> or <code>preferences.theme</code></li>
+          <li class=fragment><code>todoModel(todoId, field)</code> is the special translator for one field on one todo card</li>
+          <li class=fragment>Both helpers are just <code>model({ signal, get, set })</code>, which means the same directive powers the whole app</li>
+          <li class=fragment>This is the practical use of the template engine chapter: tiny reusable bindings instead of manual event code everywhere</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function storeModel(path, options = {}) {
+  return model({
+    signal: tickState,
+    get: () =&gt; store.get(path),
+    set: (value) =&gt; store.set(path, value),
+    ...options,
+  })
+}
+
 export function todoModel(todoId, field, options = {}) {
   return model({
-    signal: mainState,
-    get: () =&gt; getTodoById(todoId)?.[field]
-      ?? (options.prop === 'checked' ? false : ''),
+    signal: tickState,
+    get: () =&gt; getTodoById(todoId)?.[field],
     set: (value) =&gt; updateTodo(todoId, { [field]: value }),
     ...options,
   })
@@ -714,261 +1578,219 @@ export function todoModel(todoId, field, options = {}) {
   </comparison>
 </section>
 
-  <section data-topic=directives data-menu-title=repeat>
-  <comparison>
-    <left>
-      <h4>The <code>repeat</code> algorithm</h4>
-      <small>
-        <ul>
-          <li class=fragment>Iterate the next list from the end so insertion can happen before a stable reference node</li>
-          <li class=fragment>Reuse an existing block when the key is already known</li>
-          <li class=fragment>Move the block range if its current DOM position is wrong</li>
-          <li class=fragment>Create new blocks for unseen keys and remove blocks for vanished keys</li>
-        </ul>
-      </small>
-    </left>
-    <right>
-      <article class=code-stack>
-        <pre><code data-trim data-line-numbers class="hljs javascript">
-for (let index = list.length - 1; index &gt;= 0; index -= 1) {
-  const item = list[index]
-  const itemKey = key(item)
-  let block = state.blocks.get(itemKey)
-
-  if (!block) {
-    block = createBlock(itemKey, referenceNode)
-    block.part.setValue(renderItem(item))
-  } else {
-    if (!isRangeBeforeReference(block.start, block.end, referenceNode))
-      moveRangeBefore(block.start, block.end, referenceNode)
-    if (block.item !== item)
-      block.part.setValue(renderItem(item))
-  }
-
-  block.item = item
-  nextBlocks.set(itemKey, block)
-  referenceNode = block.start
-}
-        </code></pre>
-      </article>
-    </right>
-  </comparison>
-</section>
-
-  <section data-topic=directives data-menu-title="Bug fix">
-  <h4>A subtle bug: <code>&lt;select&gt;</code> values can desync during <mark>initial render</mark></h4>
-  <small>
-    <ul>
-      <li class=fragment>In a template like <code>&lt;select model=\${...}&gt;\${options}&lt;/select&gt;</code>, the binding part is visited before the child options part</li>
-      <li class=fragment>That means the binding can set <code>select.value</code> before the matching <code>&lt;option&gt;</code> exists in the DOM</li>
-      <li class=fragment>The fix is pragmatic: for <code>HTMLSelectElement</code>, sync immediately and then resync in a microtask after the render pass completes</li>
-      <li class=fragment>This is exactly the kind of edge case a tiny runtime exposes very clearly</li>
-    </ul>
-  </small>
-</section>
-
-  <section data-topic=directives data-menu-title="Bug fix">
-  <article class=code-stack>
-    <pre><code data-trim data-line-numbers class="hljs javascript">
-const syncAfterRender = () =&gt; {
-  sync()
-  if (this.element instanceof HTMLSelectElement) {
-    queueMicrotask(() =&gt; {
-      if (this._modelBinding === binding) sync()
-    })
-  }
-}
-
-if (config.signal &amp;&amp; isSignalLike(config.signal)) {
-  this.bindSignal(config.signal, syncAfterRender)
-  return
-}
-
-syncAfterRender()
-    </code></pre>
-  </article>
-</section>
-
-  <section data-topic=directives data-menu-title=Composition>
-  <article class=code-stack>
-    <pre><code data-trim data-line-numbers class="hljs javascript">
-repeat(visibleTodos, (todo) =&gt; todo.id, (todo) =&gt; html`
-  &lt;article class=${todo.completed ? 'todo-card is-done' : 'todo-card'}&gt;
-    &lt;input class="todo-title"
-      model=${todoModel(todo.id, 'title')} /&gt;
-
-    ${categorySelect(
-      todoModel(todo.id, 'category', { event: 'change' })
-    )}
-
-    &lt;select model=${todoModel(todo.id, 'priority', { event: 'change' })}&gt;
-      ${priorityOptions()}
-    &lt;/select&gt;
-  &lt;/article&gt;
-`)
-    </code></pre>
-  </article>
-</section>
-
-</section>
-
-<section>
-  
-  <section data-topic=demo data-menu-title="Demo implementation">
-  <h4>The demo is a <mark>real app slice</mark>, not a toy counter</h4>
-  <small>
-    <ul>
-      <li class=fragment>A draft form for new todos</li>
-      <li class=fragment>Category management and multiple filters</li>
-      <li class=fragment>Bulk actions over the currently visible subset</li>
-      <li class=fragment>A debug panel driven by the same mutation events used for persistence and invalidation</li>
-    </ul>
-  </small>
-</section>
-
-  <section data-topic=demo data-menu-title="State shape">
-  <comparison>
-    <left>
-      <h4>Persistent state</h4>
-      <small>
-        <ul>
-          <li class=fragment><code>todos</code> array with title, notes, category, priority, due date, completion and selection flags</li>
-          <li class=fragment><code>categories</code> list reused by draft form and todo cards</li>
-          <li class=fragment><code>draft</code> values for quick add</li>
-          <li class=fragment><code>filters</code> for search, category, status, priority and sorting</li>
-        </ul>
-      </small>
-    </left>
-    <right>
-      <h4>Ephemeral-but-visible state</h4>
-      <small>
-        <ul>
-          <li class=fragment><code>debug.paused</code> toggles the event panel</li>
-          <li class=fragment><code>debug.logs</code> stores the latest 30 mutation entries</li>
-          <li class=fragment><code>mainState</code> is the render invalidation bridge</li>
-          <li class=fragment><code>summary</code>, <code>visibleTodos</code> and <code>debugLogs</code> are computed selectors over the store</li>
-        </ul>
-      </small>
-    </right>
-  </comparison>
-</section>
-
-  <section data-topic=demo data-menu-title="Computed state">
-  <comparison>
-    <left>
-      <h4>Computed graph</h4>
-      <small>
-        <ul>
-          <li class=fragment><code>visibleTodos</code> filters and sorts from raw store state</li>
-          <li class=fragment><code>summary</code> derives counts once and feeds smaller computed signals</li>
-          <li class=fragment><code>visibleLabel</code> turns machine state into UI copy</li>
-          <li class=fragment><code>debugLogs</code> exposes the current event panel payload</li>
-        </ul>
-      </small>
-    </left>
-    <right>
-      <article class=code-stack>
-        <pre><code data-trim data-line-numbers class="hljs javascript">
-export const visibleTodos = new Signal.Computed(() =&gt; {
-  mainState.get()
-  return pipelineTodos(store.state.todos, store.state.filters)
-})
-
-export const summary = new Signal.Computed(() =&gt; {
-  mainState.get()
-  // derive total, completed, open, selected, visible
-})
-        </code></pre>
-      </article>
-    </right>
-  </comparison>
-</section>
-
-  <section data-topic=demo data-menu-title="Filtering pipeline">
-  <comparison>
-    <left>
-      <h4>Generator-first filtering</h4>
-      <small>
-        <ul>
-          <li class=fragment>Each filter is a generator that yields only matching items</li>
-          <li class=fragment>Search, category, status and priority are composed before sorting</li>
-          <li class=fragment>Materialization only happens at the sort step</li>
-          <li class=fragment>That keeps the pipeline explicit and cheap to inspect</li>
-        </ul>
-      </small>
-    </left>
-    <right>
-      <article class=code-stack>
-        <pre><code data-trim data-line-numbers class="hljs javascript">
-export function pipelineTodos(todos, filters) {
-  const iterator = filterByPriority(
-    filterByStatus(
-      filterByCategory(
-        filterBySearch(fromArray(todos), filters.search),
-        filters.category
-      ),
-      filters.status
-    ),
-    filters.priority
-  )
-  return sortTodos(iterator, filters.sortBy, filters.sortDir)
-}
-        </code></pre>
-      </article>
-    </right>
-  </comparison>
-</section>
-
-  <section data-topic=demo data-menu-title=Actions>
-  <comparison>
-    <left>
-      <h4>Action strategy</h4>
-      <small>
-        <ul>
-          <li class=fragment><code>addTodo()</code> prepends a new object and resets the draft</li>
-          <li class=fragment><code>updateTodo()</code> patches by replacing one todo object</li>
-          <li class=fragment><code>toggleAllSelected()</code>, <code>deleteSelected()</code>, <code>deleteCompleted()</code> operate on the whole array</li>
-          <li class=fragment><code>resetDemo()</code> replaces the entire store with fresh seed data</li>
-        </ul>
-      </small>
-    </left>
-    <right>
-      <article class=code-stack>
-        <pre><code data-trim data-line-numbers class="hljs javascript">
-export function updateTodo(id, patch) {
-  const index = store.state.todos.findIndex(
-    (todo) =&gt; todo.id === id
-  )
-  if (index &lt; 0) return
-
-  const current = store.state.todos[index]
-  store.state.todos[index] = {
-    ...current,
-    ...patch,
-  }
-}
-        </code></pre>
-      </article>
-    </right>
-  </comparison>
-</section>
-
-  <section data-topic=demo data-menu-title="Live demo">
-  <h4>The runtime is not theoretical. It is <mark>running here</mark>.</h4>
+  <section data-topic=demo data-menu-title=Header>
+  <h4 balance><code>components/AppHeader/_AppHeader.js</code>: big buttons on top, tiny writes underneath</h4>
   <small balance>
-    The embedded app uses the same store, signals, directives and template engine discussed in the deck. Editing a field, filtering the list or toggling bulk actions mutates the same state graph and feeds the same event log.
+    The header looks rich, but its behavior is simple. Buttons call actions, selects use <code>storeModel()</code>, and the rest of the app updates because the same shared store keeps listening.
   </small>
-  <iframe class=demo-embed title="Live demo" data-demo-embed-url=https://pixu1980.github.io/reactive-apps-without-frameworks-demo/ loading=lazy></iframe>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>@click=${resetDemo}</code>, <code>@click=${openTodoModal}</code>, and <code>@click=${openCategoryModal}</code> are plain event parts</li>
+          <li class=fragment>Theme, language, and color scheme selects write straight into <code>preferences.*</code> paths</li>
+          <li class=fragment>The document dataset effect then mirrors those preferences so CSS and translations can react</li>
+          <li class=fragment>This proves the runtime is driving the whole shell, not just the list in the middle</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+<button data-variant=warning @click=${resetDemo}>
+  ${t(language, "buttons.resetDemo")}
+</button>
+
+<select model="${storeModel(&quot;preferences.theme&quot;," { event: "change" })}>
+  ${themeOptions()}
+</select>
+
+<select model="${storeModel(&quot;preferences.language&quot;," { event: "change" })}>
+  ${languageOptions()}
+</select>
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+  <section data-topic=demo data-menu-title="Todo card">
+  <h4 balance><code>components/TodoItem/_TodoItem.js</code>: one card where <code>model()</code> shows its magic</h4>
+  <small balance>
+    This is the best "look, it is really used" slide. One todo card has checkboxes, text inputs, selects, a textarea, and a delete button, but they all stay tiny because the helpers do the boring work.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment>Checkboxes use <code>prop: "checked"</code> and <code>event: "change"</code> so DOM booleans map cleanly to store booleans</li>
+          <li class=fragment>Title, notes, category, priority, and due date all reuse the same <code>todoModel()</code> helper</li>
+          <li class=fragment>The delete button is just <code>@click</code>, so event parts and model parts live together happily</li>
+          <li class=fragment>The card also mirrors state into <code>data-state</code> and <code>data-priority</code>, which keeps styling honest and declarative</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+<input model=${todoModel(todo.id, "selected", { prop: "checked", event: "change" })} type=checkbox>
+
+<input model=${todoModel(todo.id, "title")}>
+
+<select model=${todoModel(todo.id, "priority", { event: "change" })}>
+  ${priorityOptions()}
+</select>
+
+<textarea model=${todoModel(todo.id, "notes")}></textarea>
+
+<button @click=${() => removeTodo(todo.id)} data-variant="danger"&gt;
+  ${t(language, "buttons.delete")}
+</button>
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+  <section data-topic=demo data-menu-title="repeat() list">
+  <h4 balance><code>components/TodoList/_TodoList.js</code>: one render function becomes a whole living list</h4>
+  <small balance>
+    A single todo card is nice, but the real trick is many cards that stay stable when filters, sorting, or language change. That is where <code>repeat()</code> earns its lunch.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>visibleLabel</code> drops straight into the template as a computed signal, so the summary text updates itself</li>
+          <li class=fragment><code>repeat(visibleTodos, key, todoItem)</code> turns one render function into a full ordered list</li>
+          <li class=fragment>The key uses <code>todo.id</code> and <code>language</code>, so locale changes can rebuild the right text without losing list identity accidentally</li>
+          <li class=fragment>This is the everyday use of the repeat directive and the range-moving logic from the template engine chapter</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function todoListPanel() {
+  const language = store.state.preferences.language
+
+  return html`
+    <section data-component=todo-list-panel>
+      <header data-slot=header>
+        <h2>${t(language, "sections.reactiveList")}</h2>
+        <p data-slot=summary>${visibleLabel}</p>
+      </header>
+      <ol data-list-reset data-slot=items>
+        ${repeat(visibleTodos, (todo) =&gt; `${todo.id}:${language}`, todoItem)}
+      </ol>
+    </section>
+  `
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+  <section data-topic=demo data-menu-title="Side panels">
+  <h4 balance><code>StatsRow</code>, <code>Filters</code>, <code>BulkActions</code>, <code>DebugPanel</code>: the same state wearing four costumes</h4>
+  <small balance>
+    The panels around the list are great teaching material because they all read the same brain in different ways. Some show counts, some write filters, some call actions, and one simply watches every mutation happen.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>StatsRow</code> prints computed counts, so cards stay dumb and the math stays centralized</li>
+          <li class=fragment><code>Filters</code> writes into <code>filters.*</code> paths with <code>storeModel()</code>, which immediately changes <code>visibleTodos</code></li>
+          <li class=fragment><code>BulkActions</code> calls real action functions like <code>selectAllVisible()</code> and <code>deleteSelected()</code></li>
+          <li class=fragment><code>DebugPanel</code> even pauses itself through the same store, then renders the log with another <code>repeat()</code></li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+${statCard(totalCount, t(language, "stats.total"))}
+
+<input model="${storeModel(&quot;filters.search&quot;)}">
+
+<button @click=${() => selectAllVisible(visibleTodos)}&gt;
+  ${t(language, "buttons.selectVisible")}
+</button>
+
+<input model="${storeModel(&quot;debug.paused&quot;," { prop: "checked", event: "change" })} type=checkbox>
+
+${repeat(debugLogs, (entry) =&gt; entry.id, debugLogEntry)}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=demo data-menu-title="Modals + draft">
+  <h4 balance><code>TodoModal</code> and <code>CategoryModal</code>: popups are just more state</h4>
+  <small balance>
+    A common beginner mistake is to think dialogs need special magic. Here they do not. They simply open when the store says open, and their fields write into shared state just like the rest of the app.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class=fragment><code>todoModal()</code> reads <code>ui.todoModal.open</code> and returns nothing when the dialog should stay closed</li>
+          <li class=fragment>The whole form writes into <code>draft.*</code>, so add and edit flows can share one basket of temporary values</li>
+          <li class=fragment><code>categoryModal()</code> writes to <code>ui.categoryModal.value</code> and shows validation errors from state</li>
+          <li class=fragment>Submit handlers call <code>addTodo()</code> or <code>addCategory()</code>, which means modals stay thin and business logic stays in actions</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class=code-stack>
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+if (!modal.open) return ""
+
+<input model="${storeModel(&quot;draft.title&quot;)}">
+<textarea model="${storeModel(&quot;draft.notes&quot;)}" rows=4></textarea>
+<select model="${storeModel(&quot;draft.priority&quot;," { event: "change" })}>
+  ${priorityOptions()}
+</select>
+
+<input model="${storeModel(&quot;ui.categoryModal.value&quot;)}">
+
+<form @submit=${handleTodoSubmit}></form>
+<form @submit=${handleCategorySubmit}></form>
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
+
+  <section data-topic=demo data-menu-title="Open demo">
+  <h4 balance>The runtime is not trapped in slides. It opens as a <mark>real app tab</mark>.</h4>
+  <small balance>
+    No deck-only sandbox. The audience can open the same standalone demo we publish, poke it, and see the exact store, signals, directives, and render loop we just walked through.
+  </small>
+  <article class=code-stack>
+    <pre><code data-trim class="hljs html">
+&lt;a
+  href="https://pixu1980.github.io/reactive-apps-without-frameworks-demo/"
+  target="_blank"
+  rel="noreferrer"
+&gt;
+  Open the standalone demo
+&lt;/a&gt;
+    </code></pre>
+  </article>
+  <p>
+    <a href=https://pixu1980.github.io/reactive-apps-without-frameworks-demo/ target=_blank rel=noreferrer>Open the standalone demo ↗</a>
+  </p>
 </section>
 
   <section data-topic=demo data-menu-title=Takeaways>
-  <h4>What this demo actually <mark>proves</mark></h4>
+  <h4 balance>What the demo really proves</h4>
   <small>
     <ul>
-      <li class=fragment>You can get a lot of practical UI behavior from platform primitives and a few disciplined conventions</li>
-      <li class=fragment>A tiny runtime makes architecture and bugs legible</li>
-      <li class=fragment>The browser already gives us enough pieces to experiment seriously</li>
-      <li class=fragment>The hard part is no longer "can it work?", but "how far do we want to maintain it ourselves?"</li>
+      <li class=fragment>The store is the truth box, and every part of the app keeps reading from the same box</li>
+      <li class=fragment><code>tickState</code> is the bell that wakes computed signals and render effects after each mutation</li>
+      <li class=fragment><code>model()</code> and <code>repeat()</code> are not cute helpers; they are the practical fingers that touch inputs and lists all day long</li>
+      <li class=fragment>A tiny runtime can power a surprisingly rich interface, but the real product question is still how much of that runtime you want to own yourself</li>
     </ul>
   </small>
 </section>
@@ -1124,6 +1946,6 @@ export function updateTodo(id, patch) {
 </a>
 
     </main>
-    <script src=https://pixu1980.github.io/reactive-apps-without-frameworks/reactive-apps-without-frameworks.fa910de2.js type=module></script>
+    <script src=https://pixu1980.github.io/reactive-apps-without-frameworks/reactive-apps-without-frameworks.1e9352b9.js type=module></script>
   
 

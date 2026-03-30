@@ -1,11 +1,36 @@
-<section data-topic="demo" data-menu-title="Demo implementation">
-  <h4>The demo is a <mark>real app slice</mark>, not a toy counter</h4>
-  <small>
-    <ul>
-      <li class="fragment">A draft form for new todos</li>
-      <li class="fragment">Category management and multiple filters</li>
-      <li class="fragment">Bulk actions over the currently visible subset</li>
-      <li class="fragment">A debug panel driven by the same mutation events used for persistence and invalidation</li>
-    </ul>
+<section data-topic="demo" data-menu-title="App shell">
+  <h4 balance><code>components/App/_App.js</code>: one real app shell, not one lonely button</h4>
+  <small balance>
+    This chapter is where the tiny runtime stops being theory. The app view is a little house made of small rooms, and every room uses the same store, signals, and template helpers we already studied.
   </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class="fragment"><code>appView()</code> assembles the header, stats, list, side panels, debug panel, and both modals</li>
+          <li class="fragment">Every room is just a function that returns <code>html</code>, so composition stays plain and readable</li>
+          <li class="fragment">No room owns secret state; they all read from the same shared truth box</li>
+          <li class="fragment">That is why this demo feels like a small product slice, not a stage prop</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class="code-stack">
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function appView() {
+  return html`
+    ${appHeader()}
+    <main data-component="app-shell">
+      ${statsRow()}
+      ${todoListPanel()}
+    </main>
+    <aside data-slot="controls">${filtersPanel()} ${bulkActionsPanel()}</aside>
+    <aside data-slot="debug-sidebar">${debugPanel()}</aside>
+    ${todoModal()} ${categoryModal()}
+  `
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
 </section>

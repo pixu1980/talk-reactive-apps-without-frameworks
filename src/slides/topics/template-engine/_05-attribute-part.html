@@ -1,0 +1,50 @@
+<section data-topic="template-engine" data-menu-title="AttributePart">
+  <h4 balance><code>_attribute-part.js</code>: plain attributes plus the most opinionated directive in the engine</h4>
+  <small balance>
+    This file starts simple and then becomes surprisingly sophisticated. It can write ordinary attributes, subscribe to signals, and run the two way <code>model()</code> directive with cursor preservation and a select specific bug fix.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class="fragment"><code>setValue()</code> is the traffic cop: route <code>model(...)</code> to <code>commitModel()</code>, route signals through <code>bindSignal()</code>, otherwise commit a normal attribute</li>
+          <li class="fragment"><code>commit()</code> maps <code>null</code> and <code>false</code> to attribute removal, <code>true</code> to an empty attribute, and everything else to a string</li>
+          <li class="fragment"><code>commitModel()</code> caches bindings by event, property, and signal identity, so stable model shapes do not tear down listeners every rerender</li>
+          <li class="fragment"><code>sync()</code> handles <code>checked</code> versus <code>value</code>, preserves text selection while typing, and <code>syncAfterRender()</code> gives <code>&lt;select&gt;</code> one extra microtask so options exist first</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class="code-stack">
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+setValue(value) {
+  if (this.name === "model" && isDirective(value, "model")) {
+    this.commitModel(value.payload)
+    this.value = value
+    return
+  }
+
+  if (isSignalLike(value)) {
+    this.disposeModel()
+    this.bindSignal(value, (resolved) => this.commit(resolved))
+    return
+  }
+
+  this.disposeModel()
+  this.disposeSignal()
+  this.commit(value)
+}
+
+const syncAfterRender = () => {
+  sync()
+  if (this.element instanceof HTMLSelectElement) {
+    queueMicrotask(() => {
+      if (this._modelBinding === binding && this.element.isConnected) sync()
+    })
+  }
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>

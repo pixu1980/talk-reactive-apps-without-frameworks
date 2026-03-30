@@ -1,0 +1,44 @@
+<section data-topic="template-engine" data-menu-title="range helpers">
+  <h4 balance><code>_range.js</code>: comment markers become a real DOM editing toolkit</h4>
+  <small balance>
+    Proposed DOM Parts would give the browser native update slots. We do not have that here, so this file builds the minimum surgery kit needed to treat two comments as a movable, replaceable DOM range.
+  </small>
+  <comparison>
+    <left>
+      <small>
+        <ul>
+          <li class="fragment"><code>clearRange()</code> removes everything between start and end markers without touching the markers themselves</li>
+          <li class="fragment"><code>moveRangeBefore()</code> lifts a whole block into a fragment and reinserts it, so keyed list moves can preserve real DOM nodes instead of recreating them</li>
+          <li class="fragment"><code>isRangeBeforeReference()</code> prevents pointless moves during repeat reconciliation by checking whether the block is already in the right place</li>
+          <li class="fragment"><code>normalizeNode()</code>, <code>isIterable()</code>, and <code>inferModelProperty()</code> are the tiny helpers that let the bigger parts stay readable</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <article class="code-stack">
+        <pre><code data-trim data-line-numbers class="hljs javascript">
+export function clearRange(start, end) {
+  let current = start.nextSibling
+  while (current && current !== end) {
+    const next = current.nextSibling
+    current.remove()
+    current = next
+  }
+}
+
+export function moveRangeBefore(start, end, referenceNode) {
+  const fragment = document.createDocumentFragment()
+  let current = start
+  while (current) {
+    const next = current.nextSibling
+    fragment.append(current)
+    if (current === end) break
+    current = next
+  }
+  referenceNode.parentNode.insertBefore(fragment, referenceNode)
+}
+        </code></pre>
+      </article>
+    </right>
+  </comparison>
+</section>
