@@ -1,32 +1,25 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <title>Reactive Apps Without Frameworks</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="/talk-reactive-apps-without-frameworks.ebeadb08.css">
-  </head>
-  <body>
-    <main class="reveal">
-      <div class="slides">
-        <section intro="" balance="">
+<!DOCTYPE html><html lang=en><meta charset=utf-8><title>Reactive Apps Without Frameworks</title><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=color-scheme content="light dark"><link rel=stylesheet href=https://pixu1980.github.io/reactive-apps-without-frameworks/talk-reactive-apps-without-frameworks.c31d616c.css><body>
+    <main class=reveal>
+      <div class=slides>
+        <section intro balance>
   <h1>Reactive <mark>Apps</mark></h1>
   <h2>
-    <span class="fragment">... <mark>without</mark> frameworks</span>
+    <span class=fragment>... <mark>without</mark> frameworks</span>
   </h2>
 </section>
 
 <section>
-  <section pixu="" data-transition="convex">
+  <section pixu data-transition=convex>
     <comparison>
       <left>
         <figure>
           <picture>
-            <source srcset="/pixu.8dc4bcd7.webp" type="image/webp">
-            <img src="/pixu.8cd71433.jpg" alt="Pixu">
+            <source srcset=https://pixu1980.github.io/reactive-apps-without-frameworks/pixu.ea6d4c65.webp type=image/webp>
+            <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/pixu.06482de6.jpg alt=Pixu>
           </picture>
         </figure>
         <h3>Emiliano <mark>Pisu</mark></h3>
-        <small balance="" class="fragment">
+        <small balance class=fragment>
           <p><mark>Father</mark> of 2 lovely "monsters"</p>
           <p><mark>D&amp;D</mark> master, player ... whatever</p>
           <p>
@@ -36,33 +29,33 @@
           </p>
         </small>
       </left>
-      <right class="fragment">
+      <right class=fragment>
         <h6>
-          <img src="/linkedin.1b8d1573.svg" alt="pixu1980@linkedin">
+          <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/linkedin.936119c7.svg alt=pixu1980@linkedin>
           linkedin.com/in/pixu1980
         </h6>
         <h6>
-          <img src="/github.dd65c88f.svg" alt="pixu1980@github">
+          <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/github.c428ff18.svg alt=pixu1980@github>
           github.com/pixu1980
         </h6>
         <h6>
-          <img src="/codepen.1d70fbe2.svg" alt="pixu1980@codepen">
+          <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/codepen.29dfebfb.svg alt=pixu1980@codepen>
           codepen.io/pixu1980
         </h6>
         <h6>
-          <img src="/linkedin.1b8d1573.svg" alt="devdojo@linkedin">
+          <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/linkedin.936119c7.svg alt=devdojo@linkedin>
           linkedin.com/company/dev-dojo-it/
         </h6>
         <h6>
-          <img src="/youtube.33d88a05.svg" alt="devdojo@youtube">
+          <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/youtube.d8a17c13.svg alt=devdojo@youtube>
           youtube.com/@devdojo_it
         </h6>
         <h6>
-          <img src="/twitch.b8c97bdd.svg" alt="devdojo@twitch">
+          <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/twitch.52bbfedf.svg alt=devdojo@twitch>
           twitch.tv/devdojo_it
         </h6>
         <h6>
-          <img src="/telegram.baf0a86a.svg" alt="devdojo@telegram">
+          <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/telegram.ec65b338.svg alt=devdojo@telegram>
           @devdojo_it
         </h6>
       </right>
@@ -79,152 +72,127 @@
   </section>
   <section>
     <h3>What about <mark>frameworks</mark>?</h3>
-    <p balance="" class="fragment">Frameworks <mark>were great</mark>, but they are <mark>not the only way</mark> to build reactive apps...</p>
+    <p balance class=fragment>Frameworks <mark>were great</mark>, but they are <mark>not the only way</mark> to build reactive apps...</p>
   </section>
   <section>
-    <p balance="">...specially with the recent and upcoming evolution of <mark>Web APIs combined with LLMs</mark>.</p>
+    <p balance>...specially with the recent and upcoming evolution of <mark>Web APIs combined with LLMs</mark>.</p>
   </section>
   <section>
     <p>🚨 Bold Opinion Alert #1 🚨</p>
-    <h4 balance="" class="fragment">
+    <h4 balance class=fragment>
       After years of "experimentation" in Libraries and Frameworks...
-      <span class="fragment">
+      <span class=fragment>
         the <mark>web standards</mark> are <br>
         <mark>coming back</mark> into the field!
       </span>
     </h4>
     <br>
-    <figure class="fragment">
-      <img src="/yoda-you-must-unlearn.d450da59.gif" alt="Jedi Master Yoda saying 'You must unlearn what you have learned'" width="60%">
+    <figure class=fragment>
+      <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/yoda-you-must-unlearn.3bbd05d3.gif alt="Jedi Master Yoda saying 'You must unlearn what you have learned'" width=60%>
     </figure>
   </section>
   <section>
     <h3>What about the <mark>Web APIs</mark>?</h3>
-    <p balance="" class="fragment">A custom implementation of <mark>a reactive runtime</mark> built on top of modern Web APIs and TC39 Proposals...</p>
+    <p balance class=fragment>A custom implementation of <mark>a reactive runtime</mark> built on top of modern Web APIs and TC39 Proposals...</p>
   </section>
   <section>
-    <p balance="">...without shipping <mark>anything else than vanillaJS</mark> runtime code:</p>
+    <p balance>...without shipping <mark>anything else than vanillaJS</mark> runtime code:</p>
     <ul>
-      <li class="fragment"><mark>TC39 Signals</mark> proposal for reactive behaviors</li>
-      <li class="fragment"><mark>Proxy API</mark> for path-aware state management</li>
-      <li class="fragment"><mark>DOM Parts</mark> proposals for persistent update slots</li>
-      <li class="fragment"><mark>Tagged Template Literals</mark> for declarative views</li>
+      <li class=fragment><mark>TC39 Signals</mark> proposal for reactive behaviors</li>
+      <li class=fragment><mark>Proxy API</mark> for path-aware state management</li>
+      <li class=fragment><mark>DOM Parts</mark> proposals for persistent update slots</li>
+      <li class=fragment><mark>Tagged Template Literals</mark> for declarative views</li>
     </ul>
   </section>
   <section>
     <p>🚨 Bold Opinion Alert #2 🚨</p>
-    <h4 balance="" class="fragment">
+    <h4 balance class=fragment>
       With these APIs, we can build <mark>real apps</mark> with <mark>no framework runtime</mark> at all...
-      <span class="fragment">and still have a <mark>great DX</mark>!</span>
+      <span class=fragment>and still have a <mark>great DX</mark>!</span>
     </h4>
     <br>
-    <figure class="fragment">
-      <img src="/morpheus-show-me.11847acc.gif" alt="Animated reaction meme of Morpheus saying 'Show me'" width="60%">
+    <figure class=fragment>
+      <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/morpheus-show-me.58c5a250.gif alt="Animated reaction meme of Morpheus saying 'Show me'" width=60%>
     </figure>
   </section>
   <section>
     <h3>What about <mark>the demo</mark>?</h3>
-    <p balance="" class="fragment">
+    <p balance class=fragment>
       A Todo List app with: <mark>categories</mark>, <mark>priorities</mark>, <mark>persistence</mark>, <mark>filters</mark>, <mark>bulk actions</mark> and a <mark>live event log</mark> to show the
       inner workings of the runtime and UI.
     </p>
   </section>
   <section>
     <p>🚨 Bold Opinion Alert #3 🚨</p>
-    <h4 balance="" class="fragment">
+    <h4 balance class=fragment>
       If you can <mark>build a real demo</mark> with these APIs, then you can <mark>build real apps</mark>...
-      <span class="fragment">and if you can build real apps, then you can <mark>build any app</mark>!</span>
+      <span class=fragment>and if you can build real apps, then you can <mark>build any app</mark>!</span>
     </h4>
     <br>
-    <figure class="fragment">
-      <img src="/luke-thats-impossible.b0a53233.gif" alt="Luke Skywalker saying 'That's impossible'" width="60%">
+    <figure class=fragment>
+      <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/luke-thats-impossible.4ca9ccaf.gif alt="Luke Skywalker saying 'That's impossible'" width=60%>
     </figure>
   </section>
   <section>
     <h3>Scope and <mark>honesty</mark></h3>
-    <small balance="">
+    <small balance>
       <ul>
-        <li class="fragment">This is <mark>not</mark> a framework replacement manifesto</li>
-        <li class="fragment">This is a <mark>tiny runtime</mark> to study data flow, rendering and tradeoffs</li>
-        <li class="fragment">This is <mark>not</mark> a tested production-ready solution</li>
+        <li class=fragment>This is <mark>not</mark> a framework replacement manifesto</li>
+        <li class=fragment>This is a <mark>tiny runtime</mark> to study data flow, rendering and tradeoffs</li>
+        <li class=fragment>This is <mark>not</mark> a tested production-ready solution</li>
       </ul>
     </small>
   </section>
   <section>
     <h3><mark>DevX</mark></h3>
-    <small balance="">
+    <small balance>
       <ul>
-        <li class="fragment">Build a <mark>reactive UI stack</mark> from platform primitives, not from framework abstractions</li>
-        <li class="fragment">
+        <li class=fragment>Build a <mark>reactive UI stack</mark> from platform primitives, not from framework abstractions</li>
+        <li class=fragment>
           Centralize a <mark>Store</mark> emitting <mark>CustomEvents</mark>, sync with <mark>Signals</mark> to target precise <mark>DOM parts</mark> updates instead of diffing the whole tree
         </li>
-        <li class="fragment">Keep view authoring expressive with <mark>tagged templates</mark>, <mark>conditionals</mark>, <mark>directives</mark> and <mark>keyed loop</mark></li>
+        <li class=fragment>Keep view authoring expressive with <mark>tagged templates</mark>, <mark>conditionals</mark>, <mark>directives</mark> and <mark>keyed loop</mark></li>
       </ul>
     </small>
   </section>
   <section>
     <h2>
       Are you <mark>nuts</mark>? <br>
-      <span class="fragment"><mark>without</mark> frameworks?</span>
+      <span class=fragment><mark>without</mark> frameworks?</span>
     </h2>
-    <figure class="fragment">
-      <img src="/homer-lets-just-get-outta-here.bcf730fe.gif" alt="Animated reaction meme saying let's just get outta here" width="60%">
+    <figure class=fragment>
+      <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/homer-lets-just-get-outta-here.1f25e7c8.gif alt="Animated reaction meme saying let's just get outta here" width=60%>
     </figure>
   </section>
 </section>
 
 
 <section>
-  <!-- Proxy store -->
-  <section data-topic="store" data-menu-title="Store theory">
+  
+  <section data-topic=store data-menu-title="Store theory">
   <h3>The <mark>Store</mark></h3>
 </section>
-<section data-topic="store" data-menu-title="Store theory">
-  <h4 balance="">What a Store <mark>actually is</mark>?</h4>
-  <small balance="">
+<section data-topic=store data-menu-title="Store theory">
+  <h4 balance>What a Store <mark>actually is</mark>?</h4>
+  <small balance>
     A store is <mark>a shared state tree</mark> plus a <mark>notification contract</mark>. It gives the app a single source of <mark>truth</mark> for <mark>data</mark> and a predictable way to tell
     the rest of the application when <mark>data changes</mark>.
   </small>
 </section>
-<!-- <section data-topic="store">
-  <small>
-    <comparison>
-      <left>
-        <small>
-          <ul>
-            <li>A store is useful when state has app shaped structure: lists, filters, preferences, drafts, UI flags, and anything else that should live in one coherent <mark>state tree</mark></li>
-            <li class="fragment">That tree becomes the <mark>source of truth</mark>, so readers and writers stop inventing their own scattered copies of the same information</li>
-            <li class="fragment">The store is not the renderer and it is not the business logic itself; it is the stable place where both of those layers meet the current state</li>
-            <li class="fragment">This is why <mark>path based APIs</mark> feel natural here: the store mirrors the structure of the app, so callers can talk about exact branches of that tree</li>
-          </ul>
-        </small>
-      </left>
-      <right>
-        <small>
-          <ul>
-            <li>Behind the scenes, a store usually needs three abilities: intercept writes, preserve consistent object behavior, and notify observers with safe payloads</li>
-            <li class="fragment">In this implementation those jobs are split across <code>Proxy</code>, <code>Reflect</code>, cloning, and <code>CustomEvent</code></li>
-            <li class="fragment">That separation matters because each concept does one boring job well instead of creating one giant magical state object</li>
-            <li class="fragment">In one sentence: a store is shared state with an explicit observation boundary</li>
-          </ul>
-        </small>
-      </right>
-    </comparison>
-  </small>
-</section> -->
 
-  <section data-topic="store" data-menu-title="Proxy + Reflect">
-  <h4 balance=""><mark>_store.js</mark>: where <mark>Proxy</mark> watches and <mark>Reflect</mark> does the work</h4>
-  <small balance="">
+
+  <section data-topic=store data-menu-title="Proxy + Reflect">
+  <h4 balance><mark>_store.js</mark>: where <mark>Proxy</mark> watches and <mark>Reflect</mark> does the work</h4>
+  <small balance>
     This is where everything comes together. The class wraps the raw state tree in a <mark>Proxy</mark>, uses <mark>Reflect</mark> to preserve normal object behavior, and turns ordinary reads and
     writes into something the rest of the app can observe.
   </small>
 </section>
 
-<section data-topic="store">
-  <h4 balance=""><mark>Store</mark></h4>
-  <article class="code-stack">
-    <pre>      <code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=store>
+  <h4 balance><mark>Store</mark></h4>
+  <article class=code-stack>
+    <pre>      <code data-trim data-line-numbers class="hljs javascript">
 constructor(initialState) {
   // Deep-clone the initial state, cache proxy identity,
   // and expose the proxied tree.
@@ -302,18 +270,18 @@ createProxy(target, path) {
   </article>
 </section>
 
-  <section data-topic="store" data-menu-title="CustomEvent">
-  <h4 balance=""><mark>emitChange()</mark>: the store speaks with <mark>CustomEvent</mark></h4>
-  <small balance="">
+  <section data-topic=store data-menu-title=CustomEvent>
+  <h4 balance><mark>emitChange()</mark>: the store speaks with <mark>CustomEvent</mark></h4>
+  <small balance>
     A store is only useful if the rest of the app <mark>can "hear" it</mark>. Here the store does not call framework hooks or hidden subscriptions. It creates one explicit browser
     <mark>CustomEvent</mark>, gives it a clear payload, and lets anything else <mark>listen</mark>.
   </small>
 </section>
 
-<section data-topic="store">
-  <h4 balance=""><mark>EmitChange</mark></h4>
-  <article class="code-stack">
-    <pre>      <code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=store>
+  <h4 balance><mark>EmitChange</mark></h4>
+  <article class=code-stack>
+    <pre>      <code data-trim data-line-numbers class="hljs javascript">
 emitChange(path, oldValue, newValue) {
   // Every successful mutation becomes a
   // browser native CustomEvent named
@@ -341,61 +309,36 @@ emitChange(path, oldValue, newValue) {
   </article>
 </section>
 
-  <!-- <include src="./slides/topics/store/_03-public-api.html"></include> -->
+  
 </section>
 
 <section>
-  <!-- Signals runtime -->
-  <section data-topic="signals" data-menu-title="Signal theory">
+  
+  <section data-topic=signals data-menu-title="Signal theory">
   <h3>The <mark>Signal</mark></h3>
 </section>
-<section data-topic="signals" data-menu-title="Signal theory">
-  <h4 balance="">What a Signal <mark>actually is</mark>?</h4>
-  <small balance="">
+<section data-topic=signals data-menu-title="Signal theory">
+  <h4 balance>What a Signal <mark>actually is</mark>?</h4>
+  <small balance>
     A signal is a <mark>reactive value wrapper</mark>. It gives the runtime <mark>one place to read</mark> and <mark>one stable way to know who must react later</mark> when that value changes.
   </small>
 </section>
 
-<!-- <section data-topic="signals">
-  <small>
-    <comparison>
-      <left>
-        <small>
-          <ul>
-            <li>At the most basic level, a <mark>signal</mark> answers two questions: what is the value right now, and who should be notified if it changes</li>
-            <li class="fragment">That makes a signal more than a variable, because ordinary variables do not keep a relationship graph around them</li>
-            <li class="fragment">Some signals store concrete state, some derive new values from other signals, and some exist only to run side effects when dependencies move</li>
-            <li class="fragment">So the signal system is really a <mark>dependency graph</mark> made of producers and consumers, not just a box with data inside</li>
-          </ul>
-        </small>
-      </left>
-      <right>
-        <small>
-          <ul>
-            <li>The key concept is tracking: when code reads a signal during a reactive pass, the runtime records that relationship automatically</li>
-            <li class="fragment">The next key concept is invalidation: when an upstream signal changes, dependents become dirty or scheduled instead of recomputing blindly all the time</li>
-            <li class="fragment">This is why signals feel precise: updates follow actual data dependencies instead of broad component or page level rerenders</li>
-            <li class="fragment">In one sentence: a signal is a value with memory of who depends on it</li>
-          </ul>
-        </small>
-      </right>
-    </comparison>
-  </small>
-</section> -->
 
-  <section data-topic="signals" data-menu-title="BaseSignal">
-  <h4 balance=""><mark>_base-signal.js</mark>: the shared wiring for every signal</h4>
-  <small balance="">
+
+  <section data-topic=signals data-menu-title=BaseSignal>
+  <h4 balance><mark>_base-signal.js</mark>: the shared wiring for every signal</h4>
+  <small balance>
     This file is deliberately tiny. It does not store app data and it does not compute derived values. Its whole job is to say: "I can be <mark>tracked</mark>, I can be <mark>subscribed to</mark>, and
     I can <mark>notify listeners</mark>
     when I change."
   </small>
 </section>
 
-<section data-topic="signals">
-  <h4 balance=""><mark>BaseSignal</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=signals>
+  <h4 balance><mark>BaseSignal</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export class BaseSignal {
   constructor() {
     // subscribers is a Set, so each listener is
@@ -432,18 +375,18 @@ export class BaseSignal {
   </article>
 </section>
 
-  <section data-topic="signals" data-menu-title="StateSignal">
-  <h4 balance=""><mark>_state-signal.js</mark>: the box that actually holds a value</h4>
-  <small balance="">
+  <section data-topic=signals data-menu-title=StateSignal>
+  <h4 balance><mark>_state-signal.js</mark>: the box that actually holds a value</h4>
+  <small balance>
     If <mark>BaseSignal</mark> is the wiring, <mark>StateSignal</mark> is the first real piece of state. It stores one concrete value, exposes tracked and untracked reads, and only notifies dependents
     when the value really changes.
   </small>
 </section>
 
-<section data-topic="signals">
-  <h4 balance=""><mark>StateSignal</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=signals>
+  <h4 balance><mark>StateSignal</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export class StateSignal extends BaseSignal {
   // Extend BaseSignal so this signal inherits
   // the shared subscription and tracking wiring.
@@ -480,18 +423,18 @@ export class StateSignal extends BaseSignal {
   </article>
 </section>
 
-  <section data-topic="signals" data-menu-title="Collector context">
-  <h4 balance=""><mark>_collector-context.js</mark>: the clipboard that answers "who is listening right now?"</h4>
-  <small balance="">
+  <section data-topic=signals data-menu-title="Collector context">
+  <h4 balance><mark>_collector-context.js</mark>: the clipboard that answers "who is listening right now?"</h4>
+  <small balance>
     Reactive tracking looks magical until you reduce it to one simple rule: while a <mark>computed</mark> or <mark>effect</mark> runs, remember who it is. Then every signal read can attach itself to
     that <mark>active collector</mark>.
   </small>
 </section>
 
-<section data-topic="signals">
-  <h4 balance=""><mark>CollectorContext</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=signals>
+  <h4 balance><mark>CollectorContext</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // collectors can nest, so the active one
 // always lives on top of the stack.
 const collectorStack = [];
@@ -533,19 +476,19 @@ export function withoutCollector(callback) {
   </article>
 </section>
 
-  <section data-topic="signals" data-menu-title="ComputedSignal">
-  <h4 balance=""><mark>_computed-signal.js</mark>: the lazy brain that derives new values</h4>
-  <small balance="">
+  <section data-topic=signals data-menu-title=ComputedSignal>
+  <h4 balance><mark>_computed-signal.js</mark>: the lazy brain that derives new values</h4>
+  <small balance>
     This is the <mark>heart of the graph</mark>. A computed signal does not own data like state does. Instead, it remembers how to <mark>derive data</mark>, which signals it depended on last time, and
     whether that <mark>cached answer</mark>
     is still trustworthy.
   </small>
 </section>
 
-<section data-topic="signals">
-  <h4 balance=""><mark>ComputedSignal</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=signals>
+  <h4 balance><mark>ComputedSignal</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export class ComputedSignal extends BaseSignal {
   constructor(compute, options = {}) {
     // Store the compute function, the equality
@@ -600,18 +543,18 @@ export class ComputedSignal extends BaseSignal {
   </article>
 </section>
 
-  <section data-topic="signals" data-menu-title="EffectCollector">
-  <h4 balance=""><mark>_effect-collector.js</mark>: the runner that lets the graph touch the outside world</h4>
-  <small balance="">
+  <section data-topic=signals data-menu-title=EffectCollector>
+  <h4 balance><mark>_effect-collector.js</mark>: the runner that lets the graph touch the outside world</h4>
+  <small balance>
     Effects are where <mark>reactivity becomes visible</mark>. Rendering, logging, syncing, measuring: none of those produce a derived value, so they live in a <mark>collector</mark> that tracks
     reads, resubscribes on every run, and hands reruns to the <mark>scheduler</mark>.
   </small>
 </section>
 
-<section data-topic="signals">
-  <h4 balance=""><mark>EffectCollector</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=signals>
+  <h4 balance><mark>EffectCollector</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export class EffectCollector {
   constructor(callback) {
     // Initialize the callback, dependency map,
@@ -647,18 +590,18 @@ export class EffectCollector {
   </article>
 </section>
 
-  <section data-topic="signals" data-menu-title="Scheduler">
-  <h4 balance=""><mark>_scheduler.js</mark>: the tiny batching loop that keeps rerenders calm</h4>
-  <small balance="">
+  <section data-topic=signals data-menu-title=Scheduler>
+  <h4 balance><mark>_scheduler.js</mark>: the tiny batching loop that keeps rerenders calm</h4>
+  <small balance>
     Without <mark>scheduling</mark>, three quick writes could mean three immediate reruns. This file is the polite <mark>traffic controller</mark>: collect jobs in a set, wait until the current
     JavaScript stack is done, then flush them once in a <mark>predictable batch</mark>.
   </small>
 </section>
 
-<section data-topic="signals">
-  <h4 balance=""><mark>Scheduler</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=signals>
+  <h4 balance><mark>Scheduler</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // scheduled is a Set, so repeated
 // invalidations of the same effect collapse
 // into one queued job.
@@ -694,18 +637,18 @@ export function schedule(effect) {
   </article>
 </section>
 
-  <section data-topic="signals" data-menu-title="Public API">
-  <h4 balance=""><mark>index.js</mark>: the small public surface the rest of the app actually imports</h4>
-  <small balance="">
+  <section data-topic=signals data-menu-title="Public API">
+  <h4 balance><mark>index.js</mark>: the small public surface the rest of the app actually imports</h4>
+  <small balance>
     Internal files are easier to teach when they stay tiny and focused. The outside world, though, wants one <mark>friendly door</mark>. This module assembles that door: constructors, one
     <mark>escape hatch</mark> for untracked reads, one <mark>type guard</mark>, and one helper to <mark>create effects</mark>.
   </small>
 </section>
 
-<section data-topic="signals">
-  <h4 balance=""><mark>PublicApi</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=signals>
+  <h4 balance><mark>PublicApi</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export const Signal = {
   // Expose the two main reactive primitives
   // behind one calm public object.
@@ -741,68 +684,40 @@ export function effect(callback) {
 </section>
 
 <section>
-  <!-- Template engine -->
-  <section data-topic="template-engine" data-menu-title="DOM Part theory">
+  
+  <section data-topic=template-engine data-menu-title="DOM Part theory">
   <h3>The <mark>Template Engine</mark></h3>
 </section>
-<section data-topic="template-engine" data-menu-title="DOM Part theory">
-  <h4 balance="">What a Template Engine <mark>actually does</mark>?</h4>
-  <small balance="">
+<section data-topic=template-engine data-menu-title="DOM Part theory">
+  <h4 balance>What a Template Engine <mark>actually does</mark>?</h4>
+  <small balance>
     A <mark>Template Engine</mark> is responsible for <mark>efficiently updating</mark> the DOM based on changes in the underlying data. It identifies placeholders in the DOM and manages the rendering
     process.
   </small>
 </section>
 
-<section data-topic="template-engine" data-menu-title="DOM Part theory">
-  <h4 balance="">What a DOM Part <mark>actually is</mark>?</h4>
-  <small balance="">
+<section data-topic=template-engine data-menu-title="DOM Part theory">
+  <h4 balance>What a DOM Part <mark>actually is</mark>?</h4>
+  <small balance>
     A <mark>DOM Part</mark> is not a component and it is not even a DOM node. It is a remembered update slot inside a rendered template: a precise place where the engine knows how to write the next
     value <mark>without rebuilding everything</mark> around it.
   </small>
 </section>
 
-<!-- <section data-topic="template-engine">
-  <small>
-    <comparison>
-      <left>
-        <small>
-          <ul>
-            <li>Think of a <mark>part</mark> as a bookmark the template engine leaves behind when it finds a placeholder like text, an attribute, a property, or an event handler</li>
-            <li class="fragment">That <mark>bookmark</mark> stores two things: where updates must land and how that kind of update should be applied</li>
-            <li class="fragment">
-              So a <mark>child part</mark> manages DOM nodes, an <mark>attribute part</mark> manages attributes, a <mark>property part</mark> writes JavaScript properties, and an
-              <mark>event part</mark> owns listeners
-            </li>
-            <li class="fragment">The big idea is stability: the engine finds the slot once, then keeps reusing it instead of searching the DOM from scratch on every render</li>
-          </ul>
-        </small>
-      </left>
-      <right>
-        <small>
-          <ul>
-            <li>A <mark>part</mark> is the bridge between a template placeholder and the real browser surface that placeholder controls</li>
-            <li class="fragment">It is also the natural home for <mark>cleanup</mark>, because the same slot that subscribes to a signal should know how to unsubscribe when the binding changes</li>
-            <li class="fragment">That is why parts make incremental rendering possible: each slot can update locally without pretending the whole template is brand new</li>
-            <li class="fragment">In one sentence: a DOM part is a tiny persistent address for change</li>
-          </ul>
-        </small>
-      </right>
-    </comparison>
-  </small>
-</section> -->
 
-  <section data-topic="template-engine" data-menu-title="template-helpers">
-  <h4 balance=""><mark>_template-helpers.js</mark>: the tiny IR every template expression becomes</h4>
-  <small balance="">
+
+  <section data-topic=template-engine data-menu-title=template-helpers>
+  <h4 balance><mark>_template-helpers.js</mark>: the tiny IR every template expression becomes</h4>
+  <small balance>
     Before the engine can render anything, it needs one <mark>honest shape</mark> for "a template", and one <mark>honest shape</mark> for "a directive". This file gives us exactly that, with almost no
     <mark>magic</mark>.
   </small>
 </section>
 
-<section data-topic="template-engine">
-  <h4 balance=""><mark>TemplateHelpers</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=template-engine>
+  <h4 balance><mark>TemplateHelpers</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // html(strings, ...values) does not touch the
 // DOM; it returns a plain object description.
 export function html(strings, ...values) {
@@ -840,18 +755,18 @@ export function repeat(items, key, renderItem) {
   </article>
 </section>
 
-  <section data-topic="template-engine" data-menu-title="Part">
-  <h4 balance=""><mark>_part.js</mark>: one tiny base class for reactive DOM slots</h4>
-  <small balance="">
+  <section data-topic=template-engine data-menu-title=Part>
+  <h4 balance><mark>_part.js</mark>: one tiny base class for reactive DOM slots</h4>
+  <small balance>
     A lot of the engine becomes easier to understand once you see this file: a DOM part is just a place that can <mark>hold a value</mark>, optionally <mark>subscribe to a signal</mark>, and
     <mark>clean itself up</mark> when the source changes.
   </small>
 </section>
 
-<section data-topic="template-engine">
-  <h4 balance=""><mark>Part</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=template-engine>
+  <h4 balance><mark>Part</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export class Part {
   constructor() {
     // value remembers the last committed input
@@ -885,18 +800,18 @@ export class Part {
   </article>
 </section>
 
-  <section data-topic="template-engine" data-menu-title="EventPart">
-  <h4 balance=""><mark>_event-part.js</mark>: the whole event system in one very small file</h4>
-  <small balance="">
+  <section data-topic=template-engine data-menu-title=EventPart>
+  <h4 balance><mark>_event-part.js</mark>: the whole event system in one very small file</h4>
+  <small balance>
     This slide is a nice reminder that not every runtime primitive needs to be <mark>clever</mark>. Event bindings are not tracked values. They are simply <mark>listener replacement</mark> with
     <mark>disciplined cleanup</mark>.
   </small>
 </section>
 
-<section data-topic="template-engine">
-  <h4 balance=""><mark>EventPart</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=template-engine>
+  <h4 balance><mark>EventPart</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // EventPart does not extend Part, because
 // event listeners are not signal subscriptions.
 export class EventPart {
@@ -925,18 +840,18 @@ export class EventPart {
   </article>
 </section>
 
-  <section data-topic="template-engine" data-menu-title="PropertyPart">
-  <h4 balance=""><mark>_property-part.js</mark>: write to DOM properties, not HTML text</h4>
-  <small balance="">
+  <section data-topic=template-engine data-menu-title=PropertyPart>
+  <h4 balance><mark>_property-part.js</mark>: write to DOM properties, not HTML text</h4>
+  <small balance>
     Attributes are <mark>strings on markup</mark>. Properties are <mark>live JavaScript fields</mark> on elements. This part exists for the moments when the engine must talk to the
     <mark>actual DOM object</mark>, not to <mark>serialized HTML</mark>.
   </small>
 </section>
 
-<section data-topic="template-engine">
-  <h4 balance=""><mark>PropertyPart</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=template-engine>
+  <h4 balance><mark>PropertyPart</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // PropertyPart extends Part, so property
 // bindings inherit shared signal subscription
 // and cleanup behavior.
@@ -968,18 +883,18 @@ export class PropertyPart extends Part {
   </article>
 </section>
 
-  <section data-topic="template-engine" data-menu-title="AttributePart">
-  <h4 balance=""><mark>_attribute-part.js</mark>: plain attributes plus the most opinionated directive in the engine</h4>
-  <small balance="">
+  <section data-topic=template-engine data-menu-title=AttributePart>
+  <h4 balance><mark>_attribute-part.js</mark>: plain attributes plus the most opinionated directive in the engine</h4>
+  <small balance>
     This file starts simple and then becomes surprisingly sophisticated. It can write <mark>ordinary attributes</mark>, <mark>subscribe to signals</mark>, and run the two way
     <mark><code>model()</code></mark> directive with <mark>cursor preservation</mark> and a <mark>select specific bug fix</mark>.
   </small>
 </section>
 
-<section data-topic="template-engine">
-  <h4 balance=""><mark>AttributePart</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=template-engine>
+  <h4 balance><mark>AttributePart</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 setValue(value) {
   // setValue() is the traffic cop: route
   // model(...), route signals, otherwise
@@ -1016,18 +931,18 @@ const syncAfterRender = () =&gt; {
   </article>
 </section>
 
-  <section data-topic="template-engine" data-menu-title="range helpers">
-  <h4 balance=""><mark>_range.js</mark>: comment markers become a real DOM editing toolkit</h4>
-  <small balance="">
+  <section data-topic=template-engine data-menu-title="range helpers">
+  <h4 balance><mark>_range.js</mark>: comment markers become a real DOM editing toolkit</h4>
+  <small balance>
     Proposed <mark>DOM Parts</mark> would give the browser native update slots. We do not have that here, so this file builds the <mark>minimum surgery kit</mark> needed to treat two comments as a
     movable, <mark>replaceable DOM range</mark>.
   </small>
 </section>
 
-<section data-topic="template-engine">
-  <h4 balance=""><mark>Range</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=template-engine>
+  <h4 balance><mark>Range</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export function clearRange(start, end) {
   // clearRange() removes everything between
   // start and end markers without touching the
@@ -1058,18 +973,18 @@ export function moveRangeBefore(start, end, referenceNode) {
   </article>
 </section>
 
-  <section data-topic="template-engine" data-menu-title="ChildNodePart">
-  <h4 balance=""><mark>_child-node-part.js</mark>: the part that can render almost anything</h4>
-  <small balance="">
+  <section data-topic=template-engine data-menu-title=ChildNodePart>
+  <h4 balance><mark>_child-node-part.js</mark>: the part that can render almost anything</h4>
+  <small balance>
     If <mark>AttributePart</mark> speaks to element fields, <mark>ChildNodePart</mark> speaks to the <mark>area between two markers</mark>. <mark>Text</mark>, <mark>nodes</mark>,
     <mark>nested templates</mark>, <mark>keyed repeat</mark>, and <mark>signal driven lists</mark>: this is the heavyweight operator of the engine.
   </small>
 </section>
 
-<section data-topic="template-engine">
-  <h4 balance=""><mark>ChildNodePart</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=template-engine>
+  <h4 balance><mark>ChildNodePart</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 function createBlock(itemKey, referenceNode) {
   // createBlock() creates one keyed range and
   // one ChildNodePart that can be moved without
@@ -1111,18 +1026,18 @@ commitRepeat({ items, key, renderItem }) {
   </article>
 </section>
 
-  <section data-topic="template-engine" data-menu-title="parts barrel">
-  <h4 balance=""><mark>_parts.js</mark>: one import seam for all DOM part implementations</h4>
-  <small balance="">
+  <section data-topic=template-engine data-menu-title="parts barrel">
+  <h4 balance><mark>_parts.js</mark>: one import seam for all DOM part implementations</h4>
+  <small balance>
     This file is short, but it improves the <mark>architecture</mark> in a very practical way. The template instance builder can depend on <mark>one barrel</mark> instead of juggling a handful of
     sibling imports every time it maps descriptors to <mark>concrete parts</mark>.
   </small>
 </section>
 
-<section data-topic="template-engine">
-  <h4 balance=""><mark>Parts</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=template-engine>
+  <h4 balance><mark>Parts</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // Reexport all concrete part types from one
 // place, so template-instance gets one clean
 // dependency seam.
@@ -1135,18 +1050,18 @@ export { PropertyPart } from "./_property-part.js"
   </article>
 </section>
 
-  <section data-topic="template-engine" data-menu-title="instance ref">
-  <h4 balance=""><mark>_template-instance-ref.js</mark>: a tiny registry that breaks a circular import cleanly</h4>
-  <small balance="">
+  <section data-topic=template-engine data-menu-title="instance ref">
+  <h4 balance><mark>_template-instance-ref.js</mark>: a tiny registry that breaks a circular import cleanly</h4>
+  <small balance>
     This is one of those files that makes seasoned engineers smile. Instead of pretending <mark>circular imports</mark> do not exist, the runtime isolates the cycle behind a
     <mark>tiny register and read API</mark> with one <mark>loud failure mode</mark>.
   </small>
 </section>
 
-<section data-topic="template-engine">
-  <h4 balance=""><mark>TemplateInstanceRef</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=template-engine>
+  <h4 balance><mark>TemplateInstanceRef</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // TemplateInstance lives in module scope as a
 // mutable slot, not as a direct import.
 let TemplateInstance
@@ -1170,18 +1085,18 @@ export function getTemplateInstanceClass() {
   </article>
 </section>
 
-  <section data-topic="template-engine" data-menu-title="TemplateInstance">
-  <h4 balance=""><mark>_template-instance.js</mark>: compile once, clone fast, bind precise parts</h4>
-  <small balance="">
+  <section data-topic=template-engine data-menu-title=TemplateInstance>
+  <h4 balance><mark>_template-instance.js</mark>: compile once, clone fast, bind precise parts</h4>
+  <small balance>
     This is the <mark>parser</mark> and the <mark>materializer</mark>. It turns template literals into <mark>cached descriptors</mark>, then turns those descriptors into
     <mark>concrete part objects</mark> inside a cloned fragment. If the engine feels magical anywhere, it is here.
   </small>
 </section>
 
-<section data-topic="template-engine">
-  <h4 balance=""><mark>TemplateInstance</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=template-engine>
+  <h4 balance><mark>TemplateInstance</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 function getTemplate(strings) {
   // getTemplate() builds synthetic markup,
   // parses it once, and caches descriptor
@@ -1195,7 +1110,7 @@ function getTemplate(strings) {
     markup += chunk
     markup += chunk.match(ATTRIBUTE_PART_RE)
       ? `__part_${index}__`
-      : `<!--part:${index}-->`
+      : ``
   }
 
   const template = document.createElement("template")
@@ -1220,18 +1135,18 @@ update(values) {
   </article>
 </section>
 
-  <section data-topic="template-engine" data-menu-title="template runtime">
-  <h4 balance=""><mark>_template.js</mark>: the composition root that turns helpers and instances into rendering</h4>
-  <small balance="">
+  <section data-topic=template-engine data-menu-title="template runtime">
+  <h4 balance><mark>_template.js</mark>: the composition root that turns helpers and instances into rendering</h4>
+  <small balance>
     This file is where the engine becomes usable. It wires the concrete <mark>TemplateInstance</mark> class into the registry, reexports the helper surface, and gives us a
     <mark>render()</mark> function that keeps one stable root part per container.
   </small>
 </section>
 
-<section data-topic="template-engine">
-  <h4 balance=""><mark>Template</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=template-engine>
+  <h4 balance><mark>Template</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // setTemplateInstanceClass(TemplateInstance)
 // closes the loop opened by template-instance-ref.
 setTemplateInstanceClass(TemplateInstance)
@@ -1256,18 +1171,18 @@ export function render(result, container) {
   </article>
 </section>
 
-  <section data-topic="template-engine" data-menu-title="Public API">
-  <h4 balance=""><mark>index.js</mark>: the single friendly import path the rest of the app sees</h4>
-  <small balance="">
+  <section data-topic=template-engine data-menu-title="Public API">
+  <h4 balance><mark>index.js</mark>: the single friendly import path the rest of the app sees</h4>
+  <small balance>
     After all that plumbing, the public entry is intentionally <mark>boring</mark>. That is the mark of a <mark>good boundary</mark>. Internals can be rich, but the caller should get one
     <mark>calm door</mark> and a <mark>small set of names</mark>.
   </small>
 </section>
 
-<section data-topic="template-engine">
-  <h4 balance=""><mark>PublicApi</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=template-engine>
+  <h4 balance><mark>PublicApi</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // Re-export the whole template layer from one
 // place, so callers get one calm public door.
 export {
@@ -1285,18 +1200,18 @@ export {
 </section>
 
 <section>
-  <!-- Todo demo -->
-  <section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>App.js</mark>: one real app shell, not one lonely button</h4>
-  <small balance="">
+  
+  <section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>App.js</mark>: one real app shell, not one lonely button</h4>
+  <small balance>
     This chapter is where the <mark>tiny runtime</mark> stops being <mark>theory</mark>. The app view is a little house made of small rooms, and every room uses the same <mark>store</mark>,
     <mark>signals</mark>, and <mark>template helpers</mark> we already studied.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>App</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>App</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export function App() {
   // App() assembles the header, stats, list,
   // side panels, debug panel, and both modals.
@@ -1323,17 +1238,17 @@ export function App() {
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="State shape">
-  <h4 balance=""><mark>Data.js</mark>: the toy box where every piece starts</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title="State shape">
+  <h4 balance><mark>Data.js</mark>: the toy box where every piece starts</h4>
+  <small balance>
     Before the <mark>store</mark> can react, it needs one complete <mark>starting picture</mark>. This file builds that picture in one place, so <mark>reset</mark>, <mark>persistence</mark>, and
     <mark>rendering</mark> all agree on the same <mark>state shape</mark>.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>CreateSeedData</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>CreateSeedData</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export function createSeedData() {
   // todos, categories, and draft hold the
   // work the user can create and edit.
@@ -1383,17 +1298,17 @@ export function createSeedData() {
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="Store + bell">
-  <h4 balance=""><mark>StoreSetup.js</mark>: the bell that says "something changed"</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title="Store + bell">
+  <h4 balance><mark>StoreSetup.js</mark>: the bell that says "something changed"</h4>
+  <small balance>
     The <mark>proxy store</mark> already knows when data changes. This file turns that fact into app behavior: <mark>save the snapshot</mark>, update the <mark>debug log</mark>, and ring one tiny
     <mark>signal</mark> so the rest of the <mark>UI</mark> can wake up.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>StoreSetup</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>StoreSetup</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // store is the shared truth box created from
 // the seed state.
 export const store = new Store(initialState)
@@ -1422,17 +1337,17 @@ window.addEventListener("store:change", handleStoreChange)
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="Computed state">
-  <h4 balance=""><mark>Computed.js</mark>: little helpers that keep counting for us</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title="Computed state">
+  <h4 balance><mark>Computed.js</mark>: little helpers that keep counting for us</h4>
+  <small balance>
     A five year old version is: these are <mark>tiny robots</mark>. You give them the <mark>raw toy pile</mark>, and they keep answering questions like <mark>"which todos should I show?"</mark> and
     <mark>"how many are done?"</mark>
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>ComputedState</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>ComputedState</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export const visibleTodos = new Signal.Computed(() =&gt; {
   // visibleTodos listens to tickState and runs
   // the whole filtering pipeline.
@@ -1472,17 +1387,17 @@ export const summary = new Signal.Computed(() =&gt; {
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="Filter pipe">
-  <h4 balance=""><mark>Pipeline.js</mark>: one filter pipe, one job at a time</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title="Filter pipe">
+  <h4 balance><mark>Pipeline.js</mark>: one filter pipe, one job at a time</h4>
+  <small balance>
     Instead of making lots of <mark>temporary arrays</mark>, the app lets todos walk through a <mark>pipe</mark>. Each filter looks at one todo, decides yes or no, and passes only the
     <mark>matching ones</mark> to the next step.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>PipelineTodos</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>PipelineTodos</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export function pipelineTodos(todos, filters, language) {
   // fromArray() turns the todo list into a
   // lazy stream for the rest of the pipeline.
@@ -1512,17 +1427,17 @@ export function pipelineTodos(todos, filters, language) {
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="Actions">
-  <h4 balance=""><mark>Actions.js</mark>: the hands that move the toys</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title=Actions>
+  <h4 balance><mark>Actions.js</mark>: the hands that move the toys</h4>
+  <small balance>
     Actions are the places where the app says <mark>"change the world now"</mark>. They are <mark>boring on purpose</mark>: find something, replace it, add it, remove it, or
     <mark>rebuild the whole state</mark> from the seed.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>Actions</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>Actions</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export function updateTodo(id, patch) {
   // updateTodo() finds one item and replaces
   // it with a patched copy.
@@ -1554,16 +1469,16 @@ export function resetDemo() {
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="Render loop">
-  <h4 balance=""><mark>RenderLoop.js</mark>: when the bell rings, paint again</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title="Render loop">
+  <h4 balance><mark>RenderLoop.js</mark>: when the bell rings, paint again</h4>
+  <small balance>
     This is the slide where the <mark>chapters shake hands</mark>. <mark>Signals</mark> watch, the <mark>template engine</mark> renders, and the <mark>DOM</mark> changes for real.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>RenderLoop</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>RenderLoop</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 effect(() =&gt; {
   // The first effect() mirrors theme, color
   // scheme, and language onto the document.
@@ -1586,17 +1501,17 @@ tickState.set(performance.now())
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="model() helpers">
-  <h4 balance=""><mark>Helpers.js</mark>: two tiny translators for all our inputs</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title="model() helpers">
+  <h4 balance><mark>Helpers.js</mark>: two tiny translators for all our inputs</h4>
+  <small balance>
     We do not want every <mark>text field</mark> and <mark>checkbox</mark> to remember how to read and write the <mark>store</mark>. So the app builds <mark>two small helpers</mark>, and then reuses
     them everywhere.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>ModelHelpers</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>ModelHelpers</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export function storeModel(path, options = {}) {
   // storeModel(path) is the generic translator
   // for fields like filters.search.
@@ -1624,17 +1539,17 @@ export function todoModel(todoId, field, options = {}) {
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="Header">
-  <h4 balance=""><mark>Header.js</mark>: big buttons on top, tiny writes underneath</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title=Header>
+  <h4 balance><mark>Header.js</mark>: big buttons on top, tiny writes underneath</h4>
+  <small balance>
     The header looks rich, but its behavior is simple. <mark>Buttons</mark> call actions, selects use <mark>storeModel()</mark>, and the rest of the app updates because the same
     <mark>shared store</mark> keeps listening.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>Header</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs html">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>Header</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs html">
 &lt;!-- Buttons use plain event parts, while
 preferences.* writes happen through
 storeModel(). --&gt;
@@ -1661,17 +1576,17 @@ preferences so CSS and translations can react. --&gt;
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="Todo card">
-  <h4 balance=""><mark>TodoItem.js</mark>: one card where <mark>model()</mark> shows its magic</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title="Todo card">
+  <h4 balance><mark>TodoItem.js</mark>: one card where <mark>model()</mark> shows its magic</h4>
+  <small balance>
     This is the best "look, it is really used" slide. One <mark>todo card</mark> has <mark>checkboxes</mark>, <mark>text inputs</mark>, <mark>selects</mark>, a <mark>textarea</mark>, and a
     <mark>delete button</mark>, but they all stay tiny because the helpers do the boring work.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>TodoItem</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs html">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>TodoItem</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs html">
 &lt;!-- prop: checked and event: change map DOM
 booleans cleanly to store booleans. --&gt;
 &lt;input
@@ -1698,17 +1613,17 @@ event parts and model parts live together. --&gt;
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="repeat() list">
-  <h4 balance=""><mark>TodoList.js</mark>: one render function becomes a whole living list</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title="repeat() list">
+  <h4 balance><mark>TodoList.js</mark>: one render function becomes a whole living list</h4>
+  <small balance>
     A single todo card is nice, but the real trick is <mark>many cards that stay stable</mark> when <mark>filters</mark>, <mark>sorting</mark>, or <mark>language</mark> change. That is where
     <mark>repeat()</mark> earns its lunch.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>TodoList</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>TodoList</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 export function TodoList() {
   // visibleLabel drops into the template as a
   // computed signal, so the summary updates itself.
@@ -1734,22 +1649,22 @@ export function TodoList() {
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="Side panels">
-  <h4 balance=""><mark>StatsRow</mark>, <mark>Filters</mark>, <mark>BulkActions</mark>, <mark>DebugPanel</mark>: the same state wearing four costumes</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title="Side panels">
+  <h4 balance><mark>StatsRow</mark>, <mark>Filters</mark>, <mark>BulkActions</mark>, <mark>DebugPanel</mark>: the same state wearing four costumes</h4>
+  <small balance>
     The panels around the list are great teaching material because they all read the <mark>same brain</mark> in different ways. Some <mark>show counts</mark>, some <mark>write filters</mark>, some
     <mark>call actions</mark>, and one simply <mark>watches every mutation</mark> happen.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>SupportPanels</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>SupportPanels</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // StatsRow prints computed counts, so cards
 // stay dumb and the math stays centralized.
 ${statCard(totalCount, t(language, "stats.total"))}
         </code></pre>
-    <pre><code data-trim="" data-line-numbers="" class="hljs html">
+    <pre><code data-trim data-line-numbers class="hljs html">
 &lt;!-- Filters write into filters.* paths with
 storeModel(), which immediately changes
 visibleTodos. --&gt;
@@ -1767,7 +1682,7 @@ same store. --&gt;
   type="checkbox"
 /&gt;
         </code></pre>
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // The log itself is rendered with another
 // repeat() call.
 ${repeat(debugLogs, (entry) =&gt; entry.id, DebugLogEntry)}
@@ -1775,22 +1690,22 @@ ${repeat(debugLogs, (entry) =&gt; entry.id, DebugLogEntry)}
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="Modals + draft">
-  <h4 balance=""><mark>TodoModal</mark> and <mark>CategoryModal</mark>: popups are just more state</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title="Modals + draft">
+  <h4 balance><mark>TodoModal</mark> and <mark>CategoryModal</mark>: popups are just more state</h4>
+  <small balance>
     A common beginner mistake is to think <mark>dialogs</mark> need <mark>special magic</mark>. Here they do not. They simply open when the store says open, and their fields write into
     <mark>shared state</mark> just like the rest of the app.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h4 balance=""><mark>ModalsAndDraft</mark></h4>
-  <article class="code-stack">
-    <pre><code data-trim="" data-line-numbers="" class="hljs javascript">
+<section data-topic=demo data-menu-title=App>
+  <h4 balance><mark>ModalsAndDraft</mark></h4>
+  <article class=code-stack>
+    <pre><code data-trim data-line-numbers class="hljs javascript">
 // TodoModal() reads ui.todoModal.open and
 // returns nothing while the dialog stays closed.
 if (!modal.open) return ""
         </code></pre>
-    <pre><code data-trim="" data-line-numbers="" class="hljs html">
+    <pre><code data-trim data-line-numbers class="hljs html">
 &lt;!-- The whole form writes into draft.*, so add
 and edit flows can share one basket. --&gt;
 &lt;input model=${storeModel("draft.title")} /&gt;
@@ -1811,35 +1726,35 @@ addCategory(), so modals stay thin. --&gt;
   </article>
 </section>
 
-  <section data-topic="demo" data-menu-title="Open demo">
-  <h4 balance="">The runtime is not trapped in slides. It opens as a <mark>real app tab</mark>.</h4>
-  <small balance="">
+  <section data-topic=demo data-menu-title="Open demo">
+  <h4 balance>The runtime is not trapped in slides. It opens as a <mark>real app tab</mark>.</h4>
+  <small balance>
     No deck-only sandbox. The audience can open the same <mark>standalone demo</mark> we publish, poke it, and see the exact <mark>store</mark>, <mark>signals</mark>, <mark>directives</mark>, and
     <mark>render loop</mark> we just walked through.
   </small>
 </section>
-<section data-topic="demo" data-menu-title="App">
-  <h3 balance=""><mark>Demo Time</mark></h3>
-  <p balance="">Open the <a href="https://pixu1980.github.io/reactive-apps-without-frameworks-demo/" target="_blank" rel="noreferrer">here</a>.</p>
+<section data-topic=demo data-menu-title=App>
+  <h3 balance><mark>Demo Time</mark></h3>
+  <p balance>Open the <a href=https://pixu1980.github.io/reactive-apps-without-frameworks-demo/ target=_blank rel=noreferrer>here</a>.</p>
 </section>
-<section data-topic="demo" data-menu-title="App">
+<section data-topic=demo data-menu-title=App>
   <h4>All this <mark>takes just</mark>...</h4>
-  <figure class="fragment">
-    <img src="/build.1f7b91da.png" alt="" width="85%">
+  <figure class=fragment>
+    <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/build.ad75410f.png alt width=85%>
   </figure>
 </section>
-<section data-topic="demo" data-menu-title="App">
+<section data-topic=demo data-menu-title=App>
   <h2><mark>App</mark>lause!</h2>
 </section>
 
-  <section data-topic="demo" data-menu-title="Takeaways">
-  <h4 balance="">What the demo really <mark>proves</mark>?</h4>
+  <section data-topic=demo data-menu-title=Takeaways>
+  <h4 balance>What the demo really <mark>proves</mark>?</h4>
   <small>
     <ul>
-      <li class="fragment">The <mark>store</mark> is the <mark>truth box</mark>, and every part of the app keeps reading from the same box</li>
-      <li class="fragment"><mark>tickState</mark> is the bell that wakes computed signals and render effects after each mutation</li>
-      <li class="fragment"><mark>model()</mark> and <mark>repeat()</mark> are not cute helpers; they are the practical fingers that touch inputs and lists all day long</li>
-      <li class="fragment">
+      <li class=fragment>The <mark>store</mark> is the <mark>truth box</mark>, and every part of the app keeps reading from the same box</li>
+      <li class=fragment><mark>tickState</mark> is the bell that wakes computed signals and render effects after each mutation</li>
+      <li class=fragment><mark>model()</mark> and <mark>repeat()</mark> are not cute helpers; they are the practical fingers that touch inputs and lists all day long</li>
+      <li class=fragment>
         A <mark>tiny runtime</mark> can power a <mark>surprisingly rich interface</mark>, but the real product question is still how much of that runtime you want to <mark>own yourself</mark>
       </li>
     </ul>
@@ -1850,23 +1765,23 @@ addCategory(), so modals stay thin. --&gt;
 
 
 <section>
-  <section data-transition="convex">
+  <section data-transition=convex>
     <h4>Wrapping <mark>up</mark></h4>
-    <small balance="">
+    <small balance>
       The <mark>DOM</mark> can move back to the center of the rendering story. <mark>Signals</mark>, <mark>parts</mark> and <mark>tagged templates</mark> are enough to build a reactive app, as long as
       we stay honest about the <mark>missing abstractions</mark> and the <mark>engineering cost</mark>.
     </small>
   </section>
-  <section data-transition="convex">
+  <section data-transition=convex>
     <comparison>
       <left>
         <h4>Strengths</h4>
         <small>
           <ul>
-            <li class="fragment"><mark>DOM-first rendering</mark>, with node reuse instead of virtual tree diffing</li>
-            <li class="fragment"><mark>Small surface area</mark>, so the runtime stays readable and debuggable</li>
-            <li class="fragment"><mark>Concrete DX</mark>, with signals, directives and expressive templates</li>
-            <li class="fragment"><mark>Observable state</mark>, because every write has a path and an event payload</li>
+            <li class=fragment><mark>DOM-first rendering</mark>, with node reuse instead of virtual tree diffing</li>
+            <li class=fragment><mark>Small surface area</mark>, so the runtime stays readable and debuggable</li>
+            <li class=fragment><mark>Concrete DX</mark>, with signals, directives and expressive templates</li>
+            <li class=fragment><mark>Observable state</mark>, because every write has a path and an event payload</li>
           </ul>
         </small>
       </left>
@@ -1874,34 +1789,18 @@ addCategory(), so modals stay thin. --&gt;
         <h4>Tradeoffs</h4>
         <small>
           <ul>
-            <li class="fragment">The standards story is still <mark>evolving</mark>, so some primitives are emulated</li>
-            <li class="fragment">The runtime still needs <mark>real engineering</mark>, not just enthusiasm</li>
-            <li class="fragment">It is easy to accidentally rebuild <mark>framework complexity</mark> in a worse form</li>
-            <li class="fragment">Great as a <mark>learning base</mark>, not as a <mark>universal dogma</mark></li>
+            <li class=fragment>The standards story is still <mark>evolving</mark>, so some primitives are emulated</li>
+            <li class=fragment>The runtime still needs <mark>real engineering</mark>, not just enthusiasm</li>
+            <li class=fragment>It is easy to accidentally rebuild <mark>framework complexity</mark> in a worse form</li>
+            <li class=fragment>Great as a <mark>learning base</mark>, not as a <mark>universal dogma</mark></li>
           </ul>
         </small>
       </right>
     </comparison>
   </section>
-  <!-- <section data-transition="convex">
-    <h4>Technical lessons from the <mark>demo</mark></h4>
-    <small>
-      <ul>
-        <li class="fragment">A coarse invalidation bridge can still produce incremental DOM updates if parts stay stable</li>
-        <li class="fragment"><code>model</code> on <code>&lt;select&gt;</code> needs post-render resync because options materialize after the binding</li>
-        <li class="fragment">A live event log is only useful if it describes the final persisted state, not an intermediate one</li>
-        <li class="fragment">Small runtimes make bugs easier to understand because the entire stack still fits in your head</li>
-      </ul>
-    </small>
-  </section>
-  <section data-transition="convex">
-    <h4>References and <mark>status</mark></h4>
-    <small balance>
-      This deck runs on Reveal.js <mark>6.0.0</mark>. The talk borrows ideas from TC39 Signals and the DOM Parts proposal, but the code you saw is an explicit, local implementation built for learning and experimentation.
-    </small>
-  </section> -->
-  <section data-transition="convex">
-    <p balance="">
+  
+  <section data-transition=convex>
+    <p balance>
       <mark>Vanilla JS</mark> is not about giving up <mark>DX</mark>. It is about understanding which abstractions are <mark>essential</mark>, which are <mark>optional</mark>, and how far the
       <mark>platform</mark> can already take us.
     </p>
@@ -1909,13 +1808,13 @@ addCategory(), so modals stay thin. --&gt;
 </section>
 
 <section>
-  <section data-transition="convex">
+  <section data-transition=convex>
   <h4>Slides Links</h4>
-  <comparison links="">
+  <comparison links>
     <figure>
       <picture>
-        <source srcset="/slides.edab5ca8.webp" type="image/webp">
-        <img src="/slides.1deb7d95.png" alt="Slides">
+        <source srcset=https://pixu1980.github.io/reactive-apps-without-frameworks/slides.2ea575bf.webp type=image/webp>
+        <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/slides.41a9ad13.png alt=Slides>
       </picture>
       <figcaption>
         <small>Slides</small>
@@ -1923,8 +1822,8 @@ addCategory(), so modals stay thin. --&gt;
     </figure>
     <figure>
       <picture>
-        <source srcset="/slides-repo.0d605d4e.webp" type="image/webp">
-        <img src="/slides-repo.fe295744.png" alt="Slides Repo on Github">
+        <source srcset=https://pixu1980.github.io/reactive-apps-without-frameworks/slides-repo.d183e028.webp type=image/webp>
+        <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/slides-repo.4fb6490a.png alt="Slides Repo on Github">
       </picture>
       <figcaption>
         <small>Slides Repo</small>
@@ -1933,13 +1832,13 @@ addCategory(), so modals stay thin. --&gt;
   </comparison>
 </section>
 
-<section data-transition="convex">
+<section data-transition=convex>
   <h4>Demo Links</h4>
-  <comparison links="">
+  <comparison links>
     <figure>
       <picture>
-        <source srcset="/demo.51021307.webp" type="image/webp">
-        <img src="/demo.6d63f1d0.png" alt="Demo">
+        <source srcset=https://pixu1980.github.io/reactive-apps-without-frameworks/demo.d7431b9c.webp type=image/webp>
+        <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/demo.a3012f2b.png alt=Demo>
       </picture>
       <figcaption>
         <small>Demo</small>
@@ -1947,8 +1846,8 @@ addCategory(), so modals stay thin. --&gt;
     </figure>
     <figure>
       <picture>
-        <source srcset="/demo-repo.cd5cc568.webp" type="image/webp">
-        <img src="/demo-repo.ea532467.png" alt="Demo Repo on Github">
+        <source srcset=https://pixu1980.github.io/reactive-apps-without-frameworks/demo-repo.612c9ef9.webp type=image/webp>
+        <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/demo-repo.70aa547b.png alt="Demo Repo on Github">
       </picture>
       <figcaption>
         <small>Demo Repo</small>
@@ -1957,61 +1856,15 @@ addCategory(), so modals stay thin. --&gt;
   </comparison>
 </section>
 
-<!-- <section data-transition="convex">
-  <h4>Personal Links</h4>
-  <comparison links>
-    <figure>
-      <picture>
-        <source srcset="./assets/qrcodes/pixu-dev.png?as=webp" type="image/webp" />
-        <img src="./assets/qrcodes/pixu-dev.png" alt="Pixu.dev" />
-      </picture>
-      <figcaption>
-        <small>pixu.dev</small>
-      </figcaption>
-    </figure>
-    <figure>
-      <picture>
-        <source srcset="./assets/qrcodes/linkedin.png?as=webp" type="image/webp" />
-        <img src="./assets/qrcodes/linkedin.png" alt="Pixu LinkedIn Profile" />
-      </picture>
-      <figcaption>
-        <small>LinkedIn</small>
-      </figcaption>
-    </figure>
-  </comparison>
-</section>
 
-<section data-transition="convex">
-  <h4>DevDojo Links</h4>
-  <comparison links>
-    <figure>
-      <picture>
-        <source srcset="./assets/qrcodes/dev-dojo.png?as=webp" type="image/webp" />
-        <img src="./assets/qrcodes/dev-dojo.png" alt="devdojo.it" />
-      </picture>
-      <figcaption>
-        <small>devdojo.it</small>
-      </figcaption>
-    </figure>
-    <figure>
-      <picture>
-        <source srcset="./assets/qrcodes/dev-dojo-linkedin.png?as=webp" type="image/webp" />
-        <img src="./assets/qrcodes/dev-dojo-linkedin.png" alt="devdojo @ linkedin" />
-      </picture>
-      <figcaption>
-        <small>LinkedIn</small>
-      </figcaption>
-    </figure>
-  </comparison>
-</section> -->
 
-  <section class="slide-outro-taf" data-transition="convex">
-  <!-- <div sr-only data-menu-title>That's All Folks</div> -->
-  <audio data-autoplay="" src="/taf.d3b3531a.mp3">
-    <track default="" kind="captions" label="English" src="/taf.0add0f67.vtt" srclang="en">
+  <section class=slide-outro-taf data-transition=convex>
+  
+  <audio data-autoplay src=https://pixu1980.github.io/reactive-apps-without-frameworks/taf.f9b512b9.mp3>
+    <track default kind=captions label=English src=https://pixu1980.github.io/reactive-apps-without-frameworks/taf.368f303b.vtt srclang=en>
   </audio>
-  <div class="taf-wrapper">
-    <div class="circles">
+  <div class=taf-wrapper>
+    <div class=circles>
       <div class="circle one"></div>
       <div class="circle two"></div>
       <div class="circle three"></div>
@@ -2020,60 +1873,19 @@ addCategory(), so modals stay thin. --&gt;
       <div class="circle six"></div>
       <small>© 1987-2025 - Warner Bros. Entertainment Inc.</small>
     </div>
-    <figure pixu="">
+    <figure pixu>
       <picture>
-        <source srcset="/pixu.8dc4bcd7.webp" type="image/webp">
-        <img src="/pixu.8cd71433.jpg" alt="Pixu">
+        <source srcset=https://pixu1980.github.io/reactive-apps-without-frameworks/pixu.ea6d4c65.webp type=image/webp>
+        <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/pixu.06482de6.jpg alt=Pixu>
       </picture>
     </figure>
-    <svg aria-labelledby="taf-title" role="img" style="isolation: isolate" viewBox="0 0 566.44 157.5">
-      <title id="taf-title">That's All Folks closing title artwork</title>
-      <g id="thats-all-folks">
-        <path id="Q1" data-name="Q1" d="M14.07,103.92c-1.34,6.6-2,9.89-3.2,16.46l-1.65.87c.14-6,.23-9,.46-15Z"></path>
-        <path id="Q2" data-name="Q2" d="M22.06,99.79c-1.4,6.62-2.07,9.91-3.35,16.49l-1.66.86c.21-6,.34-9,.62-15.09Z"></path>
-        <path id="T1-1" data-name="T1" d="M102.69,61.11l1.43,1.13h0a40.47,40.47,0,0,1-4.31,4.55h0a47.22,47.22,0,0,1-4.87,3.84h0a57.45,57.45,0,0,1-5.34,3.24h0c-1.85,1-3.75,1.91-5.68,2.77h0q-3.66,1.62-7.79,3.09h0l-8.21,2.89h0c-2.72,1-5.33,1.9-7.86,2.82h0c-2.52.93-4.76,1.87-6.74,2.83h0a33.31,33.31,0,0,0-7.53,4.91h0a24.9,24.9,0,0,0-5.09,6h0a17.75,17.75,0,0,0-2.36,6.59h0a14.62,14.62,0,0,0,.62,6.71h0a9.72,9.72,0,0,0,2.19,3.78h0a7.41,7.41,0,0,0,3.32,2h0a10.31,10.31,0,0,0,4.22.22h0a16.63,16.63,0,0,0,4.85-1.56h0a26.81,26.81,0,0,0,4.37-2.7h0A30.46,30.46,0,0,0,62,110.43h0l1.16,1.06h0a29,29,0,0,1-4.68,4.64h0a30.65,30.65,0,0,1-5.8,3.69h0a19.64,19.64,0,0,1-5.3,1.72h0a12.69,12.69,0,0,1-5-.11h0a9.53,9.53,0,0,1-4.27-2.24h0a10.82,10.82,0,0,1-2.91-4.74h0a16.12,16.12,0,0,1-.88-5.88h0A17.9,17.9,0,0,1,35.47,103h0a21.55,21.55,0,0,1,2.79-5.1h0a32.51,32.51,0,0,1,4-4.54h0a36.81,36.81,0,0,1,4.89-3.87h0a46.76,46.76,0,0,1,5.33-3.05h0a74.43,74.43,0,0,1,7.1-3h0c2.56-.94,5.19-1.87,7.87-2.79h0l8.11-2.82h0c2.71-1,5.31-2,7.8-3.08h0c1.87-.83,3.69-1.71,5.48-2.66h0A52.51,52.51,0,0,0,94,69h0a45.18,45.18,0,0,0,4.62-3.62h0a36,36,0,0,0,4.06-4.3Z"></path>
-        <path id="T1-2" data-name="T1" d="M79.54,81l1.41.43h0a66.66,66.66,0,0,0-3.23,9.82h0c-.81,3.27-1.48,6.49-2,9.66h0q-.81,4.75-1.44,9.32h0c-.41,3-.9,6-1.47,8.8h0a72.38,72.38,0,0,1-2.09,8.06h0a33.52,33.52,0,0,1-3.25,7.14h0a28,28,0,0,1-5,6.07h0a30,30,0,0,1-7.33,4.84h0A24.47,24.47,0,0,1,48,147.44h0a14.21,14.21,0,0,1-5.81-.26h0a10,10,0,0,1-4.39-2.51h0A11.5,11.5,0,0,1,35,140.18h0a14.25,14.25,0,0,1-.55-2h0a9.87,9.87,0,0,1-.19-1.9h0l1.85-.35h0a12.84,12.84,0,0,0,.17,1.65h0a11,11,0,0,0,.45,1.75h0a9,9,0,0,0,2.83,4.24h0a9.4,9.4,0,0,0,4.21,1.91h0a13.62,13.62,0,0,0,5-.08h0A21.33,21.33,0,0,0,54,143.64h0a20.57,20.57,0,0,0,6.12-4.42h0a25.5,25.5,0,0,0,4.15-6h0A38.13,38.13,0,0,0,67,126h0q1.05-3.91,1.86-8.24h0q.81-4.32,1.59-8.94h0q.78-4.62,1.92-9.33h0a88.24,88.24,0,0,1,2.83-9.38h0A50.49,50.49,0,0,1,79.54,81Z"></path>
-        <path id="H-1" data-name="H" d="M94.58,96.07c-.7,4.48-1,6.71-1.72,11.18h0A58.62,58.62,0,0,1,95.45,101h0a40.44,40.44,0,0,1,3.07-5.4h0a25,25,0,0,1,3.42-4.13h0a12.2,12.2,0,0,1,3.68-2.5h0a5.28,5.28,0,0,1,2.23-.49h0a3,3,0,0,1,1.59.46h0a3.22,3.22,0,0,1,1,1.08h0a5.38,5.38,0,0,1,.58,1.4h0a8.76,8.76,0,0,1,.17,3h0a35.59,35.59,0,0,1-.55,3.6h0c-.25,1.27-.55,2.59-.87,4h0c-.32,1.36-.61,2.67-.86,4h0a31.6,31.6,0,0,0-.51,3.63h0a9,9,0,0,0,.22,3h0a2.82,2.82,0,0,0,.76,1.35h0a1.29,1.29,0,0,0,1.49.14h0a5.21,5.21,0,0,0,2.19-2.17h0a27,27,0,0,0,2-4.07h0c.64-1.58,1.26-3.29,1.84-5.14h0q.89-2.78,1.6-5.37h0l1.53.48h0c-.17.46-.38,1.17-.64,2.14h0c-.25,1-.55,2.07-.91,3.3h0c-.35,1.22-.76,2.5-1.24,3.84h0a33.41,33.41,0,0,1-1.63,3.8h0a17.15,17.15,0,0,1-2.06,3.19h0a6.54,6.54,0,0,1-2.54,2h0a8.87,8.87,0,0,1-1.87.54h0a4.11,4.11,0,0,1-1.85-.09h0a3.53,3.53,0,0,1-1.59-1h0a5.25,5.25,0,0,1-1.11-2.26h0a11.84,11.84,0,0,1-.36-3.73h0a31.47,31.47,0,0,1,.5-4.12h0c.27-1.4.6-2.79,1-4.16h0c.4-1.38.76-2.67,1.09-3.87h0c.32-1.21.58-2.28.76-3.23h0a5.24,5.24,0,0,0,.07-2.24h0c-.25-1-.85-1.25-1.8-.85h0A10.59,10.59,0,0,0,102,94h0a34,34,0,0,0-3.6,5.34h0A67.7,67.7,0,0,0,95.2,106h0q-1.45,3.54-2.61,6.93h0c-1,4.91-1.5,7.35-2.47,12.24l-3.49.12h0q1.62-11.52,3.11-22.75h0q1.5-11.23,3.43-22.41h0c.2-1.16.45-2.43.76-3.81h0c.31-1.39.67-2.79,1.08-4.22h0c.42-1.43.9-2.84,1.45-4.22h0A30.08,30.08,0,0,1,98.29,64h0a16.46,16.46,0,0,1,2.22-3.07h0a7.66,7.66,0,0,1,2.67-1.9h0a3.49,3.49,0,0,1,2.75-.17h0A2.87,2.87,0,0,1,107.46,61h0a10.51,10.51,0,0,1,0,4.14h0a36.71,36.71,0,0,1-1.32,5.44h0q-.93,3-2.3,6.26h0q-1.37,3.32-2.93,6.66h0q-1.56,3.36-3.2,6.58h0c-1.09,2.15-2.14,4.15-3.16,6Z"></path>
-        <path id="H-2" data-name="H" d="M103.84,60.84h0a5.63,5.63,0,0,0-2.71,2.47h0a20.29,20.29,0,0,0-1.93,5.24h0c-.58,2.31-1.17,5.24-1.75,8.8h0c-.57,3.55-1.26,7.92-2,13.07h0q2.89-5.43,4.94-10.21h0q2-4.78,3.28-8.55h0a45.92,45.92,0,0,0,1.7-6.34h0a10,10,0,0,0,.18-3.65h0a1.24,1.24,0,0,0-.63-.86h0A1.29,1.29,0,0,0,103.84,60.84Z"></path>
-        <path id="A1-1" data-name="A1" d="M143.63,75.69l1.28.07h0c-.19.73-.46,1.7-.82,2.91h0c-.36,1.21-.74,2.53-1.14,4h0c-.39,1.44-.78,2.94-1.15,4.5h0c-.38,1.55-.69,3-1,4.51h0a39.15,39.15,0,0,0-.54,4h0a10.31,10.31,0,0,0,.11,3h0c.17.76.43,1.19.78,1.3h0a1.8,1.8,0,0,0,1.23-.1h0a5.43,5.43,0,0,0,2-1.42h0a15.27,15.27,0,0,0,1.8-2.38h0a29.22,29.22,0,0,0,1.58-3h0c.5-1.06,1-2.11,1.37-3.15h0c.42-1,.79-2,1.12-3h0c.32-.93.6-1.71.83-2.36h0l1.52.51h0c-.26.91-.58,1.91-.95,3h0c-.37,1.09-.79,2.2-1.27,3.33h0c-.47,1.14-1,2.27-1.58,3.39h0A25.27,25.27,0,0,1,146.9,98h0a16.26,16.26,0,0,1-2.32,2.55h0a9.08,9.08,0,0,1-2.7,1.66h0a3.54,3.54,0,0,1-3.41-.07h0a4.69,4.69,0,0,1-1.76-2.92h0l-.12-.63h0a4.72,4.72,0,0,1-.09-.8h0a41,41,0,0,1-2.53,5h0a24.29,24.29,0,0,1-2.56,3.53h0a14.88,14.88,0,0,1-2.6,2.34h0a14.18,14.18,0,0,1-2.57,1.39h0a7.44,7.44,0,0,1-2.63.56h0a5.63,5.63,0,0,1-2.39-.45h0a5.23,5.23,0,0,1-1.94-1.52h0a6.91,6.91,0,0,1-1.23-2.66h0a15,15,0,0,1-.27-5h0a24.36,24.36,0,0,1,1.81-6.91h0a33,33,0,0,1,3-6h0a30.62,30.62,0,0,1,3.54-4.52h0a22.38,22.38,0,0,1,3.61-3.09h0a17,17,0,0,1,3.29-1.76h0a9.83,9.83,0,0,1,5.33-.83h0a3.87,3.87,0,0,1,2.82,2.55h0c.36-.78.75-1.56,1.15-2.35h0c.41-.8.83-1.61,1.27-2.43Z"></path>
-        <path id="A1-2" data-name="A1" d="M136.75,93.48h0c.2-.62.44-1.4.72-2.35h0c.28-.94.58-1.92.9-2.93h0c.32-1,.64-2,.95-2.93h0c.31-1,.6-1.75.84-2.4h0a6.62,6.62,0,0,0-.32-1h0a3.48,3.48,0,0,0-.81-1.26h0a2.89,2.89,0,0,0-1.56-.78h0a4.73,4.73,0,0,0-2.57.39h0a13.48,13.48,0,0,0-2.46,1.3h0a17.84,17.84,0,0,0-2.71,2.29h0A24.49,24.49,0,0,0,127,87.18h0a29.86,29.86,0,0,0-2.52,4.57h0a31.21,31.21,0,0,0-2.35,7.41h0a14.38,14.38,0,0,0,0,5.87h0a4.23,4.23,0,0,0,1.69,2.75h0a3.11,3.11,0,0,0,2.88.06h0a9.75,9.75,0,0,0,3.42-2.32h0a18.11,18.11,0,0,0,2.64-3.51h0a35.55,35.55,0,0,0,2.12-4.18h0C135.52,96.35,136.14,94.9,136.75,93.48Z"></path>
-        <path id="T2" data-name="T2" d="M148.85,68.21c2.61-.93,3.92-1.39,6.56-2.3h0c.17-.49.48-1.35.94-2.56h0q.68-1.83,1.65-4.08h0c.66-1.5,1.39-3,2.21-4.59h0a32.36,32.36,0,0,1,2.54-4.1h0l1.92.39h0c-.84,2-1.66,4.18-2.48,6.44h0c-.82,2.26-1.59,4.58-2.33,7h0c4.93-1.68,7.4-2.5,12.4-4.12-.19.83-.29,1.25-.48,2.09-5.07,1.65-7.59,2.5-12.6,4.22h0q-1.1,3.78-2,7.46h0c-.57,2.45-1,4.78-1.38,7h0a52.78,52.78,0,0,0-.64,6h0a19.84,19.84,0,0,0,.27,4.59h0c.31,1.54.89,2.51,1.73,2.92h0a3.5,3.5,0,0,0,2.84,0h0a7.29,7.29,0,0,0,2.69-1.9h0a23.1,23.1,0,0,0,2.49-3.18h0a41,41,0,0,0,2.2-3.78h0c.67-1.33,1.27-2.56,1.78-3.69h0c.51-1.14.93-2.12,1.26-2.95h0c.32-.82.52-1.34.6-1.53h0l1.52.51h0q-1,2.51-2.16,5.37h0a46.93,46.93,0,0,1-2.77,5.54h0a26.73,26.73,0,0,1-3.57,4.8h0a12.09,12.09,0,0,1-4.58,3.11h0a6.58,6.58,0,0,1-2.9.48h0a4.85,4.85,0,0,1-2.33-.83h0a5.68,5.68,0,0,1-1.72-1.93h0a9.64,9.64,0,0,1-1-2.87h0a19.21,19.21,0,0,1-.29-3.16h0a42.06,42.06,0,0,1,.22-5.08h0c.19-2,.53-4.28,1-6.85h0a75.74,75.74,0,0,1,2.2-8.47h0c-2.49.87-3.73,1.31-6.2,2.2C148.62,69.48,148.7,69.06,148.85,68.21Z"></path>
-        <path id="Q3" data-name="Q3" d="M189.41,32.72c-2.28,5.94-3.32,8.94-6.18,15.24l-1.91.56c1.62-6,2.77-9,4-14.74C187,33.35,187.77,33.14,189.41,32.72Z"></path>
-        <path id="S1" data-name="S1" d="M198.47,53.77h0a7.32,7.32,0,0,1-.36.78h0a8.82,8.82,0,0,0-.42,1h0a6.58,6.58,0,0,0-.3,1.2h0a5.58,5.58,0,0,0,0,1.53h0a7.44,7.44,0,0,0,.61,1.86h0q.52,1.14,1.14,2.61h0c.41,1,.82,2.07,1.22,3.25h0a19.36,19.36,0,0,1,.86,3.75h0a15.88,15.88,0,0,1-.12,5.36h0a15.33,15.33,0,0,1-1.6,4.43h0a30.11,30.11,0,0,0,4.74-5.66h0a56.32,56.32,0,0,0,4.36-8.18h0l1.33.72h0A61,61,0,0,1,207.16,72h0a39.61,39.61,0,0,1-3.6,5.4h0A28.38,28.38,0,0,1,199.13,82h0a16.83,16.83,0,0,1-5.26,3h0a7.16,7.16,0,0,1-4.47.3h0a4,4,0,0,1-2.75-2.91h0l1.26-.7h0a1.85,1.85,0,0,0,.29.61h0a2.27,2.27,0,0,0,.74.7h0a3.12,3.12,0,0,0,1.26.39h0a3.83,3.83,0,0,0,1.75-.26h0a5.81,5.81,0,0,0,2.31-1.46h0a8.89,8.89,0,0,0,1.62-2.28h0a13.16,13.16,0,0,0,1-2.78h0a19.55,19.55,0,0,0,.52-3h0a23.94,23.94,0,0,0,.11-2.89h0a22,22,0,0,0-.18-2.48h0c-.09-.74-.22-1.54-.39-2.42h0c-.17-.88-.35-1.71-.52-2.51h0c-.17-.79-.32-1.49-.46-2.08h0c-.13-.59-.21-1-.23-1.16h0v-.07h0a14.84,14.84,0,0,0-.87,1.72h0c-.33.73-.67,1.54-1,2.42h0c-.37.87-.73,1.76-1.09,2.67h0c-.37.9-.69,1.73-1,2.47h0l-.72,1.84h0q-.27.72-.27.75h0l-1.31-.57h0s.23-.63.65-1.78h0q.62-1.73,1.66-4.37h0q1-2.65,2.38-5.85h0Q195.5,56,197,53h0Z"></path>
-        <path id="A2-1" data-name="A2" d="M256,45.54l1.26.33h0q-.37.95-1.08,2.49h0c-.47,1-1,2.15-1.5,3.37h0q-.79,1.85-1.59,3.84h0c-.52,1.32-1,2.61-1.39,3.87h0A30.94,30.94,0,0,0,250.8,63h0a8.36,8.36,0,0,0-.19,2.71h0c.09.72.31,1.17.64,1.34h0a2.16,2.16,0,0,0,1.25.17h0a4.89,4.89,0,0,0,2.12-.83h0a11.65,11.65,0,0,0,2-1.74h0a20.76,20.76,0,0,0,1.87-2.3h0c.6-.84,1.16-1.69,1.67-2.53h0c.51-.85,1-1.65,1.39-2.42h0l1.05-2h0l1.46.82h0c-.34.77-.75,1.61-1.22,2.5h0c-.47.9-1,1.81-1.57,2.73h0a32.17,32.17,0,0,1-1.91,2.69h0a18,18,0,0,1-2.24,2.36h0a12.48,12.48,0,0,1-2.57,1.76h0a8.51,8.51,0,0,1-2.89.89h0a4.09,4.09,0,0,1-3.41-.79h0a4.68,4.68,0,0,1-1.45-3h0l-.06-.59h0a3.51,3.51,0,0,1,0-.73h0a31.61,31.61,0,0,1-3.06,4h0a19.42,19.42,0,0,1-2.94,2.65h0a13.06,13.06,0,0,1-2.86,1.59h0a12.85,12.85,0,0,1-2.72.77h0a8.27,8.27,0,0,1-2.67,0h0a6.31,6.31,0,0,1-2.32-.83h0a5.27,5.27,0,0,1-1.72-1.7h0a6.26,6.26,0,0,1-.91-2.62h0a13,13,0,0,1,.32-4.55h0a20.32,20.32,0,0,1,2.56-5.93h0a27,27,0,0,1,3.63-4.86h0A25.7,25.7,0,0,1,238,49.17h0a19.47,19.47,0,0,1,3.87-2.09h0a16.21,16.21,0,0,1,3.41-.94h0a10.33,10.33,0,0,1,5.34.33h0a4.37,4.37,0,0,1,2.54,2.91h0c.43-.63.89-1.26,1.36-1.9h0c.49-.63,1-1.28,1.48-1.94Z"></path>
-        <path id="A2-2" data-name="A2" d="M247.48,60.21h0c.26-.51.57-1.17,1-2h0c.37-.8.77-1.62,1.19-2.46h0c.42-.85.83-1.67,1.24-2.46h0c.4-.78.76-1.45,1.07-2h0a9.76,9.76,0,0,0-.22-1h0a3.83,3.83,0,0,0-.68-1.31h0a3.39,3.39,0,0,0-1.47-1h0a5.18,5.18,0,0,0-2.57-.17h0a12.24,12.24,0,0,0-2.55.69h0a15.12,15.12,0,0,0-2.91,1.52h0a20.93,20.93,0,0,0-3.05,2.52h0a24.08,24.08,0,0,0-3,3.64h0a25.3,25.3,0,0,0-3.14,6.26h0a12.1,12.1,0,0,0-.67,5.29h0a4.1,4.1,0,0,0,1.36,2.78h0a3.49,3.49,0,0,0,2.85.58h0a9.41,9.41,0,0,0,3.66-1.43h0a15.64,15.64,0,0,0,3-2.63h0a30.72,30.72,0,0,0,2.56-3.32h0C246,62.54,246.73,61.37,247.48,60.21Z"></path>
-        <path id="L1-1" data-name="L1" d="M286.47,15.47h0a4.25,4.25,0,0,1,2.34.38h0a2.31,2.31,0,0,1,1.09,2.06h0a8.57,8.57,0,0,1-.28,2.6h0a27.49,27.49,0,0,1-1.06,3.35h0c-.46,1.21-1,2.5-1.64,3.85h0q-.94,2-2.07,4.05h0c-.74,1.35-1.52,2.66-2.34,3.95h0c-.81,1.28-1.63,2.48-2.44,3.57h0q-2.43,3.33-4.2,5.62h0q-1.75,2.28-3,3.88h0c-.85,1.06-1.56,1.92-2.15,2.59h0c-.58.67-1.1,1.24-1.55,1.72h0c-.45.48-.86.92-1.25,1.32h0c-.38.39-.77.83-1.17,1.3h0a10,10,0,0,0,0,2.51h0c.1.78.19,1.5.26,2.16h0a7.72,7.72,0,0,0,1.55,4.3h0a3.54,3.54,0,0,0,3.08,1.18h0a6,6,0,0,0,2.47-.79h0a14.23,14.23,0,0,0,2.36-1.75h0A20.79,20.79,0,0,0,278.66,61h0c.7-.87,1.37-1.75,2-2.63h0c.62-.89,1.18-1.75,1.67-2.57h0l1.3-2.15h0l1.46.88h0c-.07.1-.27.48-.62,1.14h0c-.35.67-.82,1.47-1.4,2.41h0c-.58,1-1.27,2-2.08,3h0a25.61,25.61,0,0,1-2.67,3h0a16.26,16.26,0,0,1-3.1,2.39h0a8.1,8.1,0,0,1-3.46,1.12h0a8.43,8.43,0,0,1-3-.28h0a6.74,6.74,0,0,1-2.63-1.44h0a9.06,9.06,0,0,1-2.05-2.74h0A12.75,12.75,0,0,1,263,59h0a28.44,28.44,0,0,1,0-6.58h0a47.23,47.23,0,0,1,1.4-7.09h0a55.66,55.66,0,0,1,2.52-7.17h0a67.82,67.82,0,0,1,3.36-6.84h0a55.56,55.56,0,0,1,3.95-6.1h0a43.09,43.09,0,0,1,4.24-4.94h0a23.05,23.05,0,0,1,4.2-3.37h0A9,9,0,0,1,286.47,15.47Z"></path>
-        <path id="L1-2" data-name="L1" d="M267,52.6h0q2.85-3.33,5.51-6.73h0c1.78-2.27,3.44-4.5,5-6.71h0q2.34-3.3,4.29-6.4h0c1.3-2.06,2.4-4,3.31-5.8h0a36.09,36.09,0,0,0,2.07-4.89h0a9.77,9.77,0,0,0,.6-3.71h0a1.5,1.5,0,0,0-.38-.71h0a.9.9,0,0,0-.78-.4h0a6.18,6.18,0,0,0-3.08,1.7h0a29.62,29.62,0,0,0-3.94,4.23h0a61.06,61.06,0,0,0-4.2,6.12h0a66.86,66.86,0,0,0-3.85,7.39h0a65,65,0,0,0-3,8h0A40.77,40.77,0,0,0,267,52.6Z"></path>
-        <path id="L2-1" data-name="L2" d="M308.5,13.82h0a4.12,4.12,0,0,1,2.31.46h0a2.35,2.35,0,0,1,1,2.12h0a8.88,8.88,0,0,1-.39,2.62h0a29.21,29.21,0,0,1-1.17,3.38h0c-.5,1.22-1.09,2.51-1.77,3.86h0c-.68,1.35-1.41,2.71-2.19,4.06h0c-.78,1.35-1.59,2.66-2.44,4h0c-.85,1.28-1.7,2.47-2.53,3.56h0c-1.68,2.21-3.11,4.07-4.32,5.58h0c-1.21,1.52-2.24,2.8-3.11,3.85h0c-.87,1.05-1.6,1.91-2.19,2.57h0c-.6.65-1.12,1.22-1.58,1.69h0c-.46.48-.88.91-1.27,1.29h0c-.39.39-.79.82-1.2,1.28h0a10.45,10.45,0,0,0,0,2.55h0c.08.8.15,1.53.21,2.2h0a8.05,8.05,0,0,0,1.41,4.42h0a3.5,3.5,0,0,0,3,1.31h0a5.57,5.57,0,0,0,2.43-.72h0A13.23,13.23,0,0,0,297,62.17h0a22.45,22.45,0,0,0,2.23-2.32h0c.71-.86,1.39-1.73,2-2.61h0c.63-.88,1.2-1.74,1.71-2.56h0l1.34-2.15h0l1.4.95h0c-.07.09-.29.48-.65,1.14h0c-.36.66-.84,1.47-1.44,2.41h0c-.6.94-1.31,1.95-2.13,3h0a26.42,26.42,0,0,1-2.69,3h0a16.07,16.07,0,0,1-3.11,2.31h0a7.39,7.39,0,0,1-3.42,1h0A7.9,7.9,0,0,1,289.4,66h0a6.67,6.67,0,0,1-2.55-1.56h0a9.27,9.27,0,0,1-2-2.85h0a13.29,13.29,0,0,1-1.05-4.29h0a29.68,29.68,0,0,1,.19-6.68h0a46,46,0,0,1,1.57-7.14h0a56.13,56.13,0,0,1,2.69-7.2h0a72.35,72.35,0,0,1,3.54-6.85h0A56.62,56.62,0,0,1,296,23.33h0a43.08,43.08,0,0,1,4.39-4.89h0a23.67,23.67,0,0,1,4.29-3.29h0A8.82,8.82,0,0,1,308.5,13.82Z"></path>
-        <path id="L2-2" data-name="L2" d="M288.05,50.94h0c1.94-2.18,3.81-4.4,5.64-6.64h0q2.73-3.37,5.14-6.67h0q2.42-3.29,4.45-6.38h0c1.36-2.06,2.52-4,3.48-5.8h0A37.75,37.75,0,0,0,309,20.54h0a10,10,0,0,0,.73-3.75h0a1.43,1.43,0,0,0-.34-.73h0a.88.88,0,0,0-.76-.43h0a6.14,6.14,0,0,0-3.12,1.63h0a29.15,29.15,0,0,0-4.07,4.18h0a61.91,61.91,0,0,0-4.37,6.09h0a66.27,66.27,0,0,0-4.06,7.4h0a67,67,0,0,0-3.17,8h0A43.15,43.15,0,0,0,288.05,50.94Z"></path>
-        <path id="F-1" data-name="F" d="M388.05,23.16l1.08,1.19h0s-.52.39-1.5,1.18h0c-1,.79-2.3,2-4,3.67h0c-1.7,1.66-3.69,3.78-6,6.37h0c-2.34,2.6-4.88,5.69-7.67,9.29h0c-.75,1-1.14,1.47-1.9,2.45h0c1-.17,1.93-.33,2.92-.48h0c1-.14,2-.27,3-.38h0l1.94-.26h0a38,38,0,0,1,2.72-3.37h0a17.09,17.09,0,0,1,2.18-2h0a6.23,6.23,0,0,1,1.78-1h0a4.28,4.28,0,0,1,1.42-.21h0a2.86,2.86,0,0,1,1.5.56h0a1.93,1.93,0,0,1,.66,1.76h0a3.64,3.64,0,0,1-.63,1.87h0a6.3,6.3,0,0,1-1.63,1.63h0a11.1,11.1,0,0,1-2.48,1.3h0a17.2,17.2,0,0,1-3.15.84h0c-.6.92-1.23,1.89-1.87,2.9h0c-.65,1-1.34,2-2.05,3h0q-1.08,1.53-2.22,3h0c-.76,1-1.55,1.91-2.37,2.78h0l-2.91-2.48h0c.29-.26.74-.68,1.34-1.25h0c.59-.57,1.24-1.21,1.93-1.92h0c.7-.71,1.38-1.47,2.06-2.26h0c.67-.8,1.25-1.55,1.74-2.27h0l.69-1.07h0c-1.33.19-2.68.4-4,.62h0c-1.36.23-2.76.48-4.21.78h0c-2.55,3.18-5,6.07-6.75,8.66h0a45.81,45.81,0,0,1-5.4,6.59h0a21,21,0,0,1-5.88,4.16h0a16.58,16.58,0,0,1-7.17,1.44h0a18.38,18.38,0,0,1-5.39-.84h0a17.39,17.39,0,0,1-5-2.41h0A14.2,14.2,0,0,1,327,63.13h0a9.65,9.65,0,0,1-1.54-5.28h0a9.51,9.51,0,0,1,.85-4.17h0a9.24,9.24,0,0,1,2.42-3.11h0a10.82,10.82,0,0,1,3.59-1.94h0a14.34,14.34,0,0,1,4.31-.68h0a14.66,14.66,0,0,1,3.71.45h0a16.36,16.36,0,0,1,3.53,1.34h0a15.93,15.93,0,0,1,3.11,2.14h0a15.22,15.22,0,0,1,2.49,2.83h0l-1.3,1h0a11.63,11.63,0,0,0-2.07-1.95h0a13.3,13.3,0,0,0-2.55-1.46h0a14.3,14.3,0,0,0-2.85-.9h0a13.43,13.43,0,0,0-3-.3h0a11.72,11.72,0,0,0-3.16.46h0A8.09,8.09,0,0,0,331.78,53h0a7.5,7.5,0,0,0-2,2.48h0a8.19,8.19,0,0,0-.76,3.67h0a7.54,7.54,0,0,0,.92,3.61h0a9.48,9.48,0,0,0,2.44,2.89h0A12,12,0,0,0,336,67.6h0a12.9,12.9,0,0,0,4.28.72h0A12.63,12.63,0,0,0,346,67h0a19.26,19.26,0,0,0,4.89-3.64h0a38.63,38.63,0,0,0,4.46-5.48h0q2.16-3.16,4.42-6.76h0c-.61.21-1.23.44-1.86.68h0c-.64.24-1.27.49-1.91.75h0l-.45-1.8h0l2.91-1h0l2.76-.93h0a72.09,72.09,0,0,1,5.43-7.07h0q3-3.6,6.3-7h0a78.73,78.73,0,0,1,7-6.37h0a49.73,49.73,0,0,1,8-5.24Z"></path>
-        <path id="F-2" data-name="F" d="M360.17,41.44c.21.67.31,1,.51,1.69h0a28.37,28.37,0,0,1-6.19,2.19h0a26,26,0,0,1-5.73.68h0a17.12,17.12,0,0,1-5.72-.91h0a14.12,14.12,0,0,1-4.52-2.53h0a11.54,11.54,0,0,1-3-3.91h0a11.55,11.55,0,0,1-1-5.06h0a15.18,15.18,0,0,1,1.29-6.16h0a15.74,15.74,0,0,1,3.38-4.78h0a19.6,19.6,0,0,1,5-3.5h0a34.84,34.84,0,0,1,6.16-2.33h0a41.93,41.93,0,0,1,6.77-1.27h0a56.25,56.25,0,0,1,6.81-.31h0a58.5,58.5,0,0,1,7.78.67h0c2.57.39,5.05.83,7.46,1.31h0l7,1.41h0a56.79,56.79,0,0,0,6.65.93h0a43.46,43.46,0,0,0,6.83,0h0a49.07,49.07,0,0,0,5.33-.68h0a28.62,28.62,0,0,0,3.46-.85h0c.83-.27,1.26-.41,1.28-.4h0c.39.69.58,1,1,1.74h0c-.08,0-.56.2-1.45.49h0a32.6,32.6,0,0,1-3.66.9h0a52.93,52.93,0,0,1-5.57.71h0a46.81,46.81,0,0,1-7.18-.05h0a61.94,61.94,0,0,1-7-.94h0c-2.26-.44-4.53-.89-6.83-1.36h0q-3.44-.7-7.15-1.28h0a58.85,58.85,0,0,0-7.87-.64h0a42.27,42.27,0,0,0-10.59,1h0a24.62,24.62,0,0,0-7.9,3.26h0a14.83,14.83,0,0,0-4.87,5.19h0a14.77,14.77,0,0,0-1.75,6.81h0a9.75,9.75,0,0,0,.85,4.52h0a9.11,9.11,0,0,0,2.48,3.21h0a10.87,10.87,0,0,0,3.61,1.91h0a14.36,14.36,0,0,0,4.26.64h0a20.25,20.25,0,0,0,3.77-.35h0a28.42,28.42,0,0,0,3.22-.81h0c.93-.3,1.68-.58,2.25-.83h0c.57-.25.87-.37.89-.37Z"></path>
-        <path id="F-3" data-name="F" d="M383.45,41.44h0c-.47,0-1,.33-1.66,1.07h0a30.27,30.27,0,0,0-2.18,2.92h0a11.23,11.23,0,0,0,2.16-.81h0a6.32,6.32,0,0,0,1.31-.89h0a2.57,2.57,0,0,0,.67-.91h0a2.81,2.81,0,0,0,.22-.91h0a.34.34,0,0,0-.15-.35h0A.77.77,0,0,0,383.45,41.44Z"></path>
-        <path id="O-1" data-name="O" d="M405,60.4h0a1.94,1.94,0,0,0,.33.07h0l.38,0h0a10.18,10.18,0,0,0,2.12,0h0a6,6,0,0,0,1.75-.43h0a5.78,5.78,0,0,0,1.51-1h0a8.1,8.1,0,0,0,1.37-1.55h0L414,58.8h0a9.24,9.24,0,0,1-3.95,3h0a10.3,10.3,0,0,1-4.49.47h0a7.93,7.93,0,0,1-1.56-.32h0a19.44,19.44,0,0,1-3.84,4h0a19.71,19.71,0,0,1-4.31,2.54h0a18.7,18.7,0,0,1-4.42,1.28h0a18.94,18.94,0,0,1-4.12.2h0a12.15,12.15,0,0,1-3.59-.8h0a8.54,8.54,0,0,1-2.8-1.75h0a7.11,7.11,0,0,1-1.74-2.56h0a7.64,7.64,0,0,1-.5-3.26h0a10.64,10.64,0,0,1,.88-3.63h0a20,20,0,0,1,2.05-3.63h0a26.61,26.61,0,0,1,2.87-3.41h0a31.6,31.6,0,0,1,3.45-3h0a31.5,31.5,0,0,1,3.73-2.41h0a21.19,21.19,0,0,1,3.77-1.65h0l1.3,1.65h0a28.31,28.31,0,0,0-4.44,3.12h0A33.09,33.09,0,0,0,388,52.94h0a27.5,27.5,0,0,0-3.26,5h0a12.68,12.68,0,0,0-1.42,5.13h0a4.81,4.81,0,0,0,1.11,3.56h0a5.36,5.36,0,0,0,3.7,1.49h0a11.71,11.71,0,0,0,3.82-.35h0a16.08,16.08,0,0,0,3.67-1.44h0A18.64,18.64,0,0,0,399,64h0a28.14,28.14,0,0,0,3-3h0a8.5,8.5,0,0,1-2.16-1.86h0a11.3,11.3,0,0,1-1.57-2.51h0a13.48,13.48,0,0,1-.95-2.94h0a16,16,0,0,1-.31-3.17h0a9.65,9.65,0,0,1,.45-3h0a7.76,7.76,0,0,1,1.23-2.38h0a5.27,5.27,0,0,1,1.83-1.52h0a4.06,4.06,0,0,1,2.28-.38h0a4.13,4.13,0,0,1,2,.74h0a5.53,5.53,0,0,1,1.52,1.63h0a8.59,8.59,0,0,1,1,2.32h0a12.51,12.51,0,0,1,.4,2.78h0a15.63,15.63,0,0,1-.14,2.39h0a18.14,18.14,0,0,1-.52,2.58h0a20.31,20.31,0,0,1-.88,2.52h0A10.75,10.75,0,0,1,405,60.4Z"></path>
-        <path id="O-2" data-name="O" d="M399.2,50.76h0a14.2,14.2,0,0,0,.23,2.31h0a12.57,12.57,0,0,0,.68,2.47h0a11.23,11.23,0,0,0,1.19,2.28h0a6.21,6.21,0,0,0,1.78,1.76h0a14.87,14.87,0,0,0,1.23-2.46h0a22.33,22.33,0,0,0,.81-2.48h0a14.7,14.7,0,0,0,.44-2.26h0a14.41,14.41,0,0,0,.1-1.87h0a9.8,9.8,0,0,0-.25-2h0a7.58,7.58,0,0,0-.58-1.65h0a3.59,3.59,0,0,0-.87-1.15h0a2,2,0,0,0-1.12-.51h0a2.33,2.33,0,0,0-1.48.34h0a3.64,3.64,0,0,0-1.17,1.2h0a6.2,6.2,0,0,0-.73,1.83h0A8.89,8.89,0,0,0,399.2,50.76Z"></path>
-        <path id="L3-1" data-name="L3" d="M437.8,22.24h0a4.72,4.72,0,0,1,2.24,1h0a3.36,3.36,0,0,1,1.1,2.4h0a8.45,8.45,0,0,1-.22,2.6h0a22.35,22.35,0,0,1-1,3.18h0A37.15,37.15,0,0,1,438.41,35h0c-.61,1.23-1.28,2.44-2,3.65h0c-.74,1.2-1.51,2.36-2.34,3.49h0c-.83,1.12-1.67,2.14-2.51,3.08h0c-1.68,1.88-3.17,3.47-4.44,4.76h0c-1.26,1.29-2.37,2.38-3.31,3.28h0c-.95.89-1.75,1.62-2.4,2.17h0c-.66.55-1.25,1-1.76,1.41h0c-.51.39-1,.74-1.43,1.06h0c-.44.31-.89.67-1.36,1.07h0a10,10,0,0,0-.17,2.6h0c.05.84.1,1.61.13,2.31h0a8.64,8.64,0,0,0,1.4,4.81h0a4.84,4.84,0,0,0,3.36,2h0a6.3,6.3,0,0,0,2.79-.23h0a11.63,11.63,0,0,0,2.7-1.23h0a16.65,16.65,0,0,0,2.52-1.9h0c.79-.73,1.54-1.47,2.23-2.24h0c.69-.77,1.31-1.52,1.85-2.25h0l1.41-1.91h0l1.54,1.27h0c-.07.09-.29.43-.67,1h0c-.38.6-.89,1.31-1.52,2.15h0a28.63,28.63,0,0,1-2.32,2.63h0a19.63,19.63,0,0,1-3,2.49h0a14.21,14.21,0,0,1-3.55,1.72h0a8.71,8.71,0,0,1-3.94.33h0a11.59,11.59,0,0,1-3.31-1h0a9.55,9.55,0,0,1-2.85-2.12h0A11.2,11.2,0,0,1,413.38,66h0a13.5,13.5,0,0,1-.91-4.62h0a28.34,28.34,0,0,1,.6-6.83h0a47,47,0,0,1,2-7h0a58.63,58.63,0,0,1,3.06-6.83h0a68.27,68.27,0,0,1,3.72-6.25h0A50.08,50.08,0,0,1,426,29.15h0a33.72,33.72,0,0,1,4.19-4h0a16.2,16.2,0,0,1,4-2.41h0A6.77,6.77,0,0,1,437.8,22.24Z"></path>
-        <path id="L3-2" data-name="L3" d="M417.42,55.76h0c2.18-1.84,4.24-3.72,6.2-5.63h0c1.95-1.92,3.73-3.82,5.37-5.71h0c1.63-1.9,3.09-3.74,4.4-5.54h0a45.06,45.06,0,0,0,3.27-5.15h0a27.42,27.42,0,0,0,2-4.51h0a9.31,9.31,0,0,0,.51-3.66h0a2.18,2.18,0,0,0-.37-.83h0a1.22,1.22,0,0,0-.76-.61h0a4.37,4.37,0,0,0-2.94,1h0a21.08,21.08,0,0,0-3.8,3.36h0a53.11,53.11,0,0,0-4.19,5.26h0A62.86,62.86,0,0,0,423,40.37h0a67.56,67.56,0,0,0-3.42,7.57h0A41,41,0,0,0,417.42,55.76Z"></path>
-        <path id="K-1" data-name="K" d="M444,52.58c-1.61,4-2.42,5.93-4.09,9.86h0a48.09,48.09,0,0,1,3.83-4.34h0a30.62,30.62,0,0,1,4.14-3.52h0a16.06,16.06,0,0,1,4.31-2.18h0a8.8,8.8,0,0,1,4.4-.26h0a6.67,6.67,0,0,1,2.26.86h0a5.79,5.79,0,0,1,1.48,1.32h0a5.37,5.37,0,0,1,.86,1.57h0a7.11,7.11,0,0,1,.36,1.61h0a6.82,6.82,0,0,1-.19,2.31h0a7.67,7.67,0,0,1-1.06,2.34h0a8.19,8.19,0,0,1-2,2.05h0a10.16,10.16,0,0,1-3,1.51h0a6.73,6.73,0,0,1,.65,2.4h0a6.14,6.14,0,0,1-.05,1.66h0c-.1.55-.2,1.08-.33,1.61h0c-.12.52-.22,1.06-.32,1.6h0a6.33,6.33,0,0,0-.05,1.69h0a5.8,5.8,0,0,0,.14.85h0a2.74,2.74,0,0,0,.3.78h0a2,2,0,0,0,.59.63h0a2.74,2.74,0,0,0,1,.4h0a2.81,2.81,0,0,0,1.68-.25h0a9.37,9.37,0,0,0,1.91-1.17h0a17.26,17.26,0,0,0,2-1.82h0c.67-.71,1.32-1.47,1.94-2.27h0c.62-.8,1.22-1.61,1.8-2.41h0c.57-.8,1.09-1.56,1.55-2.28h0l1.46,1.33h0q-1.61,2.39-3.15,4.54h0a25.61,25.61,0,0,1-3.16,3.67h0a11.61,11.61,0,0,1-3.39,2.26h0a6.32,6.32,0,0,1-3.79.34h0a8.43,8.43,0,0,1-1.69-.54h0a6.81,6.81,0,0,1-1.64-1h0a5.8,5.8,0,0,1-1.31-1.51h0a4.82,4.82,0,0,1-.66-2h0a7.92,7.92,0,0,1,.41-3.11h0a25.07,25.07,0,0,0,.67-2.77h0a9.38,9.38,0,0,0,.15-1.93h0q-.79,0-1.68,0h0a10.31,10.31,0,0,1-1.7-.17h0a6.05,6.05,0,0,1-.93-.26h0a4.82,4.82,0,0,1-1-.49h0a3.23,3.23,0,0,1-.77-.7h0a1.65,1.65,0,0,1-.38-.95h0a1.32,1.32,0,0,1,.27-1h0a2.23,2.23,0,0,1,.92-.7h0a4.3,4.3,0,0,1,1.46-.33h0a8,8,0,0,1,1.94.15h0a7.33,7.33,0,0,1,3.5,1.68h0a7,7,0,0,0,2-1.8h0a8.31,8.31,0,0,0,1.14-2.09h0a9,9,0,0,0,.48-1.92h0a7.05,7.05,0,0,0,0-1.31h0a3.09,3.09,0,0,0-.62-1.77h0a2,2,0,0,0-1.14-.68h0a5.11,5.11,0,0,0-2.64.24h0A12.68,12.68,0,0,0,450,55.77h0a27.23,27.23,0,0,0-3,2.44h0q-1.54,1.42-3,3h0q-1.46,1.62-2.84,3.29h0c-.91,1.12-1.75,2.18-2.52,3.17h0c-.69,1.08-1.3,2.09-1.84,3h0c-.54.94-1,1.74-1.36,2.42h0c-.36.68-.66,1.19-.87,1.53h0c-.21.35-.33.46-.37.33h0c-1.63-.63-2.45-1-4.1-1.57h0c2.73-6,5.35-12,7.92-18.1h0c2.56-6.08,5.18-12.21,7.9-18.32h0c.41-.88.88-1.85,1.41-2.89h0c.52-1,1.1-2.06,1.73-3.08h0a30.88,30.88,0,0,1,2-2.91h0a15,15,0,0,1,2.31-2.38h0a8.36,8.36,0,0,1,2.54-1.45h0a5.15,5.15,0,0,1,2.73-.17h0a4.89,4.89,0,0,1,2.5,1.29h0a4.26,4.26,0,0,1,1.18,2.74h0a14.1,14.1,0,0,1-.77,5.57h0a26,26,0,0,1-3.25,6.53h0a36.12,36.12,0,0,1-5.8,6.59h0A37,37,0,0,1,444,52.58Z"></path>
-        <path id="K-2" data-name="K" d="M445.3,49.34h0a36.59,36.59,0,0,0,7.22-5.65h0a33.53,33.53,0,0,0,4.74-6h0a22.05,22.05,0,0,0,2.51-5.6h0a12.86,12.86,0,0,0,.52-4.58h0a1.56,1.56,0,0,0-.39-.93h0a1.7,1.7,0,0,0-1-.53h0a3.33,3.33,0,0,0-2.75.74h0a13.09,13.09,0,0,0-2.9,3.72h0a65.68,65.68,0,0,0-3.46,7.3h0C448.53,40.91,447,44.74,445.3,49.34Z"></path>
-        <path id="K-3" data-name="K" d="M451.6,64.65h0a2.7,2.7,0,0,0-.7-.84h0a2.18,2.18,0,0,0-1-.5h0a3.8,3.8,0,0,0-1.92.07h0c-.54.19-.79.42-.77.69h0a.58.58,0,0,0,.41.46h0a4.07,4.07,0,0,0,.68.22h0a7.39,7.39,0,0,0,1.83.12h0A9.87,9.87,0,0,0,451.6,64.65Z"></path>
-        <path id="S2" data-name="S2" d="M478.54,54.58h0a3.73,3.73,0,0,1-.42.61h0a4.44,4.44,0,0,0-.5.75h0a4.27,4.27,0,0,0-.39,1.05h0a5,5,0,0,0-.07,1.54h0a9.67,9.67,0,0,0,.56,2.19h0c.33.94.68,2,1.06,3.23h0c.39,1.2.76,2.51,1.11,3.9h0a24.3,24.3,0,0,1,.7,4.22h0a15.37,15.37,0,0,1-.38,5.3h0a9.13,9.13,0,0,1-1.82,3.56h0a14,14,0,0,0,5-3.15h0a30.81,30.81,0,0,0,4.81-6h0l1.25,1.39h0a37.82,37.82,0,0,1-3.08,4.31h0A19.82,19.82,0,0,1,482.56,81h0a13.83,13.83,0,0,1-4.64,2.14h0a11.83,11.83,0,0,1-5.55,0h0a10.85,10.85,0,0,1-4.73-2.3h0a8.35,8.35,0,0,1-2.72-4.38h0l1.3,0h0a3.05,3.05,0,0,0,.28.76h0a4.71,4.71,0,0,0,.74,1.1h0a6.45,6.45,0,0,0,1.27,1.1h0a5.5,5.5,0,0,0,1.88.76h0a4.24,4.24,0,0,0,2.5-.1h0a4.27,4.27,0,0,0,1.78-1.34h0a7.38,7.38,0,0,0,1.18-2.19h0a14.4,14.4,0,0,0,.66-2.7h0a21.16,21.16,0,0,0,.23-2.83h0c0-.93,0-1.79-.07-2.58h0c-.07-.78-.17-1.66-.32-2.63h0c-.14-1-.28-1.9-.43-2.79h0c-.15-.89-.28-1.67-.4-2.33h0c-.11-.67-.18-1.1-.2-1.3h0v-.07h0a7.29,7.29,0,0,0-1,1.26h0c-.39.56-.79,1.18-1.22,1.85h0q-.66,1-1.29,2.07h0c-.43.7-.82,1.34-1.16,1.91h0l-.84,1.42h0a6,6,0,0,0-.32.6h0l-1.42-1.32h0s.28-.48.77-1.38h0c.49-.91,1.15-2,2-3.42h0c.83-1.38,1.77-2.89,2.83-4.55h0Q475.22,55.31,477,53h0C477.6,53.64,477.91,54,478.54,54.58Z"></path>
-        <path id="EX-1" data-name="EX" d="M521,41.5a244.32,244.32,0,0,0-24.5,37l-1.47-1a282.84,282.84,0,0,1,21.24-39.14C518.17,39.61,519.12,40.24,521,41.5Z"></path>
-        <path id="EX-2" data-name="EX" d="M495.4,84.67h0a2.05,2.05,0,0,1-.64,1.69h0a1.78,1.78,0,0,1-1.69.35h0a3.17,3.17,0,0,1-1.7-1.2h0a3.5,3.5,0,0,1-.81-2h0a1.94,1.94,0,0,1,.63-1.66h0a1.74,1.74,0,0,1,1.66-.36h0a3.22,3.22,0,0,1,1.78,1.22h0A3.38,3.38,0,0,1,495.4,84.67Z"></path>
-        <path id="Q4" data-name="Q4" d="M552.39,49.89a113.33,113.33,0,0,0-13.47,10L537,59.33a123.06,123.06,0,0,1,9.73-11Z"></path>
-        <path id="Q5" data-name="Q5" d="M542.21,47.11A111,111,0,0,0,530,57.43l-1.87-.51a127.18,127.18,0,0,1,8.56-11.3Z"></path>
-      </g>
-    </svg>
+    <svg aria-labelledby=taf-title role=img style=isolation:isolate viewBox="0 0 566.44 157.5"><title id=taf-title>That's All Folks closing title artwork</title><g id=thats-all-folks><path id=Q1 d="M14.07 103.92c-1.34 6.6-2 9.89-3.2 16.46l-1.65.87c.14-6 .23-9 .46-15Z" data-name=Q1 /><path id=Q2 d="M22.06 99.79c-1.4 6.62-2.07 9.91-3.35 16.49l-1.66.86c.21-6 .34-9 .62-15.09Z" data-name=Q2 /><path id=T1-1 d="m102.69 61.11 1.43 1.13a40.5 40.5 0 0 1-4.31 4.55 47 47 0 0 1-4.87 3.84 58 58 0 0 1-5.34 3.24c-1.85 1-3.75 1.91-5.68 2.77q-3.66 1.62-7.79 3.09l-8.21 2.89c-2.72 1-5.33 1.9-7.86 2.82-2.52.93-4.76 1.87-6.74 2.83a33.3 33.3 0 0 0-7.53 4.91 24.9 24.9 0 0 0-5.09 6 17.8 17.8 0 0 0-2.36 6.59 14.6 14.6 0 0 0 .62 6.71 9.7 9.7 0 0 0 2.19 3.78 7.4 7.4 0 0 0 3.32 2 10.3 10.3 0 0 0 4.22.22 16.6 16.6 0 0 0 4.85-1.56 27 27 0 0 0 4.37-2.7 30.5 30.5 0 0 0 4.09-3.79l1.16 1.06a29 29 0 0 1-4.68 4.64 30.7 30.7 0 0 1-5.8 3.69 19.6 19.6 0 0 1-5.3 1.72 12.7 12.7 0 0 1-5-.11 9.53 9.53 0 0 1-4.27-2.24 10.8 10.8 0 0 1-2.91-4.74 16.1 16.1 0 0 1-.88-5.88 17.9 17.9 0 0 1 1.15-5.57 21.6 21.6 0 0 1 2.79-5.1 32.5 32.5 0 0 1 4-4.54 37 37 0 0 1 4.89-3.87 47 47 0 0 1 5.33-3.05 74 74 0 0 1 7.1-3c2.56-.94 5.19-1.87 7.87-2.79l8.11-2.82c2.71-1 5.31-2 7.8-3.08 1.87-.83 3.69-1.71 5.48-2.66A53 53 0 0 0 94 69a45 45 0 0 0 4.62-3.62 36 36 0 0 0 4.06-4.3Z" data-name=T1 /><path id=T1-2 d="m79.54 81 1.41.43a66.7 66.7 0 0 0-3.23 9.82c-.81 3.27-1.48 6.49-2 9.66q-.81 4.75-1.44 9.32c-.41 3-.9 6-1.47 8.8a72 72 0 0 1-2.09 8.06 33.5 33.5 0 0 1-3.25 7.14 28 28 0 0 1-5 6.07 30 30 0 0 1-7.33 4.84 24.5 24.5 0 0 1-7.14 2.3 14.2 14.2 0 0 1-5.81-.26 10 10 0 0 1-4.39-2.51 11.5 11.5 0 0 1-2.8-4.49 14 14 0 0 1-.55-2 10 10 0 0 1-.19-1.9l1.85-.35a13 13 0 0 0 .17 1.65 11 11 0 0 0 .45 1.75 9 9 0 0 0 2.83 4.24 9.4 9.4 0 0 0 4.21 1.91 13.6 13.6 0 0 0 5-.08 21.3 21.3 0 0 0 5.23-1.76 20.6 20.6 0 0 0 6.12-4.42 25.5 25.5 0 0 0 4.15-6A38 38 0 0 0 67 126q1.05-3.91 1.86-8.24.81-4.32 1.59-8.94t1.92-9.33a88 88 0 0 1 2.83-9.38A50.5 50.5 0 0 1 79.54 81" data-name=T1 /><path id=H-1 d="M94.58 96.07c-.7 4.48-1 6.71-1.72 11.18a59 59 0 0 1 2.59-6.25 40.4 40.4 0 0 1 3.07-5.4 25 25 0 0 1 3.42-4.13 12.2 12.2 0 0 1 3.68-2.5 5.3 5.3 0 0 1 2.23-.49 3 3 0 0 1 1.59.46 3.2 3.2 0 0 1 1 1.08 5.4 5.4 0 0 1 .58 1.4 8.8 8.8 0 0 1 .17 3 36 36 0 0 1-.55 3.6c-.25 1.27-.55 2.59-.87 4-.32 1.36-.61 2.67-.86 4a32 32 0 0 0-.51 3.63 9 9 0 0 0 .22 3 2.8 2.8 0 0 0 .76 1.35 1.29 1.29 0 0 0 1.49.14 5.2 5.2 0 0 0 2.19-2.17 27 27 0 0 0 2-4.07 67 67 0 0 0 1.84-5.14q.89-2.78 1.6-5.37l1.53.48c-.17.46-.38 1.17-.64 2.14-.25 1-.55 2.07-.91 3.3-.35 1.22-.76 2.5-1.24 3.84a33 33 0 0 1-1.63 3.8 17 17 0 0 1-2.06 3.19 6.54 6.54 0 0 1-2.54 2 9 9 0 0 1-1.87.54 4.1 4.1 0 0 1-1.85-.09 3.53 3.53 0 0 1-1.59-1 5.25 5.25 0 0 1-1.11-2.26 11.8 11.8 0 0 1-.36-3.73 31.5 31.5 0 0 1 .5-4.12c.27-1.4.6-2.79 1-4.16.4-1.38.76-2.67 1.09-3.87.32-1.21.58-2.28.76-3.23a5.2 5.2 0 0 0 .07-2.24c-.25-1-.85-1.25-1.8-.85A10.6 10.6 0 0 0 102 94a34 34 0 0 0-3.6 5.34 68 68 0 0 0-3.2 6.66q-1.45 3.54-2.61 6.93c-1 4.91-1.5 7.35-2.47 12.24l-3.49.12q1.62-11.52 3.11-22.75 1.5-11.23 3.43-22.41c.2-1.16.45-2.43.76-3.81.31-1.39.67-2.79 1.08-4.22.42-1.43.9-2.84 1.45-4.22A30 30 0 0 1 98.29 64a16.5 16.5 0 0 1 2.22-3.07 7.7 7.7 0 0 1 2.67-1.9 3.5 3.5 0 0 1 2.75-.17 2.87 2.87 0 0 1 1.53 2.14 10.5 10.5 0 0 1 0 4.14 37 37 0 0 1-1.32 5.44q-.93 3-2.3 6.26-1.37 3.32-2.93 6.66-1.56 3.36-3.2 6.58a197 197 0 0 1-3.16 6Z" data-name=H /><path id=H-2 d="M103.84 60.84a5.63 5.63 0 0 0-2.71 2.47 20.3 20.3 0 0 0-1.93 5.24c-.58 2.31-1.17 5.24-1.75 8.8-.57 3.55-1.26 7.92-2 13.07q2.89-5.43 4.94-10.21 2-4.78 3.28-8.55a46 46 0 0 0 1.7-6.34 10 10 0 0 0 .18-3.65 1.24 1.24 0 0 0-.63-.86 1.29 1.29 0 0 0-1.08.03" data-name=H /><path id=A1-1 d="m143.63 75.69 1.28.07c-.19.73-.46 1.7-.82 2.91s-.74 2.53-1.14 4c-.39 1.44-.78 2.94-1.15 4.5-.38 1.55-.69 3-1 4.51a39 39 0 0 0-.54 4 10.3 10.3 0 0 0 .11 3c.17.76.43 1.19.78 1.3a1.8 1.8 0 0 0 1.23-.1 5.4 5.4 0 0 0 2-1.42 15.3 15.3 0 0 0 1.8-2.38 29 29 0 0 0 1.58-3c.5-1.06 1-2.11 1.37-3.15.42-1 .79-2 1.12-3 .32-.93.6-1.71.83-2.36l1.52.51c-.26.91-.58 1.91-.95 3s-.79 2.2-1.27 3.33c-.47 1.14-1 2.27-1.58 3.39a25 25 0 0 1-1.9 3.2 16.3 16.3 0 0 1-2.32 2.55 9.1 9.1 0 0 1-2.7 1.66 3.54 3.54 0 0 1-3.41-.07 4.7 4.7 0 0 1-1.76-2.92l-.12-.63a5 5 0 0 1-.09-.8 41 41 0 0 1-2.53 5 24.3 24.3 0 0 1-2.56 3.53 15 15 0 0 1-2.6 2.34 14 14 0 0 1-2.57 1.39 7.4 7.4 0 0 1-2.63.56 5.6 5.6 0 0 1-2.39-.45 5.2 5.2 0 0 1-1.94-1.52 6.9 6.9 0 0 1-1.23-2.66 15 15 0 0 1-.27-5 24.4 24.4 0 0 1 1.81-6.91 33 33 0 0 1 3-6 30.6 30.6 0 0 1 3.54-4.52 22.4 22.4 0 0 1 3.61-3.09 17 17 0 0 1 3.29-1.76 9.83 9.83 0 0 1 5.33-.83 3.87 3.87 0 0 1 2.82 2.55c.36-.78.75-1.56 1.15-2.35.41-.8.83-1.61 1.27-2.43Z" data-name=A1 /><path id=A1-2 d="M136.75 93.48c.2-.62.44-1.4.72-2.35.28-.94.58-1.92.9-2.93.32-1 .64-2 .95-2.93.31-1 .6-1.75.84-2.4a6.6 6.6 0 0 0-.32-1 3.5 3.5 0 0 0-.81-1.26 2.9 2.9 0 0 0-1.56-.78 4.73 4.73 0 0 0-2.57.39 13.5 13.5 0 0 0-2.46 1.3 18 18 0 0 0-2.71 2.29 24.5 24.5 0 0 0-2.73 3.37 30 30 0 0 0-2.52 4.57 31.2 31.2 0 0 0-2.35 7.41 14.4 14.4 0 0 0 0 5.87 4.23 4.23 0 0 0 1.69 2.75 3.11 3.11 0 0 0 2.88.06 9.75 9.75 0 0 0 3.42-2.32 18 18 0 0 0 2.64-3.51 36 36 0 0 0 2.12-4.18c.64-1.48 1.26-2.93 1.87-4.35" data-name=A1 /><path id=T2 d="M148.85 68.21c2.61-.93 3.92-1.39 6.56-2.3.17-.49.48-1.35.94-2.56q.68-1.83 1.65-4.08c.66-1.5 1.39-3 2.21-4.59a32.4 32.4 0 0 1 2.54-4.1l1.92.39c-.84 2-1.66 4.18-2.48 6.44s-1.59 4.58-2.33 7c4.93-1.68 7.4-2.5 12.4-4.12-.19.83-.29 1.25-.48 2.09-5.07 1.65-7.59 2.5-12.6 4.22q-1.1 3.78-2 7.46c-.57 2.45-1 4.78-1.38 7a53 53 0 0 0-.64 6 19.8 19.8 0 0 0 .27 4.59c.31 1.54.89 2.51 1.73 2.92a3.5 3.5 0 0 0 2.84 0 7.3 7.3 0 0 0 2.69-1.9 23 23 0 0 0 2.49-3.18 41 41 0 0 0 2.2-3.78c.67-1.33 1.27-2.56 1.78-3.69.51-1.14.93-2.12 1.26-2.95.32-.82.52-1.34.6-1.53l1.52.51q-1 2.51-2.16 5.37a47 47 0 0 1-2.77 5.54 26.7 26.7 0 0 1-3.57 4.8 12.1 12.1 0 0 1-4.58 3.11 6.6 6.6 0 0 1-2.9.48 4.85 4.85 0 0 1-2.33-.83 5.7 5.7 0 0 1-1.72-1.93 9.6 9.6 0 0 1-1-2.87 19 19 0 0 1-.29-3.16 42 42 0 0 1 .22-5.08c.19-2 .53-4.28 1-6.85a76 76 0 0 1 2.2-8.47c-2.49.87-3.73 1.31-6.2 2.2.18-.88.26-1.3.41-2.15" data-name=T2 /><path id=Q3 d="M189.41 32.72c-2.28 5.94-3.32 8.94-6.18 15.24l-1.91.56c1.62-6 2.77-9 4-14.74 1.68-.43 2.45-.64 4.09-1.06" data-name=Q3 /><path id=S1 d="M198.47 53.77a7 7 0 0 1-.36.78 9 9 0 0 0-.42 1 6.6 6.6 0 0 0-.3 1.2 5.6 5.6 0 0 0 0 1.53 7.4 7.4 0 0 0 .61 1.86q.52 1.14 1.14 2.61c.41 1 .82 2.07 1.22 3.25a19.4 19.4 0 0 1 .86 3.75 15.9 15.9 0 0 1-.12 5.36 15.3 15.3 0 0 1-1.6 4.43 30 30 0 0 0 4.74-5.66 56.3 56.3 0 0 0 4.36-8.18l1.33.72a61 61 0 0 1-2.77 5.58 39.6 39.6 0 0 1-3.6 5.4 28.4 28.4 0 0 1-4.43 4.6 16.8 16.8 0 0 1-5.26 3 7.16 7.16 0 0 1-4.47.3 4 4 0 0 1-2.75-2.91l1.26-.7a1.9 1.9 0 0 0 .29.61 2.3 2.3 0 0 0 .74.7 3.1 3.1 0 0 0 1.26.39 3.8 3.8 0 0 0 1.75-.26 5.8 5.8 0 0 0 2.31-1.46 8.9 8.9 0 0 0 1.62-2.28 13.2 13.2 0 0 0 1-2.78 19.6 19.6 0 0 0 .52-3 24 24 0 0 0 .11-2.89 22 22 0 0 0-.18-2.48c-.09-.74-.22-1.54-.39-2.42s-.35-1.71-.52-2.51c-.17-.79-.32-1.49-.46-2.08-.13-.59-.21-1-.23-1.16V60a15 15 0 0 0-.87 1.72c-.33.73-.67 1.54-1 2.42-.37.87-.73 1.76-1.09 2.67-.37.9-.69 1.73-1 2.47l-.72 1.84q-.27.72-.27.75l-1.31-.57.65-1.78q.62-1.73 1.66-4.37 1-2.65 2.38-5.85Q195.5 56 197 53Z" data-name=S1 /><path id=A2-1 d="m256 45.54 1.26.33q-.37.95-1.08 2.49c-.47 1-1 2.15-1.5 3.37q-.79 1.85-1.59 3.84c-.52 1.32-1 2.61-1.39 3.87a31 31 0 0 0-.9 3.56 8.4 8.4 0 0 0-.19 2.71c.09.72.31 1.17.64 1.34a2.16 2.16 0 0 0 1.25.17 4.9 4.9 0 0 0 2.12-.83 11.7 11.7 0 0 0 2-1.74 21 21 0 0 0 1.87-2.3c.6-.84 1.16-1.69 1.67-2.53.51-.85 1-1.65 1.39-2.42l1.05-2 1.46.82c-.34.77-.75 1.61-1.22 2.5-.47.9-1 1.81-1.57 2.73a32 32 0 0 1-1.91 2.69 18 18 0 0 1-2.24 2.36 12.5 12.5 0 0 1-2.57 1.76 8.5 8.5 0 0 1-2.89.89 4.09 4.09 0 0 1-3.41-.79 4.68 4.68 0 0 1-1.45-3l-.06-.59a3.5 3.5 0 0 1 0-.73 31.6 31.6 0 0 1-3.06 4 19.4 19.4 0 0 1-2.94 2.65 13 13 0 0 1-2.86 1.59 13 13 0 0 1-2.72.77 8.3 8.3 0 0 1-2.67 0 6.3 6.3 0 0 1-2.32-.83 5.3 5.3 0 0 1-1.72-1.7 6.26 6.26 0 0 1-.91-2.62 13 13 0 0 1 .32-4.55 20.3 20.3 0 0 1 2.56-5.93 27 27 0 0 1 3.63-4.86 25.7 25.7 0 0 1 3.95-3.39 19.5 19.5 0 0 1 3.87-2.09 16.2 16.2 0 0 1 3.41-.94 10.33 10.33 0 0 1 5.34.33 4.37 4.37 0 0 1 2.54 2.91c.43-.63.89-1.26 1.36-1.9.49-.63 1-1.28 1.48-1.94" data-name=A2 /><path id=A2-2 d="M247.48 60.21c.26-.51.57-1.17 1-2 .37-.8.77-1.62 1.19-2.46.42-.85.83-1.67 1.24-2.46.4-.78.76-1.45 1.07-2a10 10 0 0 0-.22-1 3.8 3.8 0 0 0-.68-1.31 3.4 3.4 0 0 0-1.47-1 5.2 5.2 0 0 0-2.57-.17 12.2 12.2 0 0 0-2.55.69 15 15 0 0 0-2.91 1.52 21 21 0 0 0-3.05 2.52 24 24 0 0 0-3 3.64 25.3 25.3 0 0 0-3.14 6.26 12.1 12.1 0 0 0-.67 5.29 4.1 4.1 0 0 0 1.36 2.78 3.5 3.5 0 0 0 2.85.58 9.4 9.4 0 0 0 3.66-1.43 15.6 15.6 0 0 0 3-2.63 31 31 0 0 0 2.56-3.32c.85-1.17 1.58-2.34 2.33-3.5" data-name=A2 /><path id=L1-1 d="M286.47 15.47a4.25 4.25 0 0 1 2.34.38 2.31 2.31 0 0 1 1.09 2.06 8.6 8.6 0 0 1-.28 2.6 27.5 27.5 0 0 1-1.06 3.35c-.46 1.21-1 2.5-1.64 3.85q-.94 2-2.07 4.05c-.74 1.35-1.52 2.66-2.34 3.95-.81 1.28-1.63 2.48-2.44 3.57q-2.43 3.33-4.2 5.62-1.75 2.28-3 3.88c-.85 1.06-1.56 1.92-2.15 2.59-.58.67-1.1 1.24-1.55 1.72s-.86.92-1.25 1.32c-.38.39-.77.83-1.17 1.3a10 10 0 0 0 0 2.51c.1.78.19 1.5.26 2.16a7.7 7.7 0 0 0 1.55 4.3 3.54 3.54 0 0 0 3.08 1.18 6 6 0 0 0 2.47-.79 14.2 14.2 0 0 0 2.36-1.75 21 21 0 0 0 2.19-2.32c.7-.87 1.37-1.75 2-2.63.62-.89 1.18-1.75 1.67-2.57l1.3-2.15 1.46.88c-.07.1-.27.48-.62 1.14-.35.67-.82 1.47-1.4 2.41-.58 1-1.27 2-2.08 3a25.6 25.6 0 0 1-2.67 3 16.3 16.3 0 0 1-3.1 2.39 8.1 8.1 0 0 1-3.46 1.12 8.4 8.4 0 0 1-3-.28 6.74 6.74 0 0 1-2.63-1.44 9.1 9.1 0 0 1-2.05-2.74A12.8 12.8 0 0 1 263 59a28.4 28.4 0 0 1 0-6.58 47 47 0 0 1 1.4-7.09 56 56 0 0 1 2.52-7.17 68 68 0 0 1 3.36-6.84 56 56 0 0 1 3.95-6.1 43 43 0 0 1 4.24-4.94 23 23 0 0 1 4.2-3.37 9 9 0 0 1 3.8-1.44" data-name=L1 /><path id=L1-2 d="M267 52.6q2.85-3.33 5.51-6.73c1.78-2.27 3.44-4.5 5-6.71q2.34-3.3 4.29-6.4c1.3-2.06 2.4-4 3.31-5.8a36 36 0 0 0 2.07-4.89 9.8 9.8 0 0 0 .6-3.71 1.5 1.5 0 0 0-.38-.71.9.9 0 0 0-.78-.4 6.2 6.2 0 0 0-3.08 1.7 29.6 29.6 0 0 0-3.94 4.23 61 61 0 0 0-4.2 6.12 67 67 0 0 0-3.85 7.39 65 65 0 0 0-3 8A40.8 40.8 0 0 0 267 52.6" data-name=L1 /><path id=L2-1 d="M308.5 13.82a4.1 4.1 0 0 1 2.31.46 2.35 2.35 0 0 1 1 2.12 8.9 8.9 0 0 1-.39 2.62 29 29 0 0 1-1.17 3.38c-.5 1.22-1.09 2.51-1.77 3.86s-1.41 2.71-2.19 4.06-1.59 2.66-2.44 4c-.85 1.28-1.7 2.47-2.53 3.56-1.68 2.21-3.11 4.07-4.32 5.58a263 263 0 0 1-3.11 3.85c-.87 1.05-1.6 1.91-2.19 2.57-.6.65-1.12 1.22-1.58 1.69-.46.48-.88.91-1.27 1.29-.39.39-.79.82-1.2 1.28a10.5 10.5 0 0 0 0 2.55c.08.8.15 1.53.21 2.2a8.05 8.05 0 0 0 1.41 4.42 3.5 3.5 0 0 0 3 1.31 5.6 5.6 0 0 0 2.43-.72 13.2 13.2 0 0 0 2.3-1.73 22.5 22.5 0 0 0 2.23-2.32c.71-.86 1.39-1.73 2-2.61.63-.88 1.2-1.74 1.71-2.56l1.34-2.15 1.4.95c-.07.09-.29.48-.65 1.14s-.84 1.47-1.44 2.41-1.31 1.95-2.13 3a26.4 26.4 0 0 1-2.69 3 16 16 0 0 1-3.11 2.31 7.4 7.4 0 0 1-3.42 1 7.9 7.9 0 0 1-2.84-.34 6.7 6.7 0 0 1-2.55-1.56 9.3 9.3 0 0 1-2-2.85 13.3 13.3 0 0 1-1.05-4.29 29.7 29.7 0 0 1 .19-6.68 46 46 0 0 1 1.57-7.14 56 56 0 0 1 2.69-7.2 72 72 0 0 1 3.54-6.85 57 57 0 0 1 4.21-6.1 43 43 0 0 1 4.39-4.89 23.7 23.7 0 0 1 4.29-3.29 8.8 8.8 0 0 1 3.82-1.33" data-name=L2 /><path id=L2-2 d="M288.05 50.94c1.94-2.18 3.81-4.4 5.64-6.64q2.73-3.37 5.14-6.67 2.42-3.29 4.45-6.38c1.36-2.06 2.52-4 3.48-5.8a38 38 0 0 0 2.24-4.91 10 10 0 0 0 .73-3.75 1.43 1.43 0 0 0-.34-.73.88.88 0 0 0-.76-.43 6.14 6.14 0 0 0-3.12 1.63 29 29 0 0 0-4.07 4.18 62 62 0 0 0-4.37 6.09 66 66 0 0 0-4.06 7.4 67 67 0 0 0-3.17 8 43 43 0 0 0-1.79 8.01" data-name=L2 /><path id=F-1 d="m388.05 23.16 1.08 1.19s-.52.39-1.5 1.18c-1 .79-2.3 2-4 3.67-1.7 1.66-3.69 3.78-6 6.37-2.34 2.6-4.88 5.69-7.67 9.29-.75 1-1.14 1.47-1.9 2.45 1-.17 1.93-.33 2.92-.48 1-.14 2-.27 3-.38l1.94-.26a38 38 0 0 1 2.72-3.37 17 17 0 0 1 2.18-2 6.2 6.2 0 0 1 1.78-1 4.3 4.3 0 0 1 1.42-.21 2.86 2.86 0 0 1 1.5.56 1.93 1.93 0 0 1 .66 1.76 3.64 3.64 0 0 1-.63 1.87 6.3 6.3 0 0 1-1.63 1.63 11 11 0 0 1-2.48 1.3 17 17 0 0 1-3.15.84c-.6.92-1.23 1.89-1.87 2.9-.65 1-1.34 2-2.05 3q-1.08 1.53-2.22 3c-.76 1-1.55 1.91-2.37 2.78l-2.91-2.48c.29-.26.74-.68 1.34-1.25.59-.57 1.24-1.21 1.93-1.92.7-.71 1.38-1.47 2.06-2.26.67-.8 1.25-1.55 1.74-2.27l.69-1.07c-1.33.19-2.68.4-4 .62-1.36.23-2.76.48-4.21.78-2.55 3.18-5 6.07-6.75 8.66a46 46 0 0 1-5.4 6.59 21 21 0 0 1-5.88 4.16 16.6 16.6 0 0 1-7.17 1.44 18.4 18.4 0 0 1-5.39-.84 17.4 17.4 0 0 1-5-2.41 14.2 14.2 0 0 1-3.83-3.87 9.65 9.65 0 0 1-1.54-5.28 9.5 9.5 0 0 1 .85-4.17 9.2 9.2 0 0 1 2.42-3.11 10.8 10.8 0 0 1 3.59-1.94 14.3 14.3 0 0 1 4.31-.68 14.7 14.7 0 0 1 3.71.45 16.4 16.4 0 0 1 3.53 1.34 16 16 0 0 1 3.11 2.14 15.2 15.2 0 0 1 2.49 2.83l-1.3 1a11.6 11.6 0 0 0-2.07-1.95 13.3 13.3 0 0 0-2.55-1.46 14.3 14.3 0 0 0-2.85-.9 13.4 13.4 0 0 0-3-.3 11.7 11.7 0 0 0-3.16.46 8.1 8.1 0 0 0-2.76 1.44 7.5 7.5 0 0 0-2 2.48 8.2 8.2 0 0 0-.76 3.67 7.54 7.54 0 0 0 .92 3.61 9.5 9.5 0 0 0 2.44 2.89A12 12 0 0 0 336 67.6a12.9 12.9 0 0 0 4.28.72A12.6 12.6 0 0 0 346 67a19.3 19.3 0 0 0 4.89-3.64 38.6 38.6 0 0 0 4.46-5.48q2.16-3.16 4.42-6.76c-.61.21-1.23.44-1.86.68-.64.24-1.27.49-1.91.75l-.45-1.8 2.91-1 2.76-.93a72 72 0 0 1 5.43-7.07q3-3.6 6.3-7a79 79 0 0 1 7-6.37 49.7 49.7 0 0 1 8-5.24Z" data-name=F /><path id=F-2 d="M360.17 41.44c.21.67.31 1 .51 1.69a28.4 28.4 0 0 1-6.19 2.19 26 26 0 0 1-5.73.68 17.1 17.1 0 0 1-5.72-.91 14.1 14.1 0 0 1-4.52-2.53 11.5 11.5 0 0 1-3-3.91 11.55 11.55 0 0 1-1-5.06 15.2 15.2 0 0 1 1.29-6.16 15.7 15.7 0 0 1 3.38-4.78 19.6 19.6 0 0 1 5-3.5 35 35 0 0 1 6.16-2.33 42 42 0 0 1 6.77-1.27 56 56 0 0 1 6.81-.31 58.5 58.5 0 0 1 7.78.67c2.57.39 5.05.83 7.46 1.31l7 1.41a57 57 0 0 0 6.65.93 43.5 43.5 0 0 0 6.83 0 49 49 0 0 0 5.33-.68 29 29 0 0 0 3.46-.85c.83-.27 1.26-.41 1.28-.4.39.69.58 1 1 1.74-.08 0-.56.2-1.45.49a33 33 0 0 1-3.66.9 53 53 0 0 1-5.57.71 47 47 0 0 1-7.18-.05 62 62 0 0 1-7-.94c-2.26-.44-4.53-.89-6.83-1.36q-3.44-.7-7.15-1.28a59 59 0 0 0-7.87-.64 42.3 42.3 0 0 0-10.59 1 24.6 24.6 0 0 0-7.9 3.26 14.8 14.8 0 0 0-4.87 5.19 14.8 14.8 0 0 0-1.75 6.81 9.75 9.75 0 0 0 .85 4.52 9.1 9.1 0 0 0 2.48 3.21 10.9 10.9 0 0 0 3.61 1.91 14.4 14.4 0 0 0 4.26.64 20.3 20.3 0 0 0 3.77-.35 28 28 0 0 0 3.22-.81c.93-.3 1.68-.58 2.25-.83s.87-.37.89-.37Z" data-name=F /><path id=F-3 d="M383.45 41.44c-.47 0-1 .33-1.66 1.07a30 30 0 0 0-2.18 2.92 11.2 11.2 0 0 0 2.16-.81 6.3 6.3 0 0 0 1.31-.89 2.6 2.6 0 0 0 .67-.91 2.8 2.8 0 0 0 .22-.91.34.34 0 0 0-.15-.35.8.8 0 0 0-.37-.12" data-name=F /><path id=O-1 d="M405 60.4a2 2 0 0 0 .33.07h.38a10.2 10.2 0 0 0 2.12 0 6 6 0 0 0 1.75-.43 5.8 5.8 0 0 0 1.51-1 8 8 0 0 0 1.37-1.55L414 58.8a9.24 9.24 0 0 1-3.95 3 10.3 10.3 0 0 1-4.49.47 8 8 0 0 1-1.56-.32 19.4 19.4 0 0 1-3.84 4 19.7 19.7 0 0 1-4.31 2.54 18.7 18.7 0 0 1-4.42 1.28 19 19 0 0 1-4.12.2 12.2 12.2 0 0 1-3.59-.8 8.5 8.5 0 0 1-2.8-1.75 7.1 7.1 0 0 1-1.74-2.56 7.6 7.6 0 0 1-.5-3.26 10.6 10.6 0 0 1 .88-3.63 20 20 0 0 1 2.05-3.63 26.6 26.6 0 0 1 2.87-3.41 31.6 31.6 0 0 1 3.45-3 31.5 31.5 0 0 1 3.73-2.41 21 21 0 0 1 3.77-1.65l1.3 1.65a28.3 28.3 0 0 0-4.44 3.12 33 33 0 0 0-4.29 4.3 27.5 27.5 0 0 0-3.26 5 12.7 12.7 0 0 0-1.42 5.13 4.8 4.8 0 0 0 1.11 3.56 5.36 5.36 0 0 0 3.7 1.49 11.7 11.7 0 0 0 3.82-.35 16 16 0 0 0 3.67-1.44A18.6 18.6 0 0 0 399 64a28 28 0 0 0 3-3 8.5 8.5 0 0 1-2.16-1.86 11.3 11.3 0 0 1-1.57-2.51 13.5 13.5 0 0 1-.95-2.94 16 16 0 0 1-.31-3.17 9.7 9.7 0 0 1 .45-3 7.8 7.8 0 0 1 1.23-2.38 5.3 5.3 0 0 1 1.83-1.52 4.06 4.06 0 0 1 2.28-.38 4.13 4.13 0 0 1 2 .74 5.5 5.5 0 0 1 1.52 1.63 8.6 8.6 0 0 1 1 2.32 12.5 12.5 0 0 1 .4 2.78 15.6 15.6 0 0 1-.14 2.39 18 18 0 0 1-.52 2.58 20 20 0 0 1-.88 2.52 10.8 10.8 0 0 1-1.18 2.2" data-name=O /><path id=O-2 d="M399.2 50.76a14 14 0 0 0 .23 2.31 12.6 12.6 0 0 0 .68 2.47 11.2 11.2 0 0 0 1.19 2.28 6.2 6.2 0 0 0 1.78 1.76 15 15 0 0 0 1.23-2.46 22 22 0 0 0 .81-2.48 15 15 0 0 0 .44-2.26 14 14 0 0 0 .1-1.87 9.8 9.8 0 0 0-.25-2 7.6 7.6 0 0 0-.58-1.65 3.6 3.6 0 0 0-.87-1.15 2 2 0 0 0-1.12-.51 2.33 2.33 0 0 0-1.48.34 3.64 3.64 0 0 0-1.17 1.2 6.2 6.2 0 0 0-.73 1.83 9 9 0 0 0-.26 2.19" data-name=O /><path id=L3-1 d="M437.8 22.24a4.7 4.7 0 0 1 2.24 1 3.36 3.36 0 0 1 1.1 2.4 8.5 8.5 0 0 1-.22 2.6 22 22 0 0 1-1 3.18 37 37 0 0 1-1.51 3.58 55 55 0 0 1-2 3.65c-.74 1.2-1.51 2.36-2.34 3.49-.83 1.12-1.67 2.14-2.51 3.08-1.68 1.88-3.17 3.47-4.44 4.76-1.26 1.29-2.37 2.38-3.31 3.28-.95.89-1.75 1.62-2.4 2.17-.66.55-1.25 1-1.76 1.41-.51.39-1 .74-1.43 1.06-.44.31-.89.67-1.36 1.07a10 10 0 0 0-.17 2.6c.05.84.1 1.61.13 2.31a8.64 8.64 0 0 0 1.4 4.81 4.84 4.84 0 0 0 3.36 2 6.3 6.3 0 0 0 2.79-.23 11.6 11.6 0 0 0 2.7-1.23 16.7 16.7 0 0 0 2.52-1.9c.79-.73 1.54-1.47 2.23-2.24s1.31-1.52 1.85-2.25l1.41-1.91 1.54 1.27c-.07.09-.29.43-.67 1-.38.6-.89 1.31-1.52 2.15a29 29 0 0 1-2.32 2.63 19.6 19.6 0 0 1-3 2.49 14.2 14.2 0 0 1-3.55 1.72 8.7 8.7 0 0 1-3.94.33 11.6 11.6 0 0 1-3.31-1 9.6 9.6 0 0 1-2.85-2.12 11.2 11.2 0 0 1-2.08-3.4 13.5 13.5 0 0 1-.91-4.62 28.3 28.3 0 0 1 .6-6.83 47 47 0 0 1 2-7 59 59 0 0 1 3.06-6.83 68 68 0 0 1 3.72-6.25 50 50 0 0 1 4.15-5.32 33.7 33.7 0 0 1 4.19-4 16.2 16.2 0 0 1 4-2.41 6.77 6.77 0 0 1 3.61-.5" data-name=L3 /><path id=L3-2 d="M417.42 55.76c2.18-1.84 4.24-3.72 6.2-5.63a100 100 0 0 0 5.37-5.71 89 89 0 0 0 4.4-5.54 45 45 0 0 0 3.27-5.15 27.4 27.4 0 0 0 2-4.51 9.3 9.3 0 0 0 .51-3.66 2.2 2.2 0 0 0-.37-.83 1.22 1.22 0 0 0-.76-.61 4.37 4.37 0 0 0-2.94 1 21 21 0 0 0-3.8 3.36 53 53 0 0 0-4.19 5.26 63 63 0 0 0-4.11 6.63 68 68 0 0 0-3.42 7.57 41 41 0 0 0-2.16 7.82" data-name=L3 /><path id=K-1 d="M444 52.58c-1.61 4-2.42 5.93-4.09 9.86a48 48 0 0 1 3.83-4.34 30.6 30.6 0 0 1 4.14-3.52 16 16 0 0 1 4.31-2.18 8.8 8.8 0 0 1 4.4-.26 6.7 6.7 0 0 1 2.26.86 5.8 5.8 0 0 1 1.48 1.32 5.4 5.4 0 0 1 .86 1.57 7 7 0 0 1 .36 1.61 6.8 6.8 0 0 1-.19 2.31 7.7 7.7 0 0 1-1.06 2.34 8.2 8.2 0 0 1-2 2.05 10.2 10.2 0 0 1-3 1.51 6.7 6.7 0 0 1 .65 2.4 6.1 6.1 0 0 1-.05 1.66c-.1.55-.2 1.08-.33 1.61-.12.52-.22 1.06-.32 1.6a6.3 6.3 0 0 0-.05 1.69 6 6 0 0 0 .14.85 2.7 2.7 0 0 0 .3.78 2 2 0 0 0 .59.63 2.7 2.7 0 0 0 1 .4 2.8 2.8 0 0 0 1.68-.25 9.4 9.4 0 0 0 1.91-1.17 17 17 0 0 0 2-1.82c.67-.71 1.32-1.47 1.94-2.27s1.22-1.61 1.8-2.41c.57-.8 1.09-1.56 1.55-2.28l1.46 1.33q-1.61 2.39-3.15 4.54a25.6 25.6 0 0 1-3.16 3.67 11.6 11.6 0 0 1-3.39 2.26 6.3 6.3 0 0 1-3.79.34 8.4 8.4 0 0 1-1.69-.54 6.8 6.8 0 0 1-1.64-1 5.8 5.8 0 0 1-1.31-1.51 4.8 4.8 0 0 1-.66-2 7.9 7.9 0 0 1 .41-3.11 25 25 0 0 0 .67-2.77 9.4 9.4 0 0 0 .15-1.93h-1.68a10.3 10.3 0 0 1-1.7-.17 6 6 0 0 1-.93-.26 4.8 4.8 0 0 1-1-.49 3.2 3.2 0 0 1-.77-.7 1.65 1.65 0 0 1-.38-.95 1.32 1.32 0 0 1 .27-1 2.23 2.23 0 0 1 .92-.7 4.3 4.3 0 0 1 1.46-.33 8 8 0 0 1 1.94.15 7.33 7.33 0 0 1 3.5 1.68 7 7 0 0 0 2-1.8 8.3 8.3 0 0 0 1.14-2.09 9 9 0 0 0 .48-1.92 7 7 0 0 0 0-1.31 3.1 3.1 0 0 0-.62-1.77 2 2 0 0 0-1.14-.68 5.1 5.1 0 0 0-2.64.24 12.7 12.7 0 0 0-2.86 1.46 27 27 0 0 0-3 2.44q-1.54 1.42-3 3-1.46 1.62-2.84 3.29c-.91 1.12-1.75 2.18-2.52 3.17-.69 1.08-1.3 2.09-1.84 3-.54.94-1 1.74-1.36 2.42s-.66 1.19-.87 1.53c-.21.35-.33.46-.37.33-1.63-.63-2.45-1-4.1-1.57 2.73-6 5.35-12 7.92-18.1 2.56-6.08 5.18-12.21 7.9-18.32.41-.88.88-1.85 1.41-2.89.52-1 1.1-2.06 1.73-3.08a31 31 0 0 1 2-2.91 15 15 0 0 1 2.31-2.38 8.4 8.4 0 0 1 2.54-1.45 5.15 5.15 0 0 1 2.73-.17 4.9 4.9 0 0 1 2.5 1.29 4.26 4.26 0 0 1 1.18 2.74 14.1 14.1 0 0 1-.77 5.57 26 26 0 0 1-3.25 6.53 36 36 0 0 1-5.8 6.59 37 37 0 0 1-8.5 5.78" data-name=K /><path id=K-2 d="M445.3 49.34a36.6 36.6 0 0 0 7.22-5.65 33.5 33.5 0 0 0 4.74-6 22 22 0 0 0 2.51-5.6 12.9 12.9 0 0 0 .52-4.58 1.56 1.56 0 0 0-.39-.93 1.7 1.7 0 0 0-1-.53 3.33 3.33 0 0 0-2.75.74 13.1 13.1 0 0 0-2.9 3.72 66 66 0 0 0-3.46 7.3c-1.26 3.1-2.79 6.93-4.49 11.53" data-name=K /><path id=K-3 d="M451.6 64.65a2.7 2.7 0 0 0-.7-.84 2.2 2.2 0 0 0-1-.5 3.8 3.8 0 0 0-1.92.07c-.54.19-.79.42-.77.69a.58.58 0 0 0 .41.46 4 4 0 0 0 .68.22 7.4 7.4 0 0 0 1.83.12 10 10 0 0 0 1.47-.22" data-name=K /><path id=S2 d="M478.54 54.58a3.7 3.7 0 0 1-.42.61 4.4 4.4 0 0 0-.5.75 4.3 4.3 0 0 0-.39 1.05 5 5 0 0 0-.07 1.54 9.7 9.7 0 0 0 .56 2.19c.33.94.68 2 1.06 3.23.39 1.2.76 2.51 1.11 3.9a24.3 24.3 0 0 1 .7 4.22 15.4 15.4 0 0 1-.38 5.3 9.1 9.1 0 0 1-1.82 3.56 14 14 0 0 0 5-3.15 30.8 30.8 0 0 0 4.81-6l1.25 1.39a38 38 0 0 1-3.08 4.31 19.8 19.8 0 0 1-3.81 3.52 13.8 13.8 0 0 1-4.64 2.14 11.8 11.8 0 0 1-5.55 0 10.85 10.85 0 0 1-4.73-2.3 8.35 8.35 0 0 1-2.72-4.38h1.3a3 3 0 0 0 .28.76 4.7 4.7 0 0 0 .74 1.1 6.5 6.5 0 0 0 1.27 1.1 5.5 5.5 0 0 0 1.88.76 4.24 4.24 0 0 0 2.5-.1 4.27 4.27 0 0 0 1.78-1.34 7.4 7.4 0 0 0 1.18-2.19 14.4 14.4 0 0 0 .66-2.7 21 21 0 0 0 .23-2.83c0-.93 0-1.79-.07-2.58-.07-.78-.17-1.66-.32-2.63-.14-1-.28-1.9-.43-2.79s-.28-1.67-.4-2.33c-.11-.67-.18-1.1-.2-1.3v-.07a7.3 7.3 0 0 0-1 1.26c-.39.56-.79 1.18-1.22 1.85q-.66 1-1.29 2.07c-.43.7-.82 1.34-1.16 1.91l-.84 1.42a6 6 0 0 0-.32.6l-1.42-1.32s.28-.48.77-1.38c.49-.91 1.15-2 2-3.42.83-1.38 1.77-2.89 2.83-4.55q1.55-2.45 3.33-4.76c.6.64.91 1 1.54 1.58" data-name=S2 /><path id=EX-1 d="M521 41.5a244.3 244.3 0 0 0-24.5 37l-1.47-1a283 283 0 0 1 21.24-39.14c1.9 1.25 2.85 1.88 4.73 3.14" data-name=EX /><path id=EX-2 d="M495.4 84.67a2.05 2.05 0 0 1-.64 1.69 1.78 1.78 0 0 1-1.69.35 3.17 3.17 0 0 1-1.7-1.2 3.5 3.5 0 0 1-.81-2 1.94 1.94 0 0 1 .63-1.66 1.74 1.74 0 0 1 1.66-.36 3.22 3.22 0 0 1 1.78 1.22 3.38 3.38 0 0 1 .77 1.96" data-name=EX /><path id=Q4 d="M552.39 49.89a113 113 0 0 0-13.47 10l-1.92-.56a123 123 0 0 1 9.73-11Z" data-name=Q4 /><path id=Q5 d="M542.21 47.11A111 111 0 0 0 530 57.43l-1.87-.51a127 127 0 0 1 8.56-11.3Z" data-name=Q5 /></g></svg>
   </div>
-  <!-- <h3>Grazie ❤️!</h3> -->
+  
 </section>
 
-  <section pixu="" data-transition="convex">
-  <!-- <figure>
-    <picture>
-      <source srcset="./assets/pixu.jpg?as=webp" type="image/webp" />
-      <img src="./assets/pixu.jpg" alt="Pixu" />
-    </picture>
-  </figure> -->
+  <section pixu data-transition=convex>
+  
   <h2>Thanks ❤️</h2>
 </section>
 
@@ -2081,14 +1893,13 @@ addCategory(), so modals stay thin. --&gt;
 
 
       </div>
-      <a brand="" href="https://www.devdojo.it" target="_blank" rel="noopener noreferrer">
+      <a brand href=https://www.devdojo.it target=_blank rel="noopener noreferrer">
   <figure>
-    <img src="/dev-dojo.2f055838.png" alt="Dev Dojo IT Logo">
+    <img src=https://pixu1980.github.io/reactive-apps-without-frameworks/dev-dojo.411eb755.png alt="Dev Dojo IT Logo">
   </figure>
 </a>
 
     </main>
-    <script src="/talk-reactive-apps-without-frameworks.c6396971.js" type="module"></script>
+    <script src=https://pixu1980.github.io/reactive-apps-without-frameworks/talk-reactive-apps-without-frameworks.180a1eab.js type=module></script>
   
 
-</body></html>
