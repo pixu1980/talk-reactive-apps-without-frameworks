@@ -1,0 +1,42 @@
+<section data-topic="store-to-dom" data-menu-title="Action write">
+  <h4 balance>Step 4 - action writes into <mark>proxy store</mark></h4>
+  <small balance> <mark>`updateTodo()`</mark> finds the item and replaces it with a new object containing the patch. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Action write">
+  <h4 balance><mark>updateTodo</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+export function updateTodo(id, patch) {
+  const index = store.state.todos.findIndex((todo) => todo.id === id)
+
+  if (index &lt; 0) {
+    return
+  }
+
+  const current = store.state.todos[index]
+
+  store.state.todos[index] = { ...current, ...patch }
+}
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Action write">
+  <h4 balance><mark>Logical field</mark>, actual write</h4>
+  <article class="code-stack">
+    <pre><code data-trim class="hljs javascript">
+// Logical change
+todo.completed = true
+
+// Actual app write
+store.state.todos[index] = {
+  ...current,
+  completed: true,
+}
+    </code></pre>
+  </article>
+  <small balance>
+    Store event path is array slot, for example <mark>`todos.1`</mark>, not deep path <mark>`todos.1.completed`</mark>. Field changed, but proxy assignment replaced whole todo object.
+  </small>
+</section>

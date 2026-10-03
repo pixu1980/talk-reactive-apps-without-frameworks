@@ -1,0 +1,28 @@
+<section data-topic="store-to-dom" data-menu-title="Timing">
+  <h4 balance>What runs <mark>synchronously</mark> and what runs later?</h4>
+  <small balance>One store write causes two kinds of work: immediate subscriber work during <mark>tickState.notify()</mark>, and microtask work through the scheduler.</small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Timing">
+  <h4 balance><mark>Synchronous</mark> work</h4>
+  <small>
+    <ul>
+      <li>Model bindings subscribed to <mark>`tickState`</mark> resync controls</li>
+      <li>Computed signals become dirty and notify subscribers</li>
+      <li>DOM parts bound directly to computed signals may refresh immediately</li>
+      <li>Repeat parts bound to <mark>`visibleTodos`</mark> can reconcile blocks</li>
+    </ul>
+  </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Timing">
+  <h4 balance><mark>Microtask</mark> work</h4>
+  <small>
+    <ul>
+      <li>Effects that read <mark>`tickState`</mark> are queued</li>
+      <li>Render effect calls <mark>`render(App(), root)`</mark></li>
+      <li>Document preferences sync from store</li>
+      <li>This split keeps direct bindings responsive while batching top level effects</li>
+    </ul>
+  </small>
+</section>

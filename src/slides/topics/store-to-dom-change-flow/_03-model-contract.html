@@ -1,0 +1,21 @@
+<section data-topic="store-to-dom" data-menu-title="model contract">
+  <h4 balance>Step 2 - <mark>`todoModel()`</mark> builds read and write contract</h4>
+  <small balance> <mark>`todoModel()`</mark> wraps the field in a directive payload. Renderer receives three things: signal for resync, getter for current value, setter for next value. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="model contract">
+  <h4 balance><mark>`todoModel`</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+export function todoModel(todoId, field, options = {}) {
+  return model({
+    signal: tickState,
+    get: () => getTodoById(todoId)?.[field] ?? (options.prop === "checked" ? false : ""),
+    set: (value) => updateTodo(todoId, { [field]: value }),
+    ...options,
+  })
+}
+    </code></pre>
+  </article>
+  <small balance> For checkbox: <mark>`field`</mark> is <mark>completed</mark>, <mark>`prop`</mark> is <mark>checked</mark>, and <mark>`event`</mark> is <mark>change</mark>. </small>
+</section>

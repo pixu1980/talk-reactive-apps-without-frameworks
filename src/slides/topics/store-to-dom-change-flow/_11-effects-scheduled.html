@@ -1,0 +1,69 @@
+<section data-topic="store-to-dom" data-menu-title="Effects scheduled">
+  <h4 balance>Step 10 - effects are <mark>scheduled</mark>, not run inline</h4>
+  <small balance> <mark>`mountApp()`</mark> creates effects that read <mark>`tickState`</mark>. Each effect subscribes to the pulse and gets queued in a microtask when it changes. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Effects scheduled">
+  <h4 balance><mark>App effects</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+effect(() => {
+  tickState.get()
+  syncDocumentPreferences(store)
+})
+
+effect(() => {
+  tickState.get()
+  render(App(), root)
+  scheduleAppShellSizeSync(() => {
+    syncAppShellSize({
+      root,
+      observedAppShell,
+      setObservedAppShell: (value) => {
+        observedAppShell = value
+      },
+      appShellResizeObserver,
+    })
+  })
+})
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Effects scheduled">
+  <h4 balance><mark>Scheduler</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+addDependency(signal) {
+  if (this.dependencies.has(signal)) return
+
+  const unsubscribe = signal.subscribe(() => schedule(this))
+  this.dependencies.set(signal, unsubscribe)
+}
+
+export function schedule(effect) {
+  scheduled.add(effect)
+
+  if (flushing) return
+
+  flushing = true
+
+  queueMicrotask(() => {
+    try {
+      while (scheduled.size &gt; 0) {
+        const batch = [...scheduled]
+        scheduled.clear()
+
+        for (const job of batch) {
+          job.run()
+        }
+      }
+    } finally {
+      flushing = false
+    }
+  })
+}
+    </code></pre>
+  </article>
+  <small balance>One store mutation can notify many subscribers, but app render effect still runs through one queued job.</small>
+</section>

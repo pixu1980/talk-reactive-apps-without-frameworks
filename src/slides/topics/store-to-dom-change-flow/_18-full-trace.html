@@ -1,0 +1,66 @@
+<section data-topic="store-to-dom" data-menu-title="Full trace">
+  <h4 balance><mark>Full trace</mark> in one screen</h4>
+  <small balance>
+    Same story, compressed: user input becomes direct DOM writes through plain objects, one proxy store, one signal pulse, lazy computed values, scheduled effects, and stable parts.
+  </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Full trace">
+  <h4 balance><mark>Trace</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+// 1. User checks the checkbox rendered by TodoItem.
+&lt;input
+  model=${todoModel(todo.id, "completed", {
+    prop: "checked",
+    event: "change",
+  })}
+  type="checkbox"
+/&gt;
+
+// 2. AttributePart model listener reads the native checked value.
+const nextValue = target.checked
+binding.config.set(nextValue)
+
+// 3. todoModel writes through an action.
+set: (value) => updateTodo(todoId, { completed: value })
+
+// 4. The action writes into the proxy store.
+store.state.todos[index] = { ...current, completed: true }
+
+// 5. The proxy emits a cloned change payload.
+this.emitChange(["todos", index], oldValue, prepared)
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Full trace">
+  <h4 balance><mark>Trace</mark>, continued</h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+// 6. The app handles the event and bumps the signal bridge.
+persistState(store)
+tickState.set(performance.now())
+
+// 7. Computed values that read tickState become dirty.
+export const visibleTodos = new Signal.Computed(() => {
+  tickState.get()
+  return pipelineTodos(store.state.todos, store.state.filters, language)
+})
+
+// 8. Effects that read tickState are scheduled.
+effect(() => {
+  tickState.get()
+  render(App(), root)
+})
+
+// 9. The renderer pushes fresh values into stable DOM parts.
+rootPart.setValue(App())
+part.setValue(nextValue)
+
+// 10. The DOM receives direct writes.
+element.setAttribute("data-state", "done")
+element.checked = true
+    </code></pre>
+  </article>
+</section>

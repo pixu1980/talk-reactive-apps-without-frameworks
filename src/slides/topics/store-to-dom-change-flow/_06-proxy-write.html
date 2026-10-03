@@ -1,0 +1,55 @@
+<section data-topic="store-to-dom" data-menu-title="Proxy write">
+  <h4 balance>Step 5 - proxy <mark>set trap</mark> detects the write</h4>
+  <small balance> Store wraps state tree in proxies. Nested objects and arrays are wrapped lazily when they are read. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Proxy write">
+  <h4 balance><mark>createProxy</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+createProxy(target, path) {
+  if (!isObject(target)) return target
+  if (this.proxyCache.has(target)) return this.proxyCache.get(target)
+
+  const proxy = new Proxy(target, {
+    get: (raw, key, receiver) => {
+      if (key === "__raw") return raw
+      if (key === "__path") return path
+
+      const value = Reflect.get(raw, key, receiver)
+
+      if (isObject(value)) return this.createProxy(value, [...path, key])
+
+      return value
+    },
+    set: (raw, key, value, receiver) => {
+      const nextPath = [...path, key]
+      const oldValue = raw[key]
+      const prepared = clonePlainValue(value)
+      const result = Reflect.set(raw, key, prepared, receiver)
+
+      if (oldValue !== prepared) {
+        this.emitChange(nextPath, oldValue, prepared)
+      }
+
+      return result
+    },
+  })
+}
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Proxy write">
+  <h4 balance><mark>Write payload</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim class="hljs text">
+path before write: ["todos"]
+key: index
+nextPath: ["todos", index]
+oldValue: previous todo object
+prepared: cloned next todo object
+    </code></pre>
+  </article>
+  <small balance> If value changed, store emits a change event. <mark>Source</mark>: <code>src/scripts/core/store/_store.js</code> </small>
+</section>

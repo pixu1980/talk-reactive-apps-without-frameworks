@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang=en><meta charset=utf-8><title>Reactive Apps Without Frameworks</title><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=color-scheme content="light dark"><link rel=stylesheet href=talk-reactive-apps-without-frameworks.06d84c9c.css><body>
+<!DOCTYPE html><html lang=en><meta charset=utf-8><title>Reactive Apps Without Frameworks</title><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=color-scheme content="light dark"><link rel=stylesheet href=talk-reactive-apps-without-frameworks.9ccf3375.css><body>
     <main class=reveal>
       <div class=slides>
         <section intro balance>
@@ -887,7 +887,7 @@ export class PropertyPart extends Part {
   <h4 balance><mark>_attribute-part.js</mark>: plain attributes plus the most opinionated directive in the engine</h4>
   <small balance>
     This file starts simple and then becomes surprisingly sophisticated. It can write <mark>ordinary attributes</mark>, <mark>subscribe to signals</mark>, and run the two way
-    <mark><code>model()</code></mark> directive with <mark>cursor preservation</mark> and a <mark>select specific bug fix</mark>.
+    <mark>`model()`</mark> directive with <mark>cursor preservation</mark> and a <mark>select specific bug fix</mark>.
   </small>
 </section>
 
@@ -1202,6 +1202,12 @@ export {
 <section>
   
   <section data-topic=demo data-menu-title=App>
+  <h4 balance>The <mark>Implementation</mark></h4>
+  <small balance>
+    Putting all together
+  </small>
+</section>
+<section data-topic=demo data-menu-title=App>
   <h4 balance><mark>App.js</mark>: one real app shell, not one lonely button</h4>
   <small balance>
     This chapter is where the <mark>tiny runtime</mark> stops being <mark>theory</mark>. The app view is a little house made of small rooms, and every room uses the same <mark>store</mark>,
@@ -1340,8 +1346,8 @@ window.addEventListener("store:change", handleStoreChange)
   <section data-topic=demo data-menu-title="Computed state">
   <h4 balance><mark>Computed.js</mark>: little helpers that keep counting for us</h4>
   <small balance>
-    A five year old version is: these are <mark>tiny robots</mark>. You give them the <mark>raw toy pile</mark>, and they keep answering questions like <mark>"which todos should I show?"</mark> and
-    <mark>"how many are done?"</mark>
+    A five year old version is: these are <mark>tiny robots</mark>. You give them the <mark>raw toy pile</mark>, and they keep answering questions like <mark>which todos should I show?</mark> and
+    <mark>how many are done?</mark>
   </small>
 </section>
 <section data-topic=demo data-menu-title=App>
@@ -1430,7 +1436,7 @@ export function pipelineTodos(todos, filters, language) {
   <section data-topic=demo data-menu-title=Actions>
   <h4 balance><mark>Actions.js</mark>: the hands that move the toys</h4>
   <small balance>
-    Actions are the places where the app says <mark>"change the world now"</mark>. They are <mark>boring on purpose</mark>: find something, replace it, add it, remove it, or
+    Actions are the places where the app says <mark>change the world now</mark>. They are <mark>boring on purpose</mark>: find something, replace it, add it, remove it, or
     <mark>rebuild the whole state</mark> from the seed.
   </small>
 </section>
@@ -1726,13 +1732,11 @@ addCategory(), so modals stay thin. --&gt;
   </article>
 </section>
 
-  <section data-topic=demo data-menu-title="Open demo">
-  <h4 balance>The runtime is not trapped in slides. It opens as a <mark>real app tab</mark>.</h4>
-  <small balance>
-    No deck-only sandbox. The audience can open the same <mark>standalone demo</mark> we publish, poke it, and see the exact <mark>store</mark>, <mark>signals</mark>, <mark>directives</mark>, and
-    <mark>render loop</mark> we just walked through.
-  </small>
 </section>
+
+<section>
+  
+  
 <section data-topic=demo data-menu-title=App>
   <h3 balance><mark>Demo Time</mark></h3>
   <p balance>Open the <a href=https://pixu1980.github.io/reactive-apps-without-frameworks-demo/ target=_blank rel=noreferrer>here</a>.</p>
@@ -1762,6 +1766,7 @@ addCategory(), so modals stay thin. --&gt;
 </section>
 
 </section>
+
 
 
 <section>
@@ -1900,6 +1905,6 @@ addCategory(), so modals stay thin. --&gt;
 </a>
 
     </main>
-    <script src=talk-reactive-apps-without-frameworks.08749237.js type=module></script>
+    <script src=talk-reactive-apps-without-frameworks.7f895ddd.js type=module></script>
   
 

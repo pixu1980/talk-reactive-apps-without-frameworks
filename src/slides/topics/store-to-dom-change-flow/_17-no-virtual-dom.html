@@ -1,0 +1,27 @@
+<section data-topic="store-to-dom" data-menu-title="No virtual DOM">
+  <h4 balance>Why no <mark>virtual DOM</mark> is needed?</h4>
+  <small balance> Runtime already has enough information. No framework scheduler, no component class, no virtual tree diff. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="No virtual DOM">
+  <h4 balance><mark>Runtime knows</mark></h4>
+  <small>
+    <ul>
+      <li>Proxy store knows when data changed</li>
+      <li><mark>`tickState`</mark> wakes reactive readers</li>
+      <li>Computed signals know when cached values are stale</li>
+      <li>Effects know which signals they read</li>
+      <li>Template instances know which expression maps to which DOM part</li>
+      <li>Repeat blocks know which keyed item owns which DOM range</li>
+    </ul>
+  </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="No virtual DOM">
+  <h4 balance><mark>Small explicit loop</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim class="hljs text">
+write data -> emit event -> pulse signal -> update affected parts
+    </code></pre>
+  </article>
+</section>

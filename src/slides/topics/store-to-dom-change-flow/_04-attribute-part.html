@@ -1,0 +1,50 @@
+<section data-topic="store-to-dom" data-menu-title="AttributePart">
+  <h4 balance>Step 3 - <mark>`AttributePart`</mark> turns model into DOM listener</h4>
+  <small balance> Template engine sees <mark>`model=${"..."}`</mark>. <mark>`AttributePart.setValue()`</mark> detects the directive and calls <mark>`commitModel()`</mark>. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="AttributePart">
+  <h4 balance><mark>Route model directive</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+setValue(value) {
+  if (this.name === "model" && isDirective(value, "model")) {
+    this.commitModel(value.payload)
+    this.value = value
+
+    return
+  }
+
+  if (isSignalLike(value)) {
+    this.disposeModel()
+    this.bindSignal(value, (resolved) => this.commit(resolved))
+
+    return
+  }
+
+  this.disposeModel()
+  this.disposeSignal()
+  this.commit(value)
+}
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="AttributePart">
+  <h4 balance><mark>Browser listener</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+const onInput = (event) => {
+  const target = event.currentTarget
+  const nextValue = property === "checked" ? target.checked : target[property]
+
+  binding.config.set(nextValue)
+}
+
+this.element.addEventListener(eventName, onInput)
+    </code></pre>
+  </article>
+  <small balance>
+    User checks checkbox: <mark>`change`</mark> event -> <mark>`onInput`</mark> -> <mark>`binding.config.set(true)`</mark> -> <mark>`updateTodo(todoId, { completed: true })`</mark>.
+  </small>
+</section>

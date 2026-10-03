@@ -1,0 +1,49 @@
+<section data-topic="store-to-dom" data-menu-title="Computed dirty">
+  <h4 balance>Step 9 - computed signals become <mark>dirty</mark></h4>
+  <small balance> Computed signals read <mark>`tickState`</mark> to join that pulse. First evaluation subscribes them to future ticks. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Computed dirty">
+  <h4 balance><mark>visibleTodos</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+export const visibleTodos = new Signal.Computed(() => {
+  tickState.get()
+
+  return pipelineTodos(
+    store.state.todos,
+    store.state.filters,
+    store.state.preferences.language,
+  )
+})
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Computed dirty">
+  <h4 balance><mark>dependency + invalidation</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+addDependency(signal) {
+  if (this.dependencies.has(signal)) return
+
+  const unsubscribe = signal.subscribe(this.boundInvalidate)
+  this.dependencies.set(signal, unsubscribe)
+}
+
+invalidate() {
+  if (this.dirty) return
+
+  this.dirty = true
+  this.notify()
+}
+
+get() {
+  this.track()
+
+  return this.evaluate()
+}
+    </code></pre>
+  </article>
+  <small balance> Computed value is lazy. It does not recompute during invalidation. It recomputes on next <mark>`get()`</mark>. </small>
+</section>

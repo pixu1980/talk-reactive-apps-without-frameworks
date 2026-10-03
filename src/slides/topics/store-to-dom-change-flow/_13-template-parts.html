@@ -1,0 +1,48 @@
+<section data-topic="store-to-dom" data-menu-title="Template parts">
+  <h4 balance>Step 12 - template instances push values into <mark>parts</mark></h4>
+  <small balance> Template engine parses each template literal once, then maps every dynamic expression to a part. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Template parts">
+  <h4 balance><mark>Part descriptors</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+if (descriptor.type === "child") {
+  const start = document.createComment(`start:${descriptor.index}`)
+  const end = document.createComment(`end:${descriptor.index}`)
+
+  node.replaceWith(start, end)
+  part = new ChildNodePart(start, end)
+} else if (descriptor.type === "attribute") {
+  node.removeAttribute(descriptor.rawName)
+  part = new AttributePart(node, descriptor.name)
+} else if (descriptor.type === "property") {
+  node.removeAttribute(descriptor.rawName)
+  part = new PropertyPart(node, descriptor.name)
+} else if (descriptor.type === "event") {
+  node.removeAttribute(descriptor.rawName)
+  part = new EventPart(node, descriptor.name)
+}
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Template parts">
+  <h4 balance><mark>Update values</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+update(values) {
+  for (let index = 0; index &lt; values.length; index += 1) {
+    const part = this.parts.get(index)
+
+    if (!part) {
+      continue
+    }
+
+    part.setValue(values[index])
+  }
+}
+    </code></pre>
+  </article>
+  <small balance>Runtime updates DOM zones, not component instances.</small>
+</section>

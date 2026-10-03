@@ -1,0 +1,53 @@
+<section data-topic="store-to-dom" data-menu-title="Root part">
+  <h4 balance>Step 11 - <mark>render()</mark> reuses one stable root part</h4>
+  <small balance> First render creates a root <mark>ChildNodePart</mark>. Later renders reuse it and push a fresh <mark>App()</mark> template result into the same DOM range. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Root part">
+  <h4 balance><mark>render</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+export function render(result, container) {
+  let rootPart = container.__rootPart
+
+  if (!rootPart) {
+    const start = document.createComment("root:start")
+    const end = document.createComment("root:end")
+
+    container.textContent = ""
+    container.append(start, end)
+    rootPart = new ChildNodePart(start, end)
+    container.__rootPart = rootPart
+  }
+
+  rootPart.setValue(result)
+}
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Root part">
+  <h4 balance><mark>App</mark> and <mark>html</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+export function App() {
+  return html`
+    ${Header()}
+    &lt;main data-component="app-shell"&gt;${StatsRow()} ${TodoList()}&lt;/main&gt;
+    &lt;aside data-slot="controls"&gt;${Filters()} ${BulkActions()}&lt;/aside&gt;
+    &lt;aside data-slot="debug-sidebar"&gt;${DebugPanel()}&lt;/aside&gt;
+    ${TodoModal()} ${CategoryModal()}
+  `
+}
+
+export function html(strings, ...values) {
+  return {
+    kind: "template-result",
+    strings,
+    values,
+  }
+}
+    </code></pre>
+  </article>
+  <small balance><mark>`html()`</mark> only packages strings and values. It does not touch the DOM.</small>
+</section>

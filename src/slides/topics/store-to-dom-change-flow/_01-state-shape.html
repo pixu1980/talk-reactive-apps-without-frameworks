@@ -1,0 +1,26 @@
+<section data-topic="store-to-dom" data-menu-title="State shape">
+  <h4 balance>Step 0 - <mark>state shape</mark></h4>
+  <small balance> Store holds one plain state tree. A todo item has a <mark>completed</mark> field, but the rest of the runtime only knows it as data inside <mark>`store.state.todos`</mark>. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="State shape">
+  <h4 balance><mark>TodoItem</mark> data</h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+/**
+ * Single todo item rendered by the demo.
+ * @typedef {object} TodoItem
+ * @property {string} id
+ * @property {string} title
+ * @property {string} notes
+ * @property {string} category
+ * @property {TodoPriority} priority
+ * @property {string} dueDate
+ * @property {boolean} completed
+ * @property {boolean} selected
+ * @property {number} createdAt
+ */
+    </code></pre>
+  </article>
+  <small><mark>Source</mark>: <code>src/scripts/data/_data.js</code></small>
+</section>

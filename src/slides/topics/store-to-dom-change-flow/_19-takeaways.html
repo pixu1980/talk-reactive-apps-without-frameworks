@@ -1,0 +1,13 @@
+<section data-topic="store-to-dom" data-menu-title="Takeaways">
+  <h4 balance>Store to DOM <mark>takeaways</mark></h4>
+  <small>
+    <ul>
+      <li><mark>Plain data</mark> stays source of truth</li>
+      <li><mark>Proxy write</mark> emits one cloned change event</li>
+      <li><mark>`tickState`</mark> is intentionally noisy, because it is a bridge, not business state</li>
+      <li><mark>Computed signals</mark> invalidate lazily, while effects batch in microtasks</li>
+      <li><mark>Template parts</mark> already know exact DOM zones to update</li>
+      <li>End result: no virtual DOM needed for this runtime shape</li>
+    </ul>
+  </small>
+</section>

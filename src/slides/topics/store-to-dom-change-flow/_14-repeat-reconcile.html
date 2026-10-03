@@ -1,0 +1,70 @@
+<section data-topic="store-to-dom" data-menu-title="repeat()">
+  <h4 balance>Step 13 - <mark>repeat()</mark> reconciles todo list</h4>
+  <small balance> Todo list receives <mark>`visibleTodos`</mark>, a computed signal. Repeat subscribes to the signal-like items source and reconciles keyed blocks. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="repeat()">
+  <h4 balance><mark>TodoList</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+export function TodoList() {
+  const language = store.state.preferences.language
+
+  return html`
+    &lt;ol data-list-reset data-slot="items"&gt;
+      ${repeat(visibleTodos, (todo) => `${todo.id}:${language}`, TodoItem)}
+    &lt;/ol&gt;
+  `
+}
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="repeat()">
+  <h4 balance><mark>Repeat source</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+commitRepeat({ items, key, renderItem }) {
+  this.repeatPayload = { items, key, renderItem }
+
+  if (isSignalLike(items)) {
+    this.bindRepeatItemsSignal(items)
+  } else {
+    this.disposeRepeatItemsSignal()
+  }
+
+  const source = isSignalLike(items) ? items.get() : items
+  const list = Array.isArray(source)
+    ? source
+    : isIterable(source)
+      ? [...source]
+      : []
+}
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="repeat()">
+  <h4 balance><mark>Keyed block</mark> update</h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+if (!block) {
+  block = createBlock(itemKey, referenceNode)
+  block.part.setValue(renderItem(item))
+  block.item = item
+} else {
+  if (!isRangeBeforeReference(block.start, block.end, referenceNode)) {
+    moveRangeBefore(block.start, block.end, referenceNode)
+  }
+
+  if (block.item !== item) {
+    block.part.setValue(renderItem(item))
+    block.item = item
+  }
+}
+    </code></pre>
+  </article>
+  <small balance>
+    Because <mark>`updateTodo()`</mark> replaces todo object, <mark>`block.item !== item`</mark> becomes true for that todo. Keyed block stays in place, internal template updates.
+  </small>
+</section>

@@ -1,0 +1,43 @@
+<section data-topic="store-to-dom" data-menu-title="model binding">
+  <h4 balance>Step 1 - component binds a field to <mark>`model()`</mark></h4>
+  <small balance>
+    <mark>`TodoItem()`</mark> renders a checkbox for the <mark>completed</mark> field. Template does not wire the field manually. It passes a <mark>model directive</mark> to the template engine.
+  </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="model binding">
+  <h4 balance><mark>TodoItem</mark> checkbox</h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+export function TodoItem(todo) {
+  const language = store.state.preferences.language
+  const isDone = todo.completed
+
+  return html`
+    &lt;label data-control-group="checkline" data-slot="completion-toggle"&gt;
+      &lt;input
+        model=${todoModel(todo.id, "completed", {
+          prop: "checked",
+          event: "change",
+        })}
+        type="checkbox"
+      /&gt;
+      &lt;span&gt;${t(language, "labels.done")}&lt;/span&gt;
+    &lt;/label&gt;
+  `
+}
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="model binding">
+  <h4 balance><mark>Mental model</mark></h4>
+  <small>
+    <ul>
+      <li><mark>`model=...`</mark> becomes an <mark>`AttributePart`</mark> because it is in an attribute position</li>
+      <li><mark>`todoModel(...)`</mark> describes how to read and write that field</li>
+      <li>Checkbox stays a normal native input</li>
+      <li><mark>Source</mark>: <code>src/scripts/components/TodoItem/_TodoItem.js</code></li>
+    </ul>
+  </small>
+</section>

@@ -1,0 +1,49 @@
+<section data-topic="store-to-dom" data-menu-title="Store bridge">
+  <h4 balance>Step 7 - <mark>_App.js</mark> bridges store events to signals</h4>
+  <small balance> App listens to one browser event: <mark>`store:change`</mark>. Handler handles side effects, then bumps <mark>`tickState`</mark>. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Store bridge">
+  <h4 balance><mark>store:change listener</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+window.addEventListener("store:change", (event) => {
+  handleStoreChange(event, {
+    store,
+    tickState,
+    getIsWritingDebugLog: () => isWritingDebugLog,
+    setIsWritingDebugLog: (value) => {
+      isWritingDebugLog = value
+    },
+  })
+})
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Store bridge">
+  <h4 balance><mark>handleStoreChange</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+export function handleStoreChange(event, context) {
+  if (context.getIsWritingDebugLog()) {
+    return
+  }
+
+  if (!context.store.state.debug.paused && event.detail.path !== "debug.logs") {
+    context.setIsWritingDebugLog(true)
+
+    try {
+      appendDebugLog(event.detail, context.store)
+    } finally {
+      context.setIsWritingDebugLog(false)
+    }
+  }
+
+  persistState(context.store)
+  context.tickState.set(performance.now())
+}
+    </code></pre>
+  </article>
+  <small><mark>Bridge</mark>: proxy write -> store:change -> handleStoreChange -> tickState.set(...)</small>
+</section>

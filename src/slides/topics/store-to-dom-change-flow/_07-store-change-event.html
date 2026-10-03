@@ -1,0 +1,42 @@
+<section data-topic="store-to-dom" data-menu-title="store:change">
+  <h4 balance>Step 6 - store emits <mark>store:change</mark></h4>
+  <small balance> Store does not expose raw internal references. It clones payload before dispatching the event. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="store:change">
+  <h4 balance><mark>emitChange</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+emitChange(path, oldValue, newValue) {
+  const detail = {
+    path: pathToString(path),
+    oldValue: deepClone(oldValue),
+    newValue: deepClone(newValue),
+  }
+
+  const event = new CustomEvent("store:change", { detail })
+  this.events.dispatchEvent(event)
+}
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="store:change">
+  <h4 balance><mark>Example detail</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim class="hljs javascript">
+{
+  path: "todos.1",
+  oldValue: {
+    title: "Refine the keyed repeat engine",
+    completed: false,
+  },
+  newValue: {
+    title: "Refine the keyed repeat engine",
+    completed: true,
+  },
+}
+    </code></pre>
+  </article>
+  <small balance> Event path is useful for debug output and persistence. It is not used as a granular dependency graph in this demo. </small>
+</section>

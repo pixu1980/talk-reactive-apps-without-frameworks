@@ -1,0 +1,28 @@
+<section data-topic="store-to-dom" data-menu-title="Change flow">
+  <h4 balance>One checkbox, <mark>whole runtime</mark></h4>
+  <small balance>
+    This walkthrough follows one real update in the demo: user checks the <mark>completed</mark> checkbox on a todo item. One logical field change travels through the runtime until the DOM shows the
+    new state.
+  </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="Change flow">
+  <h4 balance><mark>Store to DOM</mark> pipeline</h4>
+  <article class="code-stack">
+    <pre><code data-trim class="hljs text">
+DOM input
+  -> model directive
+  -> todo action
+  -> proxy store write
+  -> store:change event
+  -> tickState signal
+  -> computed signals and effects
+  -> template parts
+  -> DOM updates
+    </code></pre>
+  </article>
+  <small balance>
+    Important detail: this demo does <mark>not</mark> create one signal per store field. Proxy store is source of truth. <mark>tickState</mark> is the bridge that tells the signal layer something
+    changed.
+  </small>
+</section>

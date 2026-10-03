@@ -1,0 +1,97 @@
+<section data-topic="store-to-dom" data-menu-title="DOM commits">
+  <h4 balance>Step 14 - DOM parts commit final changes</h4>
+  <small balance> When <mark>`TodoItem(nextTodo)`</mark> runs again, <mark>`isDone`</mark> changes from false to true. Different expressions land in different part types. </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="DOM commits">
+  <h4 balance><mark>TodoItem</mark> updates</h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+const isDone = todo.completed
+
+return html`
+  &lt;article
+    data-component="todo-item"
+    data-priority=${todo.priority}
+    data-state=${isDone ? "done" : "open"}
+  &gt;
+    &lt;input
+      aria-label=${t(language, "fields.title")}
+      aria-readonly=${String(isDone)}
+      data-slot="title"
+      model=${todoModel(todo.id, "title")}
+      readonly=${isDone}
+    /&gt;
+  &lt;/article&gt;
+`
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="DOM commits">
+  <h4 balance><mark>Part types</mark></h4>
+  <small>
+    <ul>
+      <li><mark>`data-state=${"..."}`</mark> lands in <mark>AttributePart</mark></li>
+      <li><mark>`readonly=${"..."}`</mark> lands in <mark>AttributePart</mark></li>
+      <li><mark>`model=${"..."}`</mark> lands in <mark>`AttributePart.commitModel()`</mark></li>
+      <li>Text content lands in <mark>ChildNodePart</mark></li>
+      <li>Event bindings like <mark>`@click=${"..."}`</mark> land in <mark>EventPart</mark></li>
+    </ul>
+  </small>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="DOM commits">
+  <h4 balance><mark>Direct DOM writes</mark></h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+commit(value) {
+  if (value == null || value === false) {
+    this.element.removeAttribute(this.name)
+    return
+  }
+
+  this.element.setAttribute(this.name, value === true ? "" : String(value))
+}
+
+commitNode(node) {
+  clearRange(this.start, this.end)
+  this.currentNode = node
+  this.start.parentNode.insertBefore(node, this.end)
+}
+    </code></pre>
+  </article>
+</section>
+
+<section data-topic="store-to-dom" data-menu-title="DOM commits">
+  <h4 balance><mark>Model sync</mark> and visible result</h4>
+  <article class="code-stack">
+    <pre><code data-trim data-line-numbers class="hljs javascript">
+const sync = () => {
+  const nextValue = binding.config.get()
+
+  if (property === "checked") {
+    const normalizedValue = Boolean(nextValue)
+
+    if (this.element.checked !== normalizedValue) {
+      this.element.checked = normalizedValue
+    }
+  }
+}
+    </code></pre>
+  </article>
+  <small>
+    <ul>
+      <li>
+        <mark>`checkbox.checked = true`</mark>
+      </li>
+      <li>
+        <mark>`article[data-state="done"]`</mark>
+      </li>
+      <li>Readonly fields become readonly</li>
+      <li>Summary counts update</li>
+      <li>Visible list may reorder or refilter</li>
+      <li>Debug panel gets one new entry</li>
+    </ul>
+  </small>
+</section>
